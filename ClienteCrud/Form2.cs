@@ -15,6 +15,13 @@ namespace ClienteCrud
         public Form2()
         {
             InitializeComponent();
+            dateTimePicker1.Enabled = false;
+            textBox7.Enabled = false;
+        }
+
+        private void Lbl_Cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
     }

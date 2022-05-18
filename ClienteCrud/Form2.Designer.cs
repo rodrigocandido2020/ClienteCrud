@@ -39,6 +39,9 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Lbl_Salvar = new System.Windows.Forms.Button();
+            this.Lbl_Cancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox2
@@ -116,8 +119,7 @@
             this.textBox7.Location = new System.Drawing.Point(118, 50);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 7;
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox7.TabIndex = 15;
             // 
             // textBox10
             // 
@@ -125,6 +127,7 @@
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(100, 20);
             this.textBox10.TabIndex = 10;
+            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // maskedTextBox1
             // 
@@ -136,11 +139,41 @@
             this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(119, 154);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(99, 20);
+            this.dateTimePicker1.TabIndex = 12;
+            // 
+            // Lbl_Salvar
+            // 
+            this.Lbl_Salvar.Location = new System.Drawing.Point(12, 240);
+            this.Lbl_Salvar.Name = "Lbl_Salvar";
+            this.Lbl_Salvar.Size = new System.Drawing.Size(75, 23);
+            this.Lbl_Salvar.TabIndex = 13;
+            this.Lbl_Salvar.Text = "Salvar";
+            this.Lbl_Salvar.UseVisualStyleBackColor = true;
+            // 
+            // Lbl_Cancelar
+            // 
+            this.Lbl_Cancelar.Location = new System.Drawing.Point(141, 240);
+            this.Lbl_Cancelar.Name = "Lbl_Cancelar";
+            this.Lbl_Cancelar.Size = new System.Drawing.Size(77, 23);
+            this.Lbl_Cancelar.TabIndex = 14;
+            this.Lbl_Cancelar.Text = "Cancelar";
+            this.Lbl_Cancelar.UseVisualStyleBackColor = true;
+            this.Lbl_Cancelar.Click += new System.EventHandler(this.Lbl_Cancelar_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(943, 450);
+            this.Controls.Add(this.Lbl_Cancelar);
+            this.Controls.Add(this.Lbl_Salvar);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.textBox9);
@@ -153,7 +186,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "Form2";
-            this.Text = "Cliente";
+            this.Text = "Cadastro de Cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,5 +204,8 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button Lbl_Salvar;
+        private System.Windows.Forms.Button Lbl_Cancelar;
     }
 }
