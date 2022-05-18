@@ -1,0 +1,12 @@
+C:\Users\usuario\Desktop\ClienteCrud\ClienteCrud\bin\Debug\ClienteCrud.exe.config
+C:\Users\usuario\Desktop\ClienteCrud\ClienteCrud\bin\Debug\ClienteCrud.exe
+C:\Users\usuario\Desktop\ClienteCrud\ClienteCrud\bin\Debug\ClienteCrud.pdb
+C:\Users\usuario\Desktop\ClienteCrud\ClienteCrud\obj\Debug\ClienteCrud.csproj.AssemblyReference.cache
+C:\Users\usuario\Desktop\ClienteCrud\ClienteCrud\obj\Debug\ClienteCrud.csproj.SuggestedBindingRedirects.cache
+C:\Users\usuario\Desktop\ClienteCrud\ClienteCrud\obj\Debug\ClienteCrud.Form1.resources
+C:\Users\usuario\Desktop\ClienteCrud\ClienteCrud\obj\Debug\ClienteCrud.Properties.Resources.resources
+C:\Users\usuario\Desktop\ClienteCrud\ClienteCrud\obj\Debug\ClienteCrud.csproj.GenerateResource.cache
+C:\Users\usuario\Desktop\ClienteCrud\ClienteCrud\obj\Debug\ClienteCrud.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\ClienteCrud\ClienteCrud\obj\Debug\ClienteCrud.exe
+C:\Users\usuario\Desktop\ClienteCrud\ClienteCrud\obj\Debug\ClienteCrud.pdb
+C:\Users\usuario\Desktop\ClienteCrud\ClienteCrud\obj\Debug\ClienteCrud.Form2.resources
