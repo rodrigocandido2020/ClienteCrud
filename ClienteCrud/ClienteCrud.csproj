@@ -48,25 +48,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Usuario.cs" />
-    <Compile Include="ConsultaDePessoa.cs">
+    <Compile Include="ConsultaDeUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ConsultaDePessoa.Designer.cs">
-      <DependentUpon>ConsultaDePessoa.cs</DependentUpon>
+      <DependentUpon>ConsultaDeUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="CadastroDePessoa.cs">
+    <Compile Include="CadastroDeUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastroDePessoa.Designer.cs">
-      <DependentUpon>CadastroDePessoa.cs</DependentUpon>
+    <Compile Include="CadastroDeUsuario.Designer.cs">
+      <DependentUpon>CadastroDeUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ConsultaDePessoa.resx">
-      <DependentUpon>ConsultaDePessoa.cs</DependentUpon>
+      <DependentUpon>ConsultaDeUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CadastroDePessoa.resx">
-      <DependentUpon>CadastroDePessoa.cs</DependentUpon>
+    <EmbeddedResource Include="CadastroDeUsuario.resx">
+      <DependentUpon>CadastroDeUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

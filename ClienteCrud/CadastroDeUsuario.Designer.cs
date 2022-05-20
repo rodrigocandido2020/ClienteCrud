@@ -1,6 +1,6 @@
 ﻿namespace ClienteCrud
 {
-    partial class CadastroDePessoa
+    partial class CadastroDeUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -48,7 +48,7 @@
             // 
             // nomeTxt
             // 
-            this.nomeTxt.Location = new System.Drawing.Point(118, 76);
+            this.nomeTxt.Location = new System.Drawing.Point(118, 33);
             this.nomeTxt.Name = "nomeTxt";
             this.nomeTxt.Size = new System.Drawing.Size(192, 20);
             this.nomeTxt.TabIndex = 8;
@@ -56,7 +56,7 @@
             // 
             // senhaTxt
             // 
-            this.senhaTxt.Location = new System.Drawing.Point(118, 102);
+            this.senhaTxt.Location = new System.Drawing.Point(119, 59);
             this.senhaTxt.Name = "senhaTxt";
             this.senhaTxt.Size = new System.Drawing.Size(192, 20);
             this.senhaTxt.TabIndex = 9;
@@ -72,7 +72,7 @@
             // 
             // emailTxt
             // 
-            this.emailTxt.Location = new System.Drawing.Point(119, 128);
+            this.emailTxt.Location = new System.Drawing.Point(119, 91);
             this.emailTxt.Name = "emailTxt";
             this.emailTxt.Size = new System.Drawing.Size(191, 20);
             this.emailTxt.TabIndex = 10;
@@ -80,7 +80,7 @@
             // 
             // maskedTextData
             // 
-            this.maskedTextData.Location = new System.Drawing.Point(119, 203);
+            this.maskedTextData.Location = new System.Drawing.Point(117, 161);
             this.maskedTextData.Mask = "00/00/0000";
             this.maskedTextData.Name = "maskedTextData";
             this.maskedTextData.Size = new System.Drawing.Size(100, 20);
@@ -91,14 +91,14 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(119, 160);
+            this.dateTimePicker1.Location = new System.Drawing.Point(118, 126);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(99, 20);
             this.dateTimePicker1.TabIndex = 12;
             // 
             // Lbl_Salvar
             // 
-            this.Lbl_Salvar.Location = new System.Drawing.Point(12, 240);
+            this.Lbl_Salvar.Location = new System.Drawing.Point(12, 201);
             this.Lbl_Salvar.Name = "Lbl_Salvar";
             this.Lbl_Salvar.Size = new System.Drawing.Size(100, 23);
             this.Lbl_Salvar.TabIndex = 13;
@@ -108,7 +108,7 @@
             // 
             // Lbl_Cancelar
             // 
-            this.Lbl_Cancelar.Location = new System.Drawing.Point(119, 240);
+            this.Lbl_Cancelar.Location = new System.Drawing.Point(129, 201);
             this.Lbl_Cancelar.Name = "Lbl_Cancelar";
             this.Lbl_Cancelar.Size = new System.Drawing.Size(99, 23);
             this.Lbl_Cancelar.TabIndex = 14;
@@ -126,7 +126,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 83);
+            this.label2.Location = new System.Drawing.Point(9, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 17;
@@ -135,7 +135,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 57);
+            this.label3.Location = new System.Drawing.Point(12, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(16, 13);
             this.label3.TabIndex = 19;
@@ -144,7 +144,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 105);
+            this.label4.Location = new System.Drawing.Point(9, 66);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 20;
@@ -153,7 +153,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 135);
+            this.label5.Location = new System.Drawing.Point(9, 91);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 21;
@@ -162,7 +162,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 167);
+            this.label6.Location = new System.Drawing.Point(9, 126);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 13);
             this.label6.TabIndex = 22;
@@ -171,7 +171,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 209);
+            this.label7.Location = new System.Drawing.Point(9, 168);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 13);
             this.label7.TabIndex = 23;
@@ -179,17 +179,19 @@
             // 
             // idTxt
             // 
-            this.idTxt.Location = new System.Drawing.Point(118, 50);
+            this.idTxt.Location = new System.Drawing.Point(118, 7);
             this.idTxt.Name = "idTxt";
+            this.idTxt.ReadOnly = true;
             this.idTxt.Size = new System.Drawing.Size(34, 20);
             this.idTxt.TabIndex = 25;
             this.idTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.idTxt.TextChanged += new System.EventHandler(this.idTxt_TextChanged);
             // 
-            // Form2
+            // CadastroDeUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 450);
+            this.ClientSize = new System.Drawing.Size(315, 231);
             this.Controls.Add(this.idTxt);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -206,7 +208,7 @@
             this.Controls.Add(this.senhaTxt);
             this.Controls.Add(this.nomeTxt);
             this.Controls.Add(this.textBox7);
-            this.Name = "Form2";
+            this.Name = "CadastroDeUsuario";
             this.Text = "Cadastro de Cliente";
             this.ResumeLayout(false);
             this.PerformLayout();

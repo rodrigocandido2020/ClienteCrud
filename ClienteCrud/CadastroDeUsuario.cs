@@ -10,16 +10,17 @@ using System.Windows.Forms;
 
 namespace ClienteCrud
 {
-    public partial class CadastroDePessoa : Form
+    public partial class CadastroDeUsuario : Form
     {
         public Usuario Usuario { get; set; }
+        public int Id { get; internal set; }
 
-        public CadastroDePessoa(Usuario linha)
+        public CadastroDeUsuario(Usuario linha)
         {
             InitializeComponent();
             dateTimePicker1.Enabled = false;
 
-            if(linha == null)
+            if (linha == null)
             {
                 Usuario = new Usuario();
             }
@@ -36,7 +37,6 @@ namespace ClienteCrud
 
         private void Lbl_Salvar_Click(object sender, EventArgs e)
         {
-            Usuario.Id = idTxt.Text;
             Usuario.Nome = nomeTxt.Text;
             Usuario.Senha = senhaTxt.Text;
             Usuario.Email = emailTxt.Text;
@@ -44,6 +44,12 @@ namespace ClienteCrud
             Usuario.DataNascimento = maskedTextData.Text;
             DialogResult = DialogResult.OK;
             Close();
+        }
+
+        private void idTxt_TextChanged(object sender, EventArgs e)
+        {
+            //criar geração automatica de ID aqui
+
         }
     }
 }

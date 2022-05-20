@@ -41,16 +41,16 @@
             // 
             this.Lbl_Ok.Location = new System.Drawing.Point(12, 314);
             this.Lbl_Ok.Name = "Lbl_Ok";
-            this.Lbl_Ok.Size = new System.Drawing.Size(108, 25);
+            this.Lbl_Ok.Size = new System.Drawing.Size(71, 25);
             this.Lbl_Ok.TabIndex = 0;
             this.Lbl_Ok.Text = "Ok";
             this.Lbl_Ok.UseVisualStyleBackColor = true;
             // 
             // Lbl_Cancelar
             // 
-            this.Lbl_Cancelar.Location = new System.Drawing.Point(126, 314);
+            this.Lbl_Cancelar.Location = new System.Drawing.Point(89, 314);
             this.Lbl_Cancelar.Name = "Lbl_Cancelar";
-            this.Lbl_Cancelar.Size = new System.Drawing.Size(109, 25);
+            this.Lbl_Cancelar.Size = new System.Drawing.Size(65, 25);
             this.Lbl_Cancelar.TabIndex = 1;
             this.Lbl_Cancelar.Text = "Cancelar";
             this.Lbl_Cancelar.UseVisualStyleBackColor = true;
@@ -58,9 +58,9 @@
             // 
             // Lbl_Adicionar
             // 
-            this.Lbl_Adicionar.Location = new System.Drawing.Point(449, 315);
+            this.Lbl_Adicionar.Location = new System.Drawing.Point(446, 315);
             this.Lbl_Adicionar.Name = "Lbl_Adicionar";
-            this.Lbl_Adicionar.Size = new System.Drawing.Size(109, 25);
+            this.Lbl_Adicionar.Size = new System.Drawing.Size(59, 25);
             this.Lbl_Adicionar.TabIndex = 2;
             this.Lbl_Adicionar.Text = "Adicionar";
             this.Lbl_Adicionar.UseVisualStyleBackColor = true;
@@ -68,9 +68,9 @@
             // 
             // Llb_Editar
             // 
-            this.Llb_Editar.Location = new System.Drawing.Point(564, 315);
+            this.Llb_Editar.Location = new System.Drawing.Point(511, 314);
             this.Llb_Editar.Name = "Llb_Editar";
-            this.Llb_Editar.Size = new System.Drawing.Size(109, 25);
+            this.Llb_Editar.Size = new System.Drawing.Size(61, 25);
             this.Llb_Editar.TabIndex = 3;
             this.Llb_Editar.Text = "Editar";
             this.Llb_Editar.UseVisualStyleBackColor = true;
@@ -78,9 +78,9 @@
             // 
             // Lbl_Remover
             // 
-            this.Lbl_Remover.Location = new System.Drawing.Point(679, 315);
+            this.Lbl_Remover.Location = new System.Drawing.Point(578, 314);
             this.Lbl_Remover.Name = "Lbl_Remover";
-            this.Lbl_Remover.Size = new System.Drawing.Size(109, 25);
+            this.Lbl_Remover.Size = new System.Drawing.Size(56, 25);
             this.Lbl_Remover.TabIndex = 4;
             this.Lbl_Remover.Text = "Remover";
             this.Lbl_Remover.UseVisualStyleBackColor = true;
@@ -90,21 +90,21 @@
             this.listaClienteGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaClienteGrid.Location = new System.Drawing.Point(12, 12);
             this.listaClienteGrid.Name = "listaClienteGrid";
-            this.listaClienteGrid.Size = new System.Drawing.Size(776, 296);
+            this.listaClienteGrid.Size = new System.Drawing.Size(704, 296);
             this.listaClienteGrid.TabIndex = 5;
             // 
-            // Form1
+            // ConsultaDePessoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 352);
+            this.ClientSize = new System.Drawing.Size(646, 352);
             this.Controls.Add(this.listaClienteGrid);
             this.Controls.Add(this.Lbl_Remover);
             this.Controls.Add(this.Llb_Editar);
             this.Controls.Add(this.Lbl_Adicionar);
             this.Controls.Add(this.Lbl_Cancelar);
             this.Controls.Add(this.Lbl_Ok);
-            this.Name = "Form1";
+            this.Name = "ConsultaDePessoa";
             this.Text = "Cliente";
             ((System.ComponentModel.ISupportInitialize)(this.listaClienteGrid)).EndInit();
             this.ResumeLayout(false);
