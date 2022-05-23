@@ -13,10 +13,12 @@ namespace ClienteCrud
     public partial class CadastroDeUsuario : Form
     {
         public Usuario Usuario { get; set; }
-        public int Id { get; internal set; }
+        public int Id { get; set; }
 
         public CadastroDeUsuario(Usuario linha)
         {
+            ConsultaDePessoa consultaDePessoa = new ConsultaDePessoa();
+
             InitializeComponent();
             dateTimePicker1.Enabled = false;
 
@@ -27,7 +29,19 @@ namespace ClienteCrud
             else
             {
                 Usuario = linha;
+                PreencherInputsDaTela(linha);
             }
+        }
+
+        private void PreencherInputsDaTela(Usuario linha)
+        {
+            nomeTxt.Text = linha.Nome;
+            idTxt.Text = linha.Id.ToString();
+            senhaTxt.Text = linha.Senha;
+            emailTxt.Text = linha.Email;
+            dateTimePicker1.Text = linha.DataCriacao;
+            maskedTextData.Text = linha.DataNascimento;
+
         }
 
         private void Lbl_Cancelar_Click(object sender, EventArgs e)
@@ -37,6 +51,7 @@ namespace ClienteCrud
 
         private void Lbl_Salvar_Click(object sender, EventArgs e)
         {
+            
             Usuario.Nome = nomeTxt.Text;
             Usuario.Senha = senhaTxt.Text;
             Usuario.Email = emailTxt.Text;

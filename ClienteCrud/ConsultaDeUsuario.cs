@@ -12,45 +12,40 @@ namespace ClienteCrud
 {
     public partial class ConsultaDePessoa : Form
     {
-        public List<Usuario> Usuarios { get; set; }
-
+        public List<Usuario> listaUsuarios { get; set; }
         public ConsultaDePessoa()
         {
             InitializeComponent();
 
-            Usuarios = new List<Usuario>();
+            listaUsuarios = new List<Usuario>();
         }
 
-    private void Lbl_Adicionar_Click(object sender, EventArgs e)
+        public void Lbl_Adicionar_Click(object sender, EventArgs e)
         {
             CadastroDeUsuario form2 = new CadastroDeUsuario(null);
 
             DialogResult resultado = form2.ShowDialog(this);
-            // se resultado foi OK (foi salvo)
-
-            //salvar no datasource grind
 
 
+            var UsuarioId = form2.Usuario.Id +1;           
 
             if (resultado == DialogResult.OK)
             {
-                if(Usuarios.Count == 0)
+                if (listaUsuarios.Count == 0)
                 {
-                    form2.Usuario.Id = 1;
-                    
+                    form2.Usuario.Id = UsuarioId;
+
                 }
+                
                 else
-                {
-                    //pegar o valor 1 e adicionar mais 1 , assim cria o ID 2
-              
-
-                    //criar vaviavel que pega ultimo valor add 
-
+                {                    
+                    var promixoId = listaUsuarios.Last().Id +1;
+                    form2.Usuario.Id = promixoId;
                 }
 
-                Usuarios.Add(form2.Usuario);
+                listaUsuarios.Add(form2.Usuario);
                 listaClienteGrid.DataSource = null;
-                listaClienteGrid.DataSource = Usuarios;
+                listaClienteGrid.DataSource = listaUsuarios;
             }
 
             
@@ -58,8 +53,21 @@ namespace ClienteCrud
 
         private void Llb_Editar_Click(object sender, EventArgs e)
         {
-            CadastroDeUsuario form2 = new CadastroDeUsuario(null);
-            form2.Show();
+            try
+            {
+                var indexSelecionado = listaClienteGrid.CurrentCell.RowIndex;
+                var usuarioSelecionado = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario;
+
+                var cadastroDeUsuario = new CadastroDeUsuario(usuarioSelecionado);
+                DialogResult resultado = cadastroDeUsuario.ShowDialog(this);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            listaClienteGrid.DataSource = null;
+            listaClienteGrid.DataSource = listaUsuarios;
         }
 
         private void Lbl_Cancelar_Click(object sender, EventArgs e)
@@ -68,5 +76,9 @@ namespace ClienteCrud
 
         }
 
+        private void listaClienteGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     } 
 }

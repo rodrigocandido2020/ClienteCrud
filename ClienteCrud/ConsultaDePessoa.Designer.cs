@@ -90,8 +90,9 @@
             this.listaClienteGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaClienteGrid.Location = new System.Drawing.Point(12, 12);
             this.listaClienteGrid.Name = "listaClienteGrid";
-            this.listaClienteGrid.Size = new System.Drawing.Size(704, 296);
+            this.listaClienteGrid.Size = new System.Drawing.Size(635, 296);
             this.listaClienteGrid.TabIndex = 5;
+            this.listaClienteGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listaClienteGrid_CellContentClick);
             // 
             // ConsultaDePessoa
             // 
