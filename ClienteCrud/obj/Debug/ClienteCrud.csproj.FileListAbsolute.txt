@@ -20,5 +20,4 @@ C:\Users\usuario\Documents\ClienteCrud\ClienteCrud\obj\Debug\ClienteCrud.csproj.
 C:\Users\usuario\Documents\ClienteCrud\ClienteCrud\obj\Debug\ClienteCrud.csproj.CoreCompileInputs.cache
 C:\Users\usuario\Documents\ClienteCrud\ClienteCrud\obj\Debug\ClienteCrud.exe
 C:\Users\usuario\Documents\ClienteCrud\ClienteCrud\obj\Debug\ClienteCrud.pdb
-C:\Users\usuario\Documents\ClienteCrud\ClienteCrud\obj\Debug\ClienteCrud.ConsultaDePessoa.resources
 C:\Users\usuario\Documents\ClienteCrud\ClienteCrud\obj\Debug\ClienteCrud.CadastroDeUsuario.resources

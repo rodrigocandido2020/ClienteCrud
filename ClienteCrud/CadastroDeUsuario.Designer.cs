@@ -185,7 +185,6 @@
             this.idTxt.Size = new System.Drawing.Size(34, 20);
             this.idTxt.TabIndex = 25;
             this.idTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.idTxt.TextChanged += new System.EventHandler(this.idTxt_TextChanged);
             // 
             // CadastroDeUsuario
             // 

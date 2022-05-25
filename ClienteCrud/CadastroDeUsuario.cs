@@ -13,7 +13,6 @@ namespace ClienteCrud
     public partial class CadastroDeUsuario : Form
     {
         public Usuario Usuario { get; set; }
-        public int Id { get; set; }
 
         public CadastroDeUsuario(Usuario linha)
         {
@@ -35,8 +34,8 @@ namespace ClienteCrud
 
         private void PreencherInputsDaTela(Usuario linha)
         {
-            nomeTxt.Text = linha.Nome;
             idTxt.Text = linha.Id.ToString();
+            nomeTxt.Text = linha.Nome;
             senhaTxt.Text = linha.Senha;
             emailTxt.Text = linha.Email;
             dateTimePicker1.Text = linha.DataCriacao;
@@ -51,20 +50,28 @@ namespace ClienteCrud
 
         private void Lbl_Salvar_Click(object sender, EventArgs e)
         {
-            
             Usuario.Nome = nomeTxt.Text;
+            if(nomeTxt.Text == "")
+            {
+                MessageBox.Show("Campo Nome Obrigátorio");
+                return;
+            }
             Usuario.Senha = senhaTxt.Text;
+            if (Usuario.Senha == "")
+            {
+                MessageBox.Show("Campo senha Obrigátorio");
+                return;
+            }
             Usuario.Email = emailTxt.Text;
+            if (Usuario.Email == "")
+            {
+                MessageBox.Show("Campo E-mail Obrigátorio");
+                return;
+            }
             Usuario.DataCriacao = dateTimePicker1.Text;
             Usuario.DataNascimento = maskedTextData.Text;
             DialogResult = DialogResult.OK;
             Close();
-        }
-
-        private void idTxt_TextChanged(object sender, EventArgs e)
-        {
-            //criar geração automatica de ID aqui
-
         }
     }
 }

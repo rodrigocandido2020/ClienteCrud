@@ -12,38 +12,39 @@ namespace ClienteCrud
 {
     public partial class ConsultaDePessoa : Form
     {
+        //inicar uma coleção de objetos
         public List<Usuario> listaUsuarios { get; set; }
         public ConsultaDePessoa()
         {
             InitializeComponent();
-
+            //objeto esta inicinado dentro da lista
             listaUsuarios = new List<Usuario>();
+            this.listaClienteGrid.Columns["senha"].Visible = false;
         }
 
         public void Lbl_Adicionar_Click(object sender, EventArgs e)
         {
-            CadastroDeUsuario form2 = new CadastroDeUsuario(null);
+            CadastroDeUsuario cadastroDeUsuario = new CadastroDeUsuario(null);
+            DialogResult resultado = cadastroDeUsuario.ShowDialog(this);
 
-            DialogResult resultado = form2.ShowDialog(this);
 
-
-            var UsuarioId = form2.Usuario.Id +1;           
+            var UsuarioId = cadastroDeUsuario.Usuario.Id +1;           
 
             if (resultado == DialogResult.OK)
             {
                 if (listaUsuarios.Count == 0)
                 {
-                    form2.Usuario.Id = UsuarioId;
+                    cadastroDeUsuario.Usuario.Id = UsuarioId;
 
                 }
                 
                 else
                 {                    
                     var promixoId = listaUsuarios.Last().Id +1;
-                    form2.Usuario.Id = promixoId;
+                    cadastroDeUsuario.Usuario.Id = promixoId;
                 }
 
-                listaUsuarios.Add(form2.Usuario);
+                listaUsuarios.Add(cadastroDeUsuario.Usuario);
                 listaClienteGrid.DataSource = null;
                 listaClienteGrid.DataSource = listaUsuarios;
             }
@@ -53,15 +54,23 @@ namespace ClienteCrud
 
         private void Llb_Editar_Click(object sender, EventArgs e)
         {
+
             try
             {
-                var indexSelecionado = listaClienteGrid.CurrentCell.RowIndex;
-                var usuarioSelecionado = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario;
+                if (listaUsuarios.Count == 0)
+                {
+                    MessageBox.Show("Não existe Usuario criado para Editar");
+                }
+                else
+                { 
+                    var indexSelecionado = listaClienteGrid.CurrentCell.RowIndex;
+                    var usuarioSelecionado = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario;
 
-                var cadastroDeUsuario = new CadastroDeUsuario(usuarioSelecionado);
-                DialogResult resultado = cadastroDeUsuario.ShowDialog(this);
+                    var cadastroDeUsuario = new CadastroDeUsuario(usuarioSelecionado);
+                    DialogResult resultado = cadastroDeUsuario.ShowDialog(this);
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;
@@ -72,13 +81,57 @@ namespace ClienteCrud
 
         private void Lbl_Cancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Tem certeza que deseja sair da aplicação?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+                this.Close();
+            }           
 
         }
 
         private void listaClienteGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Lbl_Ok_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Tem certeza que deseja sair da aplicação?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+                this.Close();
+            }
+
+        }
+
+        private void Lbl_Remover_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (listaUsuarios.Count == 0)
+                {
+                    MessageBox.Show("Não existe Usuario criado para excluir");
+                }
+                else
+                {
+                    var indexSelecionado = listaClienteGrid.CurrentCell.RowIndex;
+                    var usuarioSelecionado = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario;
+
+
+                    if (MessageBox.Show("Tem certeza que deseja remover o Usuario selecionado?", "Apagar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        listaUsuarios.Remove(usuarioSelecionado);
+                    }
+
+                    listaClienteGrid.DataSource = null;
+                    listaClienteGrid.DataSource = listaUsuarios;
+                }
+                
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     } 
 }

@@ -62,9 +62,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ConsultaDePessoa.resx">
-      <DependentUpon>ConsultaDeUsuario.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CadastroDeUsuario.resx">
       <DependentUpon>CadastroDeUsuario.cs</DependentUpon>
     </EmbeddedResource>

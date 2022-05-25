@@ -45,6 +45,7 @@
             this.Lbl_Ok.TabIndex = 0;
             this.Lbl_Ok.Text = "Ok";
             this.Lbl_Ok.UseVisualStyleBackColor = true;
+            this.Lbl_Ok.Click += new System.EventHandler(this.Lbl_Ok_Click);
             // 
             // Lbl_Cancelar
             // 
@@ -84,6 +85,7 @@
             this.Lbl_Remover.TabIndex = 4;
             this.Lbl_Remover.Text = "Remover";
             this.Lbl_Remover.UseVisualStyleBackColor = true;
+            this.Lbl_Remover.Click += new System.EventHandler(this.Lbl_Remover_Click);
             // 
             // listaClienteGrid
             // 
@@ -98,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 352);
+            this.ClientSize = new System.Drawing.Size(660, 352);
             this.Controls.Add(this.listaClienteGrid);
             this.Controls.Add(this.Lbl_Remover);
             this.Controls.Add(this.Llb_Editar);
