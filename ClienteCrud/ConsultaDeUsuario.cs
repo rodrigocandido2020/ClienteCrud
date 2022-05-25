@@ -19,7 +19,6 @@ namespace ClienteCrud
             InitializeComponent();
             //objeto esta inicinado dentro da lista
             listaUsuarios = new List<Usuario>();
-            this.listaClienteGrid.Columns["senha"].Visible = false;
         }
 
         public void Lbl_Adicionar_Click(object sender, EventArgs e)
@@ -47,6 +46,7 @@ namespace ClienteCrud
                 listaUsuarios.Add(cadastroDeUsuario.Usuario);
                 listaClienteGrid.DataSource = null;
                 listaClienteGrid.DataSource = listaUsuarios;
+                this.listaClienteGrid.Columns["Senha"].Visible = false;
             }
 
             
@@ -77,6 +77,7 @@ namespace ClienteCrud
             }
             listaClienteGrid.DataSource = null;
             listaClienteGrid.DataSource = listaUsuarios;
+            this.listaClienteGrid.Columns["Senha"].Visible = false;
         }
 
         private void Lbl_Cancelar_Click(object sender, EventArgs e)
@@ -124,6 +125,7 @@ namespace ClienteCrud
 
                     listaClienteGrid.DataSource = null;
                     listaClienteGrid.DataSource = listaUsuarios;
+                    this.listaClienteGrid.Columns["Senha"].Visible = false;
                 }
                 
             }

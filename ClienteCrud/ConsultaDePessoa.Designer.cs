@@ -59,7 +59,7 @@
             // 
             // Lbl_Adicionar
             // 
-            this.Lbl_Adicionar.Location = new System.Drawing.Point(446, 315);
+            this.Lbl_Adicionar.Location = new System.Drawing.Point(339, 315);
             this.Lbl_Adicionar.Name = "Lbl_Adicionar";
             this.Lbl_Adicionar.Size = new System.Drawing.Size(59, 25);
             this.Lbl_Adicionar.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             // Llb_Editar
             // 
-            this.Llb_Editar.Location = new System.Drawing.Point(511, 314);
+            this.Llb_Editar.Location = new System.Drawing.Point(436, 315);
             this.Llb_Editar.Name = "Llb_Editar";
             this.Llb_Editar.Size = new System.Drawing.Size(61, 25);
             this.Llb_Editar.TabIndex = 3;
@@ -79,7 +79,7 @@
             // 
             // Lbl_Remover
             // 
-            this.Lbl_Remover.Location = new System.Drawing.Point(578, 314);
+            this.Lbl_Remover.Location = new System.Drawing.Point(516, 315);
             this.Lbl_Remover.Name = "Lbl_Remover";
             this.Lbl_Remover.Size = new System.Drawing.Size(56, 25);
             this.Lbl_Remover.TabIndex = 4;
@@ -92,7 +92,7 @@
             this.listaClienteGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaClienteGrid.Location = new System.Drawing.Point(12, 12);
             this.listaClienteGrid.Name = "listaClienteGrid";
-            this.listaClienteGrid.Size = new System.Drawing.Size(635, 296);
+            this.listaClienteGrid.Size = new System.Drawing.Size(560, 296);
             this.listaClienteGrid.TabIndex = 5;
             this.listaClienteGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listaClienteGrid_CellContentClick);
             // 
@@ -100,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 352);
+            this.ClientSize = new System.Drawing.Size(579, 352);
             this.Controls.Add(this.listaClienteGrid);
             this.Controls.Add(this.Lbl_Remover);
             this.Controls.Add(this.Llb_Editar);
