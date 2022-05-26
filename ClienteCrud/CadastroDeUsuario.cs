@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -39,7 +40,7 @@ namespace ClienteCrud
             nomeTxt.Text = linha.Nome;
             senhaTxt.Text = linha.Senha;
             emailTxt.Text = linha.Email;
-            dateTimePicker1.Text = linha.DataCriacao;
+            dateTimePicker1.Text = linha.DataCriacao.ToString();
             maskedTextData.Text = linha.DataNascimento.ToString();
 
         }
@@ -58,7 +59,7 @@ namespace ClienteCrud
 
                 throw;
             }
-            
+
         }
 
         private void Lbl_Salvar_Click(object sender, EventArgs e)
@@ -76,16 +77,42 @@ namespace ClienteCrud
                 {
                     MessageBox.Show("Campo senha Obrigátorio");
                     return;
-                }
-                Usuario.Email = emailTxt.Text;
-                if (Usuario.Email == "")
+                }                                                                                    
+                if (true)
                 {
-                    MessageBox.Show("Campo E-mail Obrigátorio");
+                    Usuario.Email = emailTxt.Text;
+                    Usuario.Email = emailTxt.Text;
+                    Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+                    Match match = regex.Match(Usuario.Email);
+                    if (match.Success)
+                    {
+                        DialogResult = DialogResult.OK;
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Campo e-mail invalido");
+                        return;
+                    }
+                }
+                try
+                {
+                    if (maskedTextData.Text == "  /  /")
+                    {
+                        Usuario.DataNascimento = null;
+                    }
+                    else
+                    {
+                        Usuario.DataNascimento = DateTime.Parse(maskedTextData.Text);
+                    }
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Informa uma Data valida");
                     return;
                 }
-                Usuario.DataCriacao = dateTimePicker1.Text;
-                Usuario.DataNascimento = DateTime.Parse(maskedTextData.Text);
-
+                Usuario.DataCriacao = DateTime.Parse(dateTimePicker1.Text);
                 DialogResult = DialogResult.OK;
                 Close();
             }
@@ -94,7 +121,8 @@ namespace ClienteCrud
 
                 throw;
             }
-            
+
         }
+
     }
 }

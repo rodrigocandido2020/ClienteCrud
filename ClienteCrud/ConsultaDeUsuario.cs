@@ -53,8 +53,7 @@ namespace ClienteCrud
             }
             catch (Exception)
             {
-
-                throw;
+                throw;       
             }
             
 
