@@ -23,31 +23,40 @@ namespace ClienteCrud
 
         public void Lbl_Adicionar_Click(object sender, EventArgs e)
         {
-            CadastroDeUsuario cadastroDeUsuario = new CadastroDeUsuario(null);
-            DialogResult resultado = cadastroDeUsuario.ShowDialog(this);
-
-
-            var UsuarioId = cadastroDeUsuario.Usuario.Id +1;           
-
-            if (resultado == DialogResult.OK)
+            try
             {
-                if (listaUsuarios.Count == 0)
+                CadastroDeUsuario cadastroDeUsuario = new CadastroDeUsuario(null);
+                DialogResult resultado = cadastroDeUsuario.ShowDialog(this);
+
+
+                var UsuarioId = cadastroDeUsuario.Usuario.Id + 1;
+
+                if (resultado == DialogResult.OK)
                 {
-                    cadastroDeUsuario.Usuario.Id = UsuarioId;
+                    if (listaUsuarios.Count == 0)
+                    {
+                        cadastroDeUsuario.Usuario.Id = UsuarioId;
 
-                }
-                
-                else
-                {                    
-                    var promixoId = listaUsuarios.Last().Id +1;
-                    cadastroDeUsuario.Usuario.Id = promixoId;
-                }
+                    }
 
-                listaUsuarios.Add(cadastroDeUsuario.Usuario);
-                listaClienteGrid.DataSource = null;
-                listaClienteGrid.DataSource = listaUsuarios;
-                this.listaClienteGrid.Columns["Senha"].Visible = false;
+                    else
+                    {
+                        var promixoId = listaUsuarios.Last().Id + 1;
+                        cadastroDeUsuario.Usuario.Id = promixoId;
+                    }
+
+                    listaUsuarios.Add(cadastroDeUsuario.Usuario);
+                    listaClienteGrid.DataSource = null;
+                    listaClienteGrid.DataSource = listaUsuarios;
+                    this.listaClienteGrid.Columns["Senha"].Visible = false;
+                }
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
 
             
         }
@@ -82,24 +91,38 @@ namespace ClienteCrud
 
         private void Lbl_Cancelar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Tem certeza que deseja sair da aplicação?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            try
             {
-                this.Close();
-            }           
+                if (MessageBox.Show("Tem certeza que deseja sair da aplicação?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    this.Close();
+                }
 
-        }
+            }
+            catch (Exception)
+            {
 
-        private void listaClienteGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+                throw;
+            }
+                 
 
         }
 
         private void Lbl_Ok_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Tem certeza que deseja sair da aplicação?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            try
             {
-                this.Close();
+                if (MessageBox.Show("Tem certeza que deseja sair da aplicação?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    this.Close();
+                }
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        
 
         }
 

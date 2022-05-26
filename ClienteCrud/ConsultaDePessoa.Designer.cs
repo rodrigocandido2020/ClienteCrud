@@ -94,7 +94,6 @@
             this.listaClienteGrid.Name = "listaClienteGrid";
             this.listaClienteGrid.Size = new System.Drawing.Size(560, 296);
             this.listaClienteGrid.TabIndex = 5;
-            this.listaClienteGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listaClienteGrid_CellContentClick);
             // 
             // ConsultaDePessoa
             // 

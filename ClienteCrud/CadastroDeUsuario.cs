@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,39 +40,61 @@ namespace ClienteCrud
             senhaTxt.Text = linha.Senha;
             emailTxt.Text = linha.Email;
             dateTimePicker1.Text = linha.DataCriacao;
-            maskedTextData.Text = linha.DataNascimento;
+            maskedTextData.Text = linha.DataNascimento.ToString();
 
         }
 
         private void Lbl_Cancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            try
+            {
+                if (MessageBox.Show("Tem certeza que fechar o cadastro de Usuario?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
 
         private void Lbl_Salvar_Click(object sender, EventArgs e)
         {
-            Usuario.Nome = nomeTxt.Text;
-            if(nomeTxt.Text == "")
+            try
             {
-                MessageBox.Show("Campo Nome Obrigátorio");
-                return;
+                Usuario.Nome = nomeTxt.Text;
+                if (nomeTxt.Text == "")
+                {
+                    MessageBox.Show("Campo Nome Obrigátorio");
+                    return;
+                }
+                Usuario.Senha = senhaTxt.Text;
+                if (Usuario.Senha == "")
+                {
+                    MessageBox.Show("Campo senha Obrigátorio");
+                    return;
+                }
+                Usuario.Email = emailTxt.Text;
+                if (Usuario.Email == "")
+                {
+                    MessageBox.Show("Campo E-mail Obrigátorio");
+                    return;
+                }
+                Usuario.DataCriacao = dateTimePicker1.Text;
+                Usuario.DataNascimento = DateTime.Parse(maskedTextData.Text);
+
+                DialogResult = DialogResult.OK;
+                Close();
             }
-            Usuario.Senha = senhaTxt.Text;
-            if (Usuario.Senha == "")
+            catch (Exception)
             {
-                MessageBox.Show("Campo senha Obrigátorio");
-                return;
+
+                throw;
             }
-            Usuario.Email = emailTxt.Text;
-            if (Usuario.Email == "")
-            {
-                MessageBox.Show("Campo E-mail Obrigátorio");
-                return;
-            }
-            Usuario.DataCriacao = dateTimePicker1.Text;
-            Usuario.DataNascimento = maskedTextData.Text;
-            DialogResult = DialogResult.OK;
-            Close();
+            
         }
     }
 }
