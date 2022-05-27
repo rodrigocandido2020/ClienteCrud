@@ -104,7 +104,7 @@
             this.Lbl_Salvar.TabIndex = 13;
             this.Lbl_Salvar.Text = "Salvar";
             this.Lbl_Salvar.UseVisualStyleBackColor = true;
-            this.Lbl_Salvar.Click += new System.EventHandler(this.Lbl_Salvar_Click);
+            this.Lbl_Salvar.Click += new System.EventHandler(this.AoclicarEmSalvar);
             // 
             // Lbl_Cancelar
             // 
@@ -114,7 +114,7 @@
             this.Lbl_Cancelar.TabIndex = 14;
             this.Lbl_Cancelar.Text = "Cancelar";
             this.Lbl_Cancelar.UseVisualStyleBackColor = true;
-            this.Lbl_Cancelar.Click += new System.EventHandler(this.Lbl_Cancelar_Click);
+            this.Lbl_Cancelar.Click += new System.EventHandler(this.AoClicarEmCancelar);
             // 
             // label1
             // 

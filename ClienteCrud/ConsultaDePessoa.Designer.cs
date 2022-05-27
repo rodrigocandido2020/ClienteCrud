@@ -45,7 +45,7 @@
             this.Lbl_Ok.TabIndex = 0;
             this.Lbl_Ok.Text = "Ok";
             this.Lbl_Ok.UseVisualStyleBackColor = true;
-            this.Lbl_Ok.Click += new System.EventHandler(this.Lbl_Ok_Click);
+            this.Lbl_Ok.Click += new System.EventHandler(this.AoClicarEmOk);
             // 
             // Lbl_Cancelar
             // 
@@ -55,7 +55,7 @@
             this.Lbl_Cancelar.TabIndex = 1;
             this.Lbl_Cancelar.Text = "Cancelar";
             this.Lbl_Cancelar.UseVisualStyleBackColor = true;
-            this.Lbl_Cancelar.Click += new System.EventHandler(this.Lbl_Cancelar_Click);
+            this.Lbl_Cancelar.Click += new System.EventHandler(this.AoClicarEmCancelar);
             // 
             // Lbl_Adicionar
             // 
@@ -65,7 +65,7 @@
             this.Lbl_Adicionar.TabIndex = 2;
             this.Lbl_Adicionar.Text = "Adicionar";
             this.Lbl_Adicionar.UseVisualStyleBackColor = true;
-            this.Lbl_Adicionar.Click += new System.EventHandler(this.Lbl_Adicionar_Click);
+            this.Lbl_Adicionar.Click += new System.EventHandler(this.AoClicarEmAdicionar);
             // 
             // Llb_Editar
             // 
@@ -75,7 +75,7 @@
             this.Llb_Editar.TabIndex = 3;
             this.Llb_Editar.Text = "Editar";
             this.Llb_Editar.UseVisualStyleBackColor = true;
-            this.Llb_Editar.Click += new System.EventHandler(this.Llb_Editar_Click);
+            this.Llb_Editar.Click += new System.EventHandler(this.AoClicarEmEditar);
             // 
             // Lbl_Remover
             // 
@@ -85,7 +85,7 @@
             this.Lbl_Remover.TabIndex = 4;
             this.Lbl_Remover.Text = "Remover";
             this.Lbl_Remover.UseVisualStyleBackColor = true;
-            this.Lbl_Remover.Click += new System.EventHandler(this.Lbl_Remover_Click);
+            this.Lbl_Remover.Click += new System.EventHandler(this.AoClicarEmRemover);
             // 
             // listaClienteGrid
             // 
