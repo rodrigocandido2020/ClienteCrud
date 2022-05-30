@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -7,11 +6,9 @@ namespace ClienteCrud
 {
     public partial class ConsultaDePessoa : Form
     {
-        public List<Usuario> listaUsuarios { get; set; }
         public ConsultaDePessoa()
         {
             InitializeComponent();
-            listaUsuarios = new List<Usuario>();
         }
         public void AoClicarEmAdicionar(object sender, EventArgs e)
         {
@@ -23,19 +20,19 @@ namespace ClienteCrud
 
                 if (resultado == DialogResult.OK)
                 {
-                    if (listaUsuarios.Count == 0)
+                    if (ListaDeUsuario.Instancia.Count == 0)
                     {
                         cadastroDeUsuario.Usuario.Id = UsuarioId;
 
                     }
                     else
                     {
-                        var promixoId = listaUsuarios.Last().Id + 1;
+                        var promixoId = ListaDeUsuario.Instancia.Last().Id + 1;
                         cadastroDeUsuario.Usuario.Id = promixoId;
                     }
-                    listaUsuarios.Add(cadastroDeUsuario.Usuario);
+                    ListaDeUsuario.Instancia.Add(cadastroDeUsuario.Usuario);
                     listaClienteGrid.DataSource = null;
-                    listaClienteGrid.DataSource = listaUsuarios;
+                    listaClienteGrid.DataSource = ListaDeUsuario.Instancia;
                     listaClienteGrid.Columns["Senha"].Visible = false;
                 }
             }
@@ -49,7 +46,7 @@ namespace ClienteCrud
         {
             try
             {
-                if (listaUsuarios.Count == 0)
+                if (ListaDeUsuario.Instancia.Count == 0)
                 {
                     MostraMensagem("Não existe Usuario criado para Editar");
                 }
@@ -67,7 +64,7 @@ namespace ClienteCrud
                 return;
             }
             listaClienteGrid.DataSource = null;
-            listaClienteGrid.DataSource = listaUsuarios;
+            listaClienteGrid.DataSource = ListaDeUsuario.Instancia;
             listaClienteGrid.Columns["Senha"].Visible = false;
         }
         private void AoClicarEmCancelar(object sender, EventArgs e)
@@ -110,7 +107,7 @@ namespace ClienteCrud
         {
             try
             {
-                if (listaUsuarios.Count == 0)
+                if (ListaDeUsuario.Instancia.Count == 0)
                 {
                     MostraMensagem("Não existe Usuario criado para excluir");
                 }
@@ -120,10 +117,10 @@ namespace ClienteCrud
                     var usuarioSelecionado = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario;
                     if (DeveRemoverUusario())
                     {
-                        listaUsuarios.Remove(usuarioSelecionado);
+                        ListaDeUsuario.Instancia.Remove(usuarioSelecionado);
                     }
                     listaClienteGrid.DataSource = null;
-                    listaClienteGrid.DataSource = listaUsuarios;
+                    listaClienteGrid.DataSource = ListaDeUsuario.Instancia;
                     listaClienteGrid.Columns["Senha"].Visible = false;
                 }               
             }
