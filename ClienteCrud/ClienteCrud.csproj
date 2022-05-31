@@ -63,6 +63,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioRepositorio.cs" />
     <EmbeddedResource Include="CadastroDeUsuario.resx">
       <DependentUpon>CadastroDeUsuario.cs</DependentUpon>
     </EmbeddedResource>
