@@ -84,7 +84,7 @@ namespace ClienteCrud
                 Usuario.Senha = senhaTxt.Text;
                 Usuario.Email = emailTxt.Text;
                 Usuario.DataCriacao = DateTime.Parse(dateTimePicker1.Text);
-                if (maskedTextData.Text == "  /  /")
+                if (maskedTextData.Text == "__/__/____")
                 {
                     Usuario.DataNascimento = null;
                 }
