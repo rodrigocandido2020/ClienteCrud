@@ -5,7 +5,6 @@ namespace ClienteCrud
 {
     public class ListaDeUsuario
     {
-        public Usuario Usuario { get; set; }
         private static List<Usuario> instancia;
 
         public static List<Usuario> Instancia()
@@ -20,8 +19,20 @@ namespace ClienteCrud
         }
         public static int AdicionarId()
         {
-            var atual = (instancia ?? new List<Usuario>()).Max(x => x.Id);
-           return atual++;
+            var proximoId = 0;
+
+            if (ListaDeUsuario.instancia.Count == 0)
+            {
+                proximoId = 0;
+
+            }
+            else
+            {
+                proximoId = ListaDeUsuario.instancia.Last().Id;
+                
+            }
+            proximoId++;
+            return proximoId;
         }
 
     }

@@ -37,7 +37,7 @@ namespace ClienteCrud
             {
                 if (DeveSairDoSistema())
                 {
-                    this.Close();
+                    Close();
                 }
             }
             catch (Exception)
@@ -68,11 +68,18 @@ namespace ClienteCrud
             {
                 throw new Exception("Campo e-mail invalido");
             }
-            var regexData = new Regex(@"(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/(19|20)\d{2}");
-            var x = regexData.Match(maskedTextData.Text);
-            if (x.Success == false)
+            if (maskedTextData.Text == "  /  /")
             {
-                throw new Exception("Campo Data invalido");
+                Usuario.DataNascimento = null;
+            }
+            else
+            {
+                var regexData = new Regex(@"(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/(19|20)\d{2}");
+                var x = regexData.Match(maskedTextData.Text);
+                if (x.Success == false)
+                {
+                    throw new Exception("Campo Data invalido");
+                }
             }
         }
         private void AoclicarEmSalvar(object sender, EventArgs e)
@@ -88,7 +95,7 @@ namespace ClienteCrud
                 {
                     Usuario.DataNascimento = null;
                 }
-                else
+                 else
                 {
                     Usuario.DataNascimento = DateTime.Parse(maskedTextData.Text);
                 }

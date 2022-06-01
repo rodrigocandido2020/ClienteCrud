@@ -17,16 +17,11 @@ namespace ClienteCrud
             try
             {
                 var cadastroDeUsuario = new CadastroDeUsuario(null);
-                var resultado = cadastroDeUsuario.ShowDialog(this);
+                var resultado = cadastroDeUsuario.ShowDialog();
                 var listaDeUsuarios = ListaDeUsuario.Instancia();
-                var proximoId = ListaDeUsuario.AdicionarId();
-
-
-                if (resultado == DialogResult.OK)
+                if(resultado == DialogResult.OK)
                 {
-                    cadastroDeUsuario.Usuario.Id = proximoId;
-                    repositorio.Adicionar(cadastroDeUsuario.Usuario);
-
+                    repositorio.AdicionarUsuario(cadastroDeUsuario.Usuario);
                 }
                 listaClienteGrid.DataSource = null;
                 listaClienteGrid.DataSource = repositorio.ObterTodos();
@@ -53,6 +48,7 @@ namespace ClienteCrud
                     var usuarioSelecionado = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario;
                     var usuario = repositorio.ObterPorId(usuarioSelecionado.Id);
                     var cadastroDeUsuario = new CadastroDeUsuario(usuario);
+                    repositorio.editarUsuario(cadastroDeUsuario.Usuario);
                     cadastroDeUsuario.ShowDialog(this);
                 }
             }
@@ -118,7 +114,7 @@ namespace ClienteCrud
                     var usuarioSelecionado = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario;
                     if (DeveRemoverUusario())
                     {
-                        repositorio.Remover(usuarioSelecionado);
+                        repositorio.RemoverUsuario(usuarioSelecionado);
                     }
                     listaClienteGrid.DataSource = null;
                     listaClienteGrid.DataSource = repositorio.ObterTodos();

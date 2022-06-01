@@ -9,14 +9,12 @@ namespace ClienteCrud
     public class UsuarioRepositorio
     {
 
-        public void Adicionar(Usuario usuario)
+        public void AdicionarUsuario(Usuario usuario)
         {
             var listaDeUsuario = ListaDeUsuario.Instancia();
+            var proximoId = ListaDeUsuario.AdicionarId();
+            usuario.Id = proximoId;
             listaDeUsuario.Add(usuario);
-            if(listaDeUsuario.Count == 0)
-            {
-                usuario.Id = +1;
-            }
         }
 
         public  List<Usuario> ObterTodos()
@@ -24,7 +22,8 @@ namespace ClienteCrud
             return ListaDeUsuario.Instancia();
         }
 
-        public void Remover(Usuario usuario)
+
+        public void RemoverUsuario(Usuario usuario)
         {
             var listaDeUsuario = ListaDeUsuario.Instancia();
             listaDeUsuario.Remove(usuario);
@@ -42,6 +41,18 @@ namespace ClienteCrud
                 }
             });
             return usuarioDeRetorno;
+        }
+
+        public void editarUsuario(Usuario usuarioEditado)
+        {
+            var listaDeUsuario = ListaDeUsuario.Instancia();
+            listaDeUsuario.ForEach(usuario =>
+            {
+                if (usuario.Id == usuarioEditado.Id)
+                {
+                    usuario = usuarioEditado;
+                }
+            });
         }
     }
 }
