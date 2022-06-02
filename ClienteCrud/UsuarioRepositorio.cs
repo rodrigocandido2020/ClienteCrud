@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClienteCrud
 {
-    public class UsuarioRepositorio
+    public class UsuarioRepositorio : IUsuarioRepositorio
     {
 
         public void AdicionarUsuario(Usuario usuario)
@@ -17,42 +17,34 @@ namespace ClienteCrud
             listaDeUsuario.Add(usuario);
         }
 
-        public  List<Usuario> ObterTodos()
+        public List<Usuario> ObterTodos()
         {
             return ListaDeUsuario.Instancia();
         }
 
 
-        public void RemoverUsuario(Usuario usuario)
+        public void RemoverUsuario(int id)
         {
             var listaDeUsuario = ListaDeUsuario.Instancia();
+            var idUsuario = listaDeUsuario.FindIndex(u => u.Id == id);
+            var idAtual = id;
+            var usuario = new Usuario();
+
             listaDeUsuario.Remove(usuario);
         }
 
-        public Usuario ObterPorId(int id)
+        public int ObterPorId(int id)
         {
-            var usuarioDeRetorno = new Usuario();
             var listaDeUsuario = ListaDeUsuario.Instancia();
-            listaDeUsuario.ForEach(usuario =>
-            {
-                if (usuario.Id == id)
-                {
-                    usuarioDeRetorno = usuario;
-                }
-            });
-            return usuarioDeRetorno;
+            var idUsuario = listaDeUsuario.FindIndex(u => u.Id == id);
+            var idAtual = id;
+            return idAtual;
         }
 
-        public void editarUsuario(Usuario usuarioEditado)
+        public void EditarUsuario(Usuario usuarioEditado)
         {
             var listaDeUsuario = ListaDeUsuario.Instancia();
-            listaDeUsuario.ForEach(usuario =>
-            {
-                if (usuario.Id == usuarioEditado.Id)
-                {
-                    usuario = usuarioEditado;
-                }
-            });
+            var IdUsuario = usuarioEditado.Id;
         }
     }
 }
