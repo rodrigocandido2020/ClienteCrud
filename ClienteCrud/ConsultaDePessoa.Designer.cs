@@ -59,7 +59,7 @@
             // 
             // Lbl_Adicionar
             // 
-            this.Lbl_Adicionar.Location = new System.Drawing.Point(339, 315);
+            this.Lbl_Adicionar.Location = new System.Drawing.Point(384, 315);
             this.Lbl_Adicionar.Name = "Lbl_Adicionar";
             this.Lbl_Adicionar.Size = new System.Drawing.Size(59, 25);
             this.Lbl_Adicionar.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             // Llb_Editar
             // 
-            this.Llb_Editar.Location = new System.Drawing.Point(436, 315);
+            this.Llb_Editar.Location = new System.Drawing.Point(449, 315);
             this.Llb_Editar.Name = "Llb_Editar";
             this.Llb_Editar.Size = new System.Drawing.Size(61, 25);
             this.Llb_Editar.TabIndex = 3;

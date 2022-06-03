@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -45,10 +46,10 @@ namespace ClienteCrud
                 else
                 { 
                     var indexSelecionado = listaClienteGrid.CurrentCell.RowIndex;
-                    var usuarioSelecionado = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario;
-                    var usuario = repositorio.ObterPorId(usuarioSelecionado.Id);
-                    var cadastroDeUsuario = new CadastroDeUsuario(usuarioSelecionado);
-                    repositorio.EditarUsuario(cadastroDeUsuario.Usuario);
+                    var linhaSelecionada = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario;
+                    var usuario = repositorio.ObterPorId(linhaSelecionada.Id).ShallowCopy() as Usuario;
+                    var cadastroDeUsuario = new CadastroDeUsuario(usuario);
+                    repositorio.AtualizarUsuario(cadastroDeUsuario.Usuario);
                     cadastroDeUsuario.ShowDialog(this);
                 }
             }

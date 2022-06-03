@@ -12,7 +12,7 @@ namespace ClienteCrud
         public void AdicionarUsuario(Usuario usuario)
         {
             var listaDeUsuario = ListaDeUsuario.Instancia();
-            var proximoId = ListaDeUsuario.AdicionarId();
+            var proximoId = ListaDeUsuario.ObterProximoId();
             usuario.Id = proximoId;
             listaDeUsuario.Add(usuario);
         }
@@ -22,29 +22,25 @@ namespace ClienteCrud
             return ListaDeUsuario.Instancia();
         }
 
-
         public void RemoverUsuario(int id)
         {
             var listaDeUsuario = ListaDeUsuario.Instancia();
-            var idUsuario = listaDeUsuario.FindIndex(u => u.Id == id);
-            var idAtual = id;
-            var usuario = new Usuario();
-
-            listaDeUsuario.Remove(usuario);
+            var usuarioEncontrado = listaDeUsuario.Find(u => u.Id == id);
+            listaDeUsuario.Remove(usuarioEncontrado);
         }
 
-        public int ObterPorId(int id)
+        public Usuario ObterPorId(int id)
         {
             var listaDeUsuario = ListaDeUsuario.Instancia();
-            var idUsuario = listaDeUsuario.FindIndex(u => u.Id == id);
-            var idAtual = id;
-            return idAtual;
+            var usuario = listaDeUsuario.Find(u => u.Id == id);
+            return usuario;
         }
 
-        public void EditarUsuario(Usuario usuarioEditado)
+        public void AtualizarUsuario(Usuario usuarioEditado)
         {
-            var listaDeUsuario = ListaDeUsuario.Instancia();
-            var IdUsuario = usuarioEditado.Id;
+            var listaDeUsuarios = ListaDeUsuario.Instancia();
+            var indice = listaDeUsuarios.FindIndex(usuario => usuario.Id == usuarioEditado.Id);
+            listaDeUsuarios[indice] = usuarioEditado;
         }
     }
 }

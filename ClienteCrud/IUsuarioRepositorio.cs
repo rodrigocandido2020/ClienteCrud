@@ -11,8 +11,8 @@ namespace ClienteCrud
         void AdicionarUsuario(Usuario Usuario);
         List<Usuario> ObterTodos();
         void RemoverUsuario(int id);
-        int ObterPorId(int id);
-        void EditarUsuario(Usuario usuario);
+        Usuario ObterPorId(int id);
+        void AtualizarUsuario(Usuario usuario);
 
     }
 }

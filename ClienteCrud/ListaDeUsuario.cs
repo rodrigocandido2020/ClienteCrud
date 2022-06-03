@@ -17,22 +17,22 @@ namespace ClienteCrud
                 return instancia;
             }
         }
-        public static int AdicionarId()
+        public static int ObterProximoId()
         {
-            var proximoId = 0;
+            var proximoId = (int)decimal.Zero;
 
-            if (ListaDeUsuario.instancia.Count == 0)
+            if (ListaDeUsuario.Instancia().Any())
             {
-                proximoId = 0;
+                proximoId = ListaDeUsuario.Instancia().Max(x => x.Id);
+            }
 
-            }
-            else
-            {
-                proximoId = ListaDeUsuario.instancia.Last().Id;
-                
-            }
             proximoId++;
             return proximoId;
+        }
+
+        public object ShallowCopy()
+        {
+            return this.MemberwiseClone();
         }
 
     }

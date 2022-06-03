@@ -22,6 +22,7 @@ namespace ClienteCrud
                 PreencherInputsDaTela(usuario);
             }
         }
+
         private void PreencherInputsDaTela(Usuario usuario)
         {
             idTxt.Text = usuario.Id.ToString();
@@ -31,6 +32,7 @@ namespace ClienteCrud
             dateTimePicker1.Text = usuario.DataCriacao.ToString();
             maskedTextData.Text = usuario.DataNascimento.ToString();
         }
+
         private void AoClicarEmCancelar(object sender, EventArgs e)
         {
             try
@@ -42,16 +44,17 @@ namespace ClienteCrud
             }
             catch (Exception)
             {
-
                 MostrarMensagem("Erro inesperado entrar em contato com administrador do sistema");
                 return;
             }
         }
+
         private bool DeveSairDoSistema()
         {
             return MessageBox.Show("Tem certeza que deseja fechar o cadastro de Usuario?", "Sair", MessageBoxButtons.YesNo,
                  MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes;
         }
+
         private void ValidarCampos()
         {
             if (nomeTxt.Text == "")
@@ -82,6 +85,7 @@ namespace ClienteCrud
                 }
             }
         }
+
         private void AoclicarEmSalvar(object sender, EventArgs e)
         {
             try
@@ -91,14 +95,6 @@ namespace ClienteCrud
                 Usuario.Senha = senhaTxt.Text;
                 Usuario.Email = emailTxt.Text;
                 Usuario.DataCriacao = DateTime.Parse(dateTimePicker1.Text);
-                if (maskedTextData.Text == "  /  /")
-                {
-                    Usuario.DataNascimento = null;
-                }
-                 else
-                {
-                    Usuario.DataNascimento = DateTime.Parse(maskedTextData.Text);
-                }
                 DialogResult = DialogResult.OK;
                 Close();
             }
@@ -107,6 +103,7 @@ namespace ClienteCrud
                 MostrarMensagem(ex.Message);
             }
         }
+
         private void MostrarMensagem(string mensagem)
         {
             MessageBox.Show(mensagem);
