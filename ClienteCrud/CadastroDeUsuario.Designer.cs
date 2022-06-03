@@ -48,6 +48,7 @@
             // 
             // nomeTxt
             // 
+            this.nomeTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.nomeTxt.Location = new System.Drawing.Point(118, 33);
             this.nomeTxt.Name = "nomeTxt";
             this.nomeTxt.Size = new System.Drawing.Size(192, 20);
@@ -56,6 +57,7 @@
             // 
             // senhaTxt
             // 
+            this.senhaTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.senhaTxt.Location = new System.Drawing.Point(119, 59);
             this.senhaTxt.Name = "senhaTxt";
             this.senhaTxt.Size = new System.Drawing.Size(192, 20);
@@ -72,6 +74,7 @@
             // 
             // emailTxt
             // 
+            this.emailTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.emailTxt.Location = new System.Drawing.Point(119, 91);
             this.emailTxt.Name = "emailTxt";
             this.emailTxt.Size = new System.Drawing.Size(191, 20);
@@ -80,6 +83,7 @@
             // 
             // maskedTextData
             // 
+            this.maskedTextData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.maskedTextData.Location = new System.Drawing.Point(117, 161);
             this.maskedTextData.Mask = "00/00/0000";
             this.maskedTextData.Name = "maskedTextData";
@@ -90,6 +94,7 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(118, 126);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -98,6 +103,7 @@
             // 
             // Lbl_Salvar
             // 
+            this.Lbl_Salvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Lbl_Salvar.Location = new System.Drawing.Point(12, 201);
             this.Lbl_Salvar.Name = "Lbl_Salvar";
             this.Lbl_Salvar.Size = new System.Drawing.Size(100, 23);
@@ -108,6 +114,7 @@
             // 
             // Lbl_Cancelar
             // 
+            this.Lbl_Cancelar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Lbl_Cancelar.Location = new System.Drawing.Point(129, 201);
             this.Lbl_Cancelar.Name = "Lbl_Cancelar";
             this.Lbl_Cancelar.Size = new System.Drawing.Size(99, 23);
@@ -128,9 +135,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(9, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 17;
-            this.label2.Text = "Nome";
+            this.label2.Text = "Nome*";
             // 
             // label3
             // 
@@ -146,18 +153,18 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(9, 66);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 20;
-            this.label4.Text = "Senha";
+            this.label4.Text = "Senha*";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(9, 91);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(39, 13);
             this.label5.TabIndex = 21;
-            this.label5.Text = "E-mail";
+            this.label5.Text = "E-mail*";
             // 
             // label6
             // 
@@ -179,6 +186,7 @@
             // 
             // idTxt
             // 
+            this.idTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.idTxt.Location = new System.Drawing.Point(118, 7);
             this.idTxt.Name = "idTxt";
             this.idTxt.ReadOnly = true;
@@ -207,7 +215,10 @@
             this.Controls.Add(this.senhaTxt);
             this.Controls.Add(this.nomeTxt);
             this.Controls.Add(this.textBox7);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "CadastroDeUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Cliente";
             this.ResumeLayout(false);
             this.PerformLayout();

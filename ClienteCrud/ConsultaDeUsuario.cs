@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -12,29 +13,20 @@ namespace ClienteCrud
         }
         public void AoClicarEmAdicionar(object sender, EventArgs e)
         {
+            var repositorio = new UsuarioRepositorio();
+
             try
             {
                 var cadastroDeUsuario = new CadastroDeUsuario(null);
-                var resultado = cadastroDeUsuario.ShowDialog(this);
-                var UsuarioId = cadastroDeUsuario.Usuario.Id + 1;
-
-                if (resultado == DialogResult.OK)
+                var resultado = cadastroDeUsuario.ShowDialog();
+                var listaDeUsuarios = ListaDeUsuario.Instancia();
+                if(resultado == DialogResult.OK)
                 {
-                    if (ListaDeUsuario.Instancia.Count == 0)
-                    {
-                        cadastroDeUsuario.Usuario.Id = UsuarioId;
-
-                    }
-                    else
-                    {
-                        var promixoId = ListaDeUsuario.Instancia.Last().Id + 1;
-                        cadastroDeUsuario.Usuario.Id = promixoId;
-                    }
-                    ListaDeUsuario.Instancia.Add(cadastroDeUsuario.Usuario);
-                    listaClienteGrid.DataSource = null;
-                    listaClienteGrid.DataSource = ListaDeUsuario.Instancia;
-                    listaClienteGrid.Columns["Senha"].Visible = false;
+                    repositorio.AdicionarUsuario(cadastroDeUsuario.Usuario);
                 }
+                listaClienteGrid.DataSource = null;
+                listaClienteGrid.DataSource = repositorio.ObterTodos();
+                listaClienteGrid.Columns["Senha"].Visible = false;
             }
             catch (Exception)
             {
@@ -44,18 +36,21 @@ namespace ClienteCrud
         }
         private void AoClicarEmEditar(object sender, EventArgs e)
         {
+            var repositorio = new UsuarioRepositorio();
             try
             {
-                if (ListaDeUsuario.Instancia.Count == 0)
+                if (repositorio.ObterTodos().Count == 0)
                 {
                     MostraMensagem("Não existe Usuario criado para Editar");
                 }
                 else
                 { 
                     var indexSelecionado = listaClienteGrid.CurrentCell.RowIndex;
-                    var usuarioSelecionado = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario;
-                    var cadastroDeUsuario = new CadastroDeUsuario(usuarioSelecionado);
-                    var resultado = cadastroDeUsuario.ShowDialog(this);
+                    var linhaSelecionada = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario;
+                    var usuario = repositorio.ObterPorId(linhaSelecionada.Id).ShallowCopy() as Usuario;
+                    var cadastroDeUsuario = new CadastroDeUsuario(usuario);
+                    repositorio.AtualizarUsuario(cadastroDeUsuario.Usuario);
+                    cadastroDeUsuario.ShowDialog(this);
                 }
             }
             catch (Exception)
@@ -64,7 +59,7 @@ namespace ClienteCrud
                 return;
             }
             listaClienteGrid.DataSource = null;
-            listaClienteGrid.DataSource = ListaDeUsuario.Instancia;
+            listaClienteGrid.DataSource = ListaDeUsuario.Instancia();
             listaClienteGrid.Columns["Senha"].Visible = false;
         }
         private void AoClicarEmCancelar(object sender, EventArgs e)
@@ -83,6 +78,7 @@ namespace ClienteCrud
                 return;
             }                
         }
+
         private bool DeveSairDoSistema()
         {
             return MessageBox.Show("Tem certeza que deseja sair da aplicação?", "Sair", MessageBoxButtons.YesNo,
@@ -105,9 +101,11 @@ namespace ClienteCrud
         }
         private void AoClicarEmRemover(object sender, EventArgs e)
         {
+            var repositorio = new UsuarioRepositorio();
+
             try
             {
-                if (ListaDeUsuario.Instancia.Count == 0)
+                if (ListaDeUsuario.Instancia().Count == 0)
                 {
                     MostraMensagem("Não existe Usuario criado para excluir");
                 }
@@ -117,10 +115,10 @@ namespace ClienteCrud
                     var usuarioSelecionado = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario;
                     if (DeveRemoverUusario())
                     {
-                        ListaDeUsuario.Instancia.Remove(usuarioSelecionado);
+                        repositorio.RemoverUsuario(usuarioSelecionado.Id);
                     }
                     listaClienteGrid.DataSource = null;
-                    listaClienteGrid.DataSource = ListaDeUsuario.Instancia;
+                    listaClienteGrid.DataSource = repositorio.ObterTodos();
                     listaClienteGrid.Columns["Senha"].Visible = false;
                 }               
             }

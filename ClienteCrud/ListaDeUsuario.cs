@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace ClienteCrud
 {
@@ -6,9 +7,8 @@ namespace ClienteCrud
     {
         private static List<Usuario> instancia;
 
-        public static List<Usuario> Instancia
+        public static List<Usuario> Instancia()
         {
-            get
             {
                 if (instancia == null)
                 {
@@ -17,5 +17,23 @@ namespace ClienteCrud
                 return instancia;
             }
         }
+        public static int ObterProximoId()
+        {
+            var proximoId = (int)decimal.Zero;
+
+            if (ListaDeUsuario.Instancia().Any())
+            {
+                proximoId = ListaDeUsuario.Instancia().Max(x => x.Id);
+            }
+
+            proximoId++;
+            return proximoId;
+        }
+
+        public object ShallowCopy()
+        {
+            return this.MemberwiseClone();
+        }
+
     }
 }
