@@ -90,7 +90,7 @@ namespace ClienteCrud
         {
             try
             {
-                ValidarCampos();
+                //ValidarCampos();
                 Usuario.Nome = nomeTxt.Text;
                 Usuario.Senha = senhaTxt.Text;
                 Usuario.Email = emailTxt.Text;

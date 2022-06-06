@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -10,10 +11,12 @@ namespace ClienteCrud
         public ConsultaDePessoa()
         {
             InitializeComponent();
+            CarregarDados();
         }
+
         public void AoClicarEmAdicionar(object sender, EventArgs e)
         {
-            var repositorio = new UsuarioRepositorio();
+            var repositorio = new UsuarioRepositorioComBanco();
 
             try
             {
@@ -22,10 +25,10 @@ namespace ClienteCrud
                 var listaDeUsuarios = ListaDeUsuario.Instancia();
                 if(resultado == DialogResult.OK)
                 {
-                    repositorio.AdicionarUsuario(cadastroDeUsuario.Usuario);
+                    repositorio.adicionarUsuario(cadastroDeUsuario.Usuario);
                 }
                 listaClienteGrid.DataSource = null;
-                listaClienteGrid.DataSource = repositorio.ObterTodos();
+                //listaClienteGrid.DataSource = repositorio.ObterTodos();
                 listaClienteGrid.Columns["Senha"].Visible = false;
             }
             catch (Exception)
@@ -137,5 +140,12 @@ namespace ClienteCrud
         {
           MessageBox.Show(mensagem);
         }
+        public void CarregarDados()
+        {
+
+            listaClienteGrid.DataSource = UsuarioRepositorioComBanco.ObterTodos();
+
+        }
+
     } 
 }
