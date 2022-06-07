@@ -13,10 +13,30 @@ namespace ClienteCrud
             InitializeComponent();
             CarregarDados();
         }
+        public void CarregarDados()
+        {
+            var repositorioComBanco = new UsuarioRepositorioComBanco();
+            listaClienteGrid.DataSource = repositorioComBanco.ObterTodos();
+            listaClienteGrid.Columns["Senha"].Visible = false;
+            listaClienteGrid.Columns["NOME"].HeaderText = "Nome";
+            listaClienteGrid.Columns["EMAIL"].HeaderText = "Email";
+            listaClienteGrid.Columns["DATACRIACAO"].HeaderText = "Data criação";
+            listaClienteGrid.Columns["DATANASCIMENTO"].HeaderText = "Data nascimento";
+            listaClienteGrid.CellFormatting += ListaClienteGrid_CellFormatting;
+        }
+
+        private void ListaClienteGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (listaClienteGrid.Columns[e.ColumnIndex].Name == "DATACRIACAO" && e.Value != null )
+            {
+                e.Value = (DateTime.Parse(e.Value as string)).ToString("dd/MM/yyyy");
+            }
+        }
 
         public void AoClicarEmAdicionar(object sender, EventArgs e)
         {
             var repositorio = new UsuarioRepositorioComBanco();
+            var repositorioLista = new UsuarioRepositorio();
 
             try
             {
@@ -25,11 +45,11 @@ namespace ClienteCrud
                 var listaDeUsuarios = ListaDeUsuario.Instancia();
                 if(resultado == DialogResult.OK)
                 {
-                    repositorio.adicionarUsuario(cadastroDeUsuario.Usuario);
+                    repositorio.AdicionarUsuario(cadastroDeUsuario.Usuario);
                 }
                 listaClienteGrid.DataSource = null;
-                //listaClienteGrid.DataSource = repositorio.ObterTodos();
-                listaClienteGrid.Columns["Senha"].Visible = false;
+                CarregarDados();
+                //listaClienteGrid.Columns["Senha"].Visible = false;
             }
             catch (Exception)
             {
@@ -139,12 +159,6 @@ namespace ClienteCrud
         private void MostraMensagem(string mensagem)
         {
           MessageBox.Show(mensagem);
-        }
-        public void CarregarDados()
-        {
-
-            listaClienteGrid.DataSource = UsuarioRepositorioComBanco.ObterTodos();
-
         }
 
     } 

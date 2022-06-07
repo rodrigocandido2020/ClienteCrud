@@ -99,7 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(579, 352);
+            this.ClientSize = new System.Drawing.Size(580, 352);
             this.Controls.Add(this.listaClienteGrid);
             this.Controls.Add(this.Lbl_Remover);
             this.Controls.Add(this.Llb_Editar);

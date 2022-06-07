@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -88,6 +89,7 @@ namespace ClienteCrud
 
         private void AoclicarEmSalvar(object sender, EventArgs e)
         {
+            
             try
             {
                 //ValidarCampos();
@@ -95,6 +97,7 @@ namespace ClienteCrud
                 Usuario.Senha = senhaTxt.Text;
                 Usuario.Email = emailTxt.Text;
                 Usuario.DataCriacao = DateTime.Parse(dateTimePicker1.Text);
+                Usuario.DataNascimento = DateTime.Parse(maskedTextData.Text);
                 DialogResult = DialogResult.OK;
                 Close();
             }
