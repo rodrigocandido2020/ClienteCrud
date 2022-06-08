@@ -36,28 +36,23 @@ namespace ClienteCrud
         {
             SqlDataAdapter comandoBancoDeDados = null;
             DataTable BancoDeDados = new DataTable();
-            using(var conn = BancoConexao())
+            using(var conexao = BancoConexao())
             {
-                using (var cmd = conn.CreateCommand())
+                using (var cmd = conexao.CreateCommand())
                 {
                     cmd.CommandText = "SELECT * FROM USUARIO";
-                    comandoBancoDeDados = new SqlDataAdapter(cmd.CommandText, conn);
+                    comandoBancoDeDados = new SqlDataAdapter(cmd.CommandText, conexao);
                     comandoBancoDeDados.Fill(BancoDeDados);
-
-                    for (int i = 0; i < BancoDeDados.Rows.Count; i++)
-                    {
-                        var row = BancoDeDados.Rows[i];
-                        var usuario = new Usuario
-                        {
-                            Nome = row.Field<string>("NOME"),
-                            DataCriacao = row.Field<DateTime>("DATACRIACAO")
-                        };
-                    }
-                    
                     return BancoDeDados;
                 }
 
             }
+        }
+        public List<Usuario> ConverterDataTableParaUsuario()
+        {
+            var repositorioComBanco = new UsuarioRepositorioComBanco();
+            var conventerDataTableParaUsuario = new ConversorDataTableParaUsuario(); 
+            return conventerDataTableParaUsuario.ConverterParaLista<Usuario>(repositorioComBanco.ObterTodos()); 
         }
 
         public void AdicionarUsuario(Usuario usuario)
@@ -68,9 +63,54 @@ namespace ClienteCrud
                 cmd.Parameters.AddWithValue("@NOME", usuario.Nome);
                 cmd.Parameters.AddWithValue("@SENHA", usuario.Senha);
                 cmd.Parameters.AddWithValue("@EMAIL", usuario.Email);
-                cmd.Parameters.AddWithValue("@DATACRIACAO", usuario.DataCriacao.ToString());
-                cmd.Parameters.AddWithValue("@DATANASCIMENTO", usuario.DataNascimento.ToString());
+                cmd.Parameters.AddWithValue("@DATACRIACAO", usuario.DataCriacao);
+                if (usuario.DataNascimento == null)
+                {
+                    cmd.Parameters.AddWithValue("@DATANASCIMENTO", DBNull.Value);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@DATANASCIMENTO", usuario.DataNascimento);
+
+                }
                 cmd.ExecuteNonQuery();  
+            }
+        }
+
+        public void EditarUsuario(Usuario usuario)
+        {
+            using (var cmd = BancoConexao().CreateCommand())
+            {
+                if(usuario != null)
+                {
+                    cmd.CommandText = "UPDATE USUARIO SET NOME=@NOME, SENHA=@SENHA, EMAIL=@EMAIL, DATACRIACAO=@DATACRIACAO, DATANASCIMENTO=@DATANASCIMENTO WHERE ID=@ID";
+                    cmd.Parameters.AddWithValue("ID", usuario.Id);
+                    cmd.Parameters.AddWithValue("@NOME", usuario.Nome);
+                    cmd.Parameters.AddWithValue("@SENHA", usuario.Senha);
+                    cmd.Parameters.AddWithValue("EMAIL", usuario.Email);
+                    cmd.Parameters.AddWithValue("@DATACRIACAO", usuario.DataCriacao);
+                    if(usuario.DataNascimento == null)
+                    {
+                        cmd.Parameters.AddWithValue("@DATANASCIMENTO", DBNull.Value);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@DATANASCIMENTO", usuario.DataNascimento);
+
+                    }
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void RemoverUsuario(int id)
+        {
+            var usuario = new Usuario();
+            using (var cmd = BancoConexao().CreateCommand())
+            {
+                cmd.CommandText = "DELETE FROM USUARIO WHERE ID=@ID";
+                cmd.Parameters.AddWithValue("@ID", id);
+                cmd.ExecuteNonQuery();
             }
         }
 
@@ -78,5 +118,7 @@ namespace ClienteCrud
         {
             GC.SuppressFinalize(this);
         }
+
+        
     }
 }

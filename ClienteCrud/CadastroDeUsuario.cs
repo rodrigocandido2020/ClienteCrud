@@ -74,13 +74,13 @@ namespace ClienteCrud
             }
             if (maskedTextData.Text == "  /  /")
             {
-                Usuario.DataNascimento = null;
+               Usuario.DataNascimento = null;
             }
             else
             {
                 var regexData = new Regex(@"(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/(19|20)\d{2}");
                 var x = regexData.Match(maskedTextData.Text);
-                if (x.Success == false)
+               if (x.Success == false)
                 {
                     throw new Exception("Campo Data invalido");
                 }
@@ -92,12 +92,11 @@ namespace ClienteCrud
             
             try
             {
-                //ValidarCampos();
+                ValidarCampos();
                 Usuario.Nome = nomeTxt.Text;
                 Usuario.Senha = senhaTxt.Text;
                 Usuario.Email = emailTxt.Text;
                 Usuario.DataCriacao = DateTime.Parse(dateTimePicker1.Text);
-                Usuario.DataNascimento = DateTime.Parse(maskedTextData.Text);
                 DialogResult = DialogResult.OK;
                 Close();
             }

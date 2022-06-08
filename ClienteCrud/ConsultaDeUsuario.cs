@@ -8,29 +8,31 @@ namespace ClienteCrud
 {
     public partial class ConsultaDePessoa : Form
     {
+        
+        
         public ConsultaDePessoa()
         {
             InitializeComponent();
             CarregarDados();
+            
         }
         public void CarregarDados()
         {
+            var classeConverter = new ConversorDataTableParaUsuario();
             var repositorioComBanco = new UsuarioRepositorioComBanco();
-            listaClienteGrid.DataSource = repositorioComBanco.ObterTodos();
+            try
+            {
+                listaClienteGrid.DataSource = repositorioComBanco.ConverterDataTableParaUsuario();
+            }
+            catch (Exception ex)
+            {
+                MostraMensagem(ex.Message);
+            }
             listaClienteGrid.Columns["Senha"].Visible = false;
             listaClienteGrid.Columns["NOME"].HeaderText = "Nome";
             listaClienteGrid.Columns["EMAIL"].HeaderText = "Email";
             listaClienteGrid.Columns["DATACRIACAO"].HeaderText = "Data criação";
             listaClienteGrid.Columns["DATANASCIMENTO"].HeaderText = "Data nascimento";
-            listaClienteGrid.CellFormatting += ListaClienteGrid_CellFormatting;
-        }
-
-        private void ListaClienteGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (listaClienteGrid.Columns[e.ColumnIndex].Name == "DATACRIACAO" && e.Value != null )
-            {
-                e.Value = (DateTime.Parse(e.Value as string)).ToString("dd/MM/yyyy");
-            }
         }
 
         public void AoClicarEmAdicionar(object sender, EventArgs e)
@@ -59,10 +61,11 @@ namespace ClienteCrud
         }
         private void AoClicarEmEditar(object sender, EventArgs e)
         {
-            var repositorio = new UsuarioRepositorio();
+            var repositorio = new UsuarioRepositorioComBanco();
+            var repositorioLista = new UsuarioRepositorio();
             try
             {
-                if (repositorio.ObterTodos().Count == 0)
+                if (repositorio.ConverterDataTableParaUsuario().Count == 0)
                 {
                     MostraMensagem("Não existe Usuario criado para Editar");
                 }
@@ -70,10 +73,11 @@ namespace ClienteCrud
                 { 
                     var indexSelecionado = listaClienteGrid.CurrentCell.RowIndex;
                     var linhaSelecionada = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario;
-                    var usuario = repositorio.ObterPorId(linhaSelecionada.Id).ShallowCopy() as Usuario;
-                    var cadastroDeUsuario = new CadastroDeUsuario(usuario);
-                    repositorio.AtualizarUsuario(cadastroDeUsuario.Usuario);
-                    cadastroDeUsuario.ShowDialog(this);
+                    var cadastroDeUsuario = new CadastroDeUsuario(linhaSelecionada);
+
+                    var resultado = cadastroDeUsuario.ShowDialog(this);
+                    repositorio.EditarUsuario(linhaSelecionada);
+
                 }
             }
             catch (Exception)
@@ -81,9 +85,7 @@ namespace ClienteCrud
                 MostraMensagem("Erro inesperado entrar em contato com administrador do sistema");
                 return;
             }
-            listaClienteGrid.DataSource = null;
-            listaClienteGrid.DataSource = ListaDeUsuario.Instancia();
-            listaClienteGrid.Columns["Senha"].Visible = false;
+            CarregarDados();
         }
         private void AoClicarEmCancelar(object sender, EventArgs e)
         {
@@ -124,25 +126,24 @@ namespace ClienteCrud
         }
         private void AoClicarEmRemover(object sender, EventArgs e)
         {
-            var repositorio = new UsuarioRepositorio();
+            var repositorio = new UsuarioRepositorioComBanco();
+            var repositorioLista = new UsuarioRepositorio();
 
             try
             {
-                if (ListaDeUsuario.Instancia().Count == 0)
+                if (repositorio.ConverterDataTableParaUsuario().Count == 0)
                 {
                     MostraMensagem("Não existe Usuario criado para excluir");
                 }
                 else
                 {
                     var indexSelecionado = listaClienteGrid.CurrentCell.RowIndex;
-                    var usuarioSelecionado = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario;
+                    var linhaSelecionada = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario;
                     if (DeveRemoverUusario())
                     {
-                        repositorio.RemoverUsuario(usuarioSelecionado.Id);
+                        repositorio.RemoverUsuario(linhaSelecionada.Id);
                     }
-                    listaClienteGrid.DataSource = null;
-                    listaClienteGrid.DataSource = repositorio.ObterTodos();
-                    listaClienteGrid.Columns["Senha"].Visible = false;
+                    CarregarDados();
                 }               
             }
             catch (Exception ex)
