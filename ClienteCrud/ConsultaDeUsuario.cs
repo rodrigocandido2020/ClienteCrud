@@ -7,9 +7,7 @@ using System.Windows.Forms;
 namespace ClienteCrud
 {
     public partial class ConsultaDePessoa : Form
-    {
-        
-        
+    {        
         public ConsultaDePessoa()
         {
             InitializeComponent();
@@ -18,7 +16,6 @@ namespace ClienteCrud
         }
         public void CarregarDados()
         {
-            var classeConverter = new ConversorDataTableParaUsuario();
             var repositorioComBanco = new UsuarioRepositorioComBanco();
             try
             {

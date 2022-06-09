@@ -153,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConversorDataTableParaUsuario.cs" />
+    <Compile Include="CriptografarSenha.cs" />
     <Compile Include="IUsuarioRepositorio.cs" />
     <Compile Include="ListaDeUsuario.cs" />
     <Compile Include="Usuario.cs" />

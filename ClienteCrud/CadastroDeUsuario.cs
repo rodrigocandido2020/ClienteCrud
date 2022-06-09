@@ -7,9 +7,11 @@ namespace ClienteCrud
 {
     public partial class CadastroDeUsuario : Form
     {
+        
         public Usuario Usuario { get; set; }
         public CadastroDeUsuario(Usuario usuario)
         {
+           
             InitializeComponent();
             dateTimePicker1.Enabled = false;
 
@@ -92,9 +94,11 @@ namespace ClienteCrud
             
             try
             {
+                var metodoCriptografar = new CriptografarSenha();
                 ValidarCampos();
                 Usuario.Nome = nomeTxt.Text;
-                Usuario.Senha = senhaTxt.Text;
+                var senhaCriptografada = metodoCriptografar.Criptografar(senhaTxt.Text);
+                Usuario.Senha = senhaCriptografada;
                 Usuario.Email = emailTxt.Text;
                 Usuario.DataCriacao = DateTime.Parse(dateTimePicker1.Text);
                 DialogResult = DialogResult.OK;

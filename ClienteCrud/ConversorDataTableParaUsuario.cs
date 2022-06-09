@@ -17,19 +17,35 @@ namespace ClienteCrud
                 .Select(coluna => coluna.ColumnName.ToLower())
                 .ToList();
 
-            var propiedadesDeUsuario = typeof(T).GetProperties().ToList();
-
+            var propriedadesDeUsuario = typeof(T).GetProperties().ToList();
             return tabelaDeDados
                 .AsEnumerable()
                 .Select(row => {
-                    var usuario = Activator.CreateInstance<T>();
+                  
+                    var objetoUsuario = Activator.CreateInstance<T>();
 
-                    propiedadesDeUsuario
-                        .Where(propiedade => colunasNomes.Contains(propiedade.Name.ToLower()))
+                    propriedadesDeUsuario
+                        .Where(propriedade => colunasNomes.Contains(propriedade.Name.ToLower()))
                         .ToList()
-                        .ForEach(propiedade => propiedade.SetValue(usuario, row[propiedade.Name]));
+                        .ForEach(propriedade =>
+                        {
+                
+                            if (colunasNomes.Contains(propriedade.Name.ToLower()))
+                            {
+                                var valor = row[propriedade.Name];
+                                if (System.Convert.IsDBNull(valor))
+                                {
+                                    propriedade.SetValue(objetoUsuario, null);
+                                }
+                                else
+                                {
+                                    propriedade.SetValue(objetoUsuario, row[propriedade.Name]);
+                                }
+                            }
+                        });
+                       
 
-                    return usuario;
+                    return objetoUsuario;
                 })
                 .ToList();
         }

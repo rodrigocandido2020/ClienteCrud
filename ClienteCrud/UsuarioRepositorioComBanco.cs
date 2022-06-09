@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -45,8 +46,8 @@ namespace ClienteCrud
                     comandoBancoDeDados.Fill(BancoDeDados);
                     return BancoDeDados;
                 }
-
             }
+
         }
         public List<Usuario> ConverterDataTableParaUsuario()
         {
@@ -73,7 +74,8 @@ namespace ClienteCrud
                     cmd.Parameters.AddWithValue("@DATANASCIMENTO", usuario.DataNascimento);
 
                 }
-                cmd.ExecuteNonQuery();  
+                cmd.ExecuteNonQuery();
+                sqlConexao.Close();
             }
         }
 
@@ -99,6 +101,7 @@ namespace ClienteCrud
 
                     }
                     cmd.ExecuteNonQuery();
+                    sqlConexao.Close();
                 }
             }
         }
@@ -111,6 +114,7 @@ namespace ClienteCrud
                 cmd.CommandText = "DELETE FROM USUARIO WHERE ID=@ID";
                 cmd.Parameters.AddWithValue("@ID", id);
                 cmd.ExecuteNonQuery();
+                sqlConexao.Close();
             }
         }
 
