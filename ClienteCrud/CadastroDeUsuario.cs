@@ -40,31 +40,43 @@ namespace ClienteCrud
         {
             try
             {
-                if (DeveSairDoSistema())
+                if (DeveSairDoCadastroDeUsuario())
                 {
+                    DialogResult =  DialogResult.Cancel;
                     Close();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MostrarMensagem("Erro inesperado entrar em contato com administrador do sistema");
-                return;
+                MessageBox.Show(ex.Message);
             }
         }
 
-        private bool DeveSairDoSistema()
+        private bool DeveSairDoCadastroDeUsuario()
         {
-            return MessageBox.Show("Tem certeza que deseja fechar o cadastro de Usuario?", "Sair", MessageBoxButtons.YesNo,
-                 MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes;
-        }
+            var resultadoPergunta = MessageBox
+                .Show("Tem certeza que deseja fechar o cadastro de Usuario?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-        private void ValidarCampos()
+            return resultadoPergunta == DialogResult.Yes;
+        }
+        public string  UsuarioNulo()
         {
-            if (nomeTxt.Text == "")
+            const string DataVazia = "  /  /";
+
+            if (maskedTextData.Text == DataVazia)
+            {
+                Usuario.DataNascimento = null;
+            }
+            return DataVazia;
+        }
+        private  void ValidarCampos()
+        {
+            if (nomeTxt.Text == string.Empty)
             {
                 throw new Exception("Campo Nome Obrigátorio");
             }
-            if (senhaTxt.Text == "")
+
+            if (senhaTxt.Text == string.Empty)
             {
                 throw new Exception("Campo senha Obrigátorio");
             }
@@ -74,31 +86,22 @@ namespace ClienteCrud
             {
                 throw new Exception("Campo e-mail invalido");
             }
-            if (maskedTextData.Text == "  /  /")
+            var regexData = new Regex(@"(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/(19|20)\d{2}");
+            var x = regexData.Match(maskedTextData.Text);
+            if (x.Success == true)
             {
-               Usuario.DataNascimento = null;
-            }
-            else
-            {
-                var regexData = new Regex(@"(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/(19|20)\d{2}");
-                var x = regexData.Match(maskedTextData.Text);
-               if (x.Success == false)
-                {
-                    throw new Exception("Campo Data invalido");
-                }
+                throw new Exception("Campo Data invalido");
             }
         }
 
         private void AoclicarEmSalvar(object sender, EventArgs e)
         {
-            
             try
             {
-                var metodoCriptografar = new CriptografarSenha();
                 ValidarCampos();
                 Usuario.Nome = nomeTxt.Text;
-                var senhaCriptografada = metodoCriptografar.Criptografar(senhaTxt.Text);
-                Usuario.Senha = senhaCriptografada;
+                Usuario.Senha = senhaTxt.Text;
+                Usuario.DataNascimento = DateTime.Parse(maskedTextData.Text);             
                 Usuario.Email = emailTxt.Text;
                 Usuario.DataCriacao = DateTime.Parse(dateTimePicker1.Text);
                 DialogResult = DialogResult.OK;
@@ -106,13 +109,8 @@ namespace ClienteCrud
             }
             catch (Exception ex)
             {
-                MostrarMensagem(ex.Message);
+                MessageBox.Show(ex.Message);
             }
-        }
-
-        private void MostrarMensagem(string mensagem)
-        {
-            MessageBox.Show(mensagem);
         }
     }
 }

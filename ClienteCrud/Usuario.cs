@@ -11,10 +11,5 @@ namespace ClienteCrud
         public string Email { get; set; }
         public DateTime DataCriacao { get; set; }
         public DateTime? DataNascimento { get; set; }
-
-        public object ShallowCopy()
-        {
-            return this.MemberwiseClone();
-        }
     }
 }

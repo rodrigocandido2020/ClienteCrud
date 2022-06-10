@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace ClienteCrud
 {
-    public class ConversorDataTableParaUsuario
+    public static class ConversorDataTableParaUsuario
     {
-        public List<T> ConverterParaLista<T>(DataTable tabelaDeDados)
+        public static List<T> ConverterParaLista<T>(DataTable tabelaDeDados)
         {
             var colunasNomes = tabelaDeDados
                 .Columns
