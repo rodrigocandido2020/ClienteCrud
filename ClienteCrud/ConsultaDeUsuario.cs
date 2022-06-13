@@ -6,9 +6,9 @@ using System.Windows.Forms;
 
 namespace ClienteCrud
 {
-    public partial class ConsultaDePessoa : Form
+    public partial class ConsultaDeUsuario : Form
     {        
-        public ConsultaDePessoa()
+        public ConsultaDeUsuario()
         {
             InitializeComponent();
             CarregarDados();

@@ -67,3 +67,117 @@ C:\Users\usuario\Documents\ClienteCrud\ClienteCrud\bin\Debug\System.Numerics.Vec
 C:\Users\usuario\Documents\ClienteCrud\ClienteCrud\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\usuario\Documents\ClienteCrud\ClienteCrud\bin\Debug\System.Security.Cryptography.Cng.xml
 C:\Users\usuario\Documents\ClienteCrud\ClienteCrud\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\ClienteCrud.exe.config
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\ClienteCrud.exe
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\ClienteCrud.pdb
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\Lambda2Js.Signed.dll
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\Newtonsoft.Json.dll
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\Raven.Client.dll
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\Sparrow.dll
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\System.Buffers.dll
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\System.Data.SqlClient.dll
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\System.Memory.dll
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\System.Security.AccessControl.dll
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\System.Security.Cryptography.Cng.dll
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\System.Security.Permissions.dll
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\Lambda2Js.Signed.xml
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\Microsoft.AspNetCore.JsonPatch.xml
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\Newtonsoft.Json.xml
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\Raven.Client.xml
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\Sparrow.xml
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\System.Buffers.xml
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\System.Data.SqlClient.xml
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\System.Memory.xml
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\System.Security.AccessControl.xml
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\System.Security.Cryptography.Cng.xml
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\System.Security.Permissions.xml
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\obj\Debug\ClienteCrud.csproj.AssemblyReference.cache
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\obj\Debug\ClienteCrud.csproj.SuggestedBindingRedirects.cache
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\obj\Debug\ClienteCrud.CadastroDeUsuario.resources
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\obj\Debug\ClienteCrud.ConsultaDePessoa.resources
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\obj\Debug\ClienteCrud.Properties.Resources.resources
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\obj\Debug\ClienteCrud.csproj.GenerateResource.cache
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\obj\Debug\ClienteCrud.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\obj\Debug\ClienteCrud.csproj.CopyComplete
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\obj\Debug\ClienteCrud.exe
+C:\Users\usuario\Documents\ClienteCrud - .net 5\ClienteCrud\obj\Debug\ClienteCrud.pdb
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\ClienteCrud.exe.config
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\ClienteCrud.exe
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\ClienteCrud.pdb
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\Lambda2Js.Signed.dll
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\Newtonsoft.Json.dll
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\Raven.Client.dll
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\Sparrow.dll
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\System.Buffers.dll
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\System.Data.SqlClient.dll
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\System.Memory.dll
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\System.Security.AccessControl.dll
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\System.Security.Cryptography.Cng.dll
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\System.Security.Permissions.dll
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\Lambda2Js.Signed.xml
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\Microsoft.AspNetCore.JsonPatch.xml
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\Newtonsoft.Json.xml
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\Raven.Client.xml
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\Sparrow.xml
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\System.Buffers.xml
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\System.Data.SqlClient.xml
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\System.Memory.xml
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\System.Security.AccessControl.xml
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\System.Security.Cryptography.Cng.xml
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\System.Security.Permissions.xml
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\obj\Debug\ClienteCrud.csproj.AssemblyReference.cache
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\obj\Debug\ClienteCrud.csproj.SuggestedBindingRedirects.cache
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\obj\Debug\ClienteCrud.CadastroDeUsuario.resources
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\obj\Debug\ClienteCrud.Properties.Resources.resources
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\obj\Debug\ClienteCrud.csproj.GenerateResource.cache
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\obj\Debug\ClienteCrud.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\obj\Debug\ClienteCrud.csproj.CopyComplete
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\obj\Debug\ClienteCrud.exe
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\obj\Debug\ClienteCrud.pdb
+C:\Users\usuario\Desktop\ClienteCrud - .net 5 teste\ClienteCrud\obj\Debug\ClienteCrud.ConsultaDeUsuario.resources

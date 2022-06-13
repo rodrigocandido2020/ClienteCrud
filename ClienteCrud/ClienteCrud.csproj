@@ -160,7 +160,7 @@
     <Compile Include="ConsultaDeUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultaDePessoa.Designer.cs">
+    <Compile Include="ConsultaDeUsuario.Designer.cs">
       <DependentUpon>ConsultaDeUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="CadastroDeUsuario.cs">
