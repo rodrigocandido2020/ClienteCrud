@@ -1,0 +1,15 @@
+C:\Users\usuario\Desktop\ClienteCrud\CrudInfraestrutura\obj\Debug\net6.0\CrudInfraestrutura.csproj.AssemblyReference.cache
+C:\Users\usuario\Desktop\ClienteCrud\CrudInfraestrutura\obj\Debug\net6.0\CrudInfraestrutura.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\usuario\Desktop\ClienteCrud\CrudInfraestrutura\obj\Debug\net6.0\CrudInfraestrutura.AssemblyInfoInputs.cache
+C:\Users\usuario\Desktop\ClienteCrud\CrudInfraestrutura\obj\Debug\net6.0\CrudInfraestrutura.AssemblyInfo.cs
+C:\Users\usuario\Desktop\ClienteCrud\CrudInfraestrutura\obj\Debug\net6.0\CrudInfraestrutura.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\ClienteCrud\CrudInfraestrutura\bin\Debug\net6.0\CrudInfraestrutura.deps.json
+C:\Users\usuario\Desktop\ClienteCrud\CrudInfraestrutura\bin\Debug\net6.0\CrudInfraestrutura.dll
+C:\Users\usuario\Desktop\ClienteCrud\CrudInfraestrutura\bin\Debug\net6.0\CrudInfraestrutura.pdb
+C:\Users\usuario\Desktop\ClienteCrud\CrudInfraestrutura\bin\Debug\net6.0\CrudServico.dll
+C:\Users\usuario\Desktop\ClienteCrud\CrudInfraestrutura\bin\Debug\net6.0\CrudServico.pdb
+C:\Users\usuario\Desktop\ClienteCrud\CrudInfraestrutura\obj\Debug\net6.0\CrudInfraestrutura.csproj.CopyComplete
+C:\Users\usuario\Desktop\ClienteCrud\CrudInfraestrutura\obj\Debug\net6.0\CrudInfraestrutura.dll
+C:\Users\usuario\Desktop\ClienteCrud\CrudInfraestrutura\obj\Debug\net6.0\refint\CrudInfraestrutura.dll
+C:\Users\usuario\Desktop\ClienteCrud\CrudInfraestrutura\obj\Debug\net6.0\CrudInfraestrutura.pdb
+C:\Users\usuario\Desktop\ClienteCrud\CrudInfraestrutura\obj\Debug\net6.0\ref\CrudInfraestrutura.dll

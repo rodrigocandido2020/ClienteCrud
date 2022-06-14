@@ -50,3 +50,38 @@ C:\Users\usuario\Desktop\ClienteCrud - .net 5 origin\Crud.NETUsuario\obj\Debug\n
 C:\Users\usuario\Desktop\ClienteCrud - .net 5 origin\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NETUsuario.pdb
 C:\Users\usuario\Desktop\ClienteCrud - .net 5 origin\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NETUsuario.genruntimeconfig.cache
 C:\Users\usuario\Desktop\ClienteCrud - .net 5 origin\Crud.NETUsuario\obj\Debug\net6.0-windows\ref\Crud.NETUsuario.dll
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Crud.NETUsuario.exe
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Crud.NETUsuario.deps.json
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Crud.NETUsuario.runtimeconfig.json
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Crud.NETUsuario.dll
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Crud.NETUsuario.pdb
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NETUsuario.csproj.AssemblyReference.cache
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NETUsuario.csproj.GenerateResource.cache
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NETUsuario.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NETUsuario.AssemblyInfoInputs.cache
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NETUsuario.AssemblyInfo.cs
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NETUsuario.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NETUsuario.csproj.CopyComplete
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NETUsuario.dll
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\refint\Crud.NETUsuario.dll
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NETUsuario.pdb
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NETUsuario.genruntimeconfig.cache
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\ref\Crud.NETUsuario.dll
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\NLog.dll
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Crud.NETUsuario.dll.config
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.CadastroDeUsuario.resources
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.ConsultaDeUsuario.resources
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Crud.Infra.dll
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Crud.Infra.pdb
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Crud.Dominio.dll
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Crud.Dominio.pdb

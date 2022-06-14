@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Crud.Infra;
+using Crud.Dominio;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ClienteCrud
+namespace Crud.NetUsuario
 {
     public partial class ConsultaDeUsuario : Form
     {        

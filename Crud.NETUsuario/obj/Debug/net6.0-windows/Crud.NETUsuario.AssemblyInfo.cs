@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Crud.NETUsuario")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Crud.NetUsuario")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("Crud.NETUsuario")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Crud.NETUsuario")]
+[assembly: System.Reflection.AssemblyProductAttribute("Crud.NetUsuario")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Crud.NetUsuario")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]

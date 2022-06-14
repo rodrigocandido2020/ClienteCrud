@@ -1,4 +1,4 @@
-﻿namespace ClienteCrud
+﻿namespace Crud.NetUsuario
 {
     partial class ConsultaDeUsuario
     {

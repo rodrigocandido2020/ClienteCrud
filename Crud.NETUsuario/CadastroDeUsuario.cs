@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Crud.Dominio;
+using System;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace ClienteCrud
+namespace Crud.NetUsuario
 {
     public partial class CadastroDeUsuario : Form
     {
