@@ -8,7 +8,7 @@ namespace Crud.NetUsuario
 {
     public partial class CadastroDeUsuario : Form
     {
-        
+        //Comentario
         public Usuario Usuario { get; set; }
         public CadastroDeUsuario(Usuario usuario)
         {
