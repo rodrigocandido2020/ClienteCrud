@@ -1,0 +1,12 @@
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\bin\Debug\net6.0\CrudServico.deps.json
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\bin\Debug\net6.0\CrudServico.dll
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\bin\Debug\net6.0\CrudServico.pdb
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\obj\Debug\net6.0\CrudServico.csproj.AssemblyReference.cache
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\obj\Debug\net6.0\CrudServico.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\obj\Debug\net6.0\CrudServico.AssemblyInfoInputs.cache
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\obj\Debug\net6.0\CrudServico.AssemblyInfo.cs
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\obj\Debug\net6.0\CrudServico.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\obj\Debug\net6.0\CrudServico.dll
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\obj\Debug\net6.0\refint\CrudServico.dll
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\obj\Debug\net6.0\CrudServico.pdb
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\obj\Debug\net6.0\ref\CrudServico.dll

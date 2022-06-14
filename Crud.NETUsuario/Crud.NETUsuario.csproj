@@ -13,6 +13,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CrudInfraestrutura\Crud.Infra.csproj" />
+    <ProjectReference Include="..\CrudServico\Crud.Dominio.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="CadastroDeUsuario.cs">
       <SubType>Form</SubType>
     </Compile>

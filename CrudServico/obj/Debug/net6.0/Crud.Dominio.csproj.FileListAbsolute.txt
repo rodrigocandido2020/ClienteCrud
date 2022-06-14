@@ -1,0 +1,12 @@
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\bin\Debug\net6.0\Crud.Dominio.deps.json
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\bin\Debug\net6.0\Crud.Dominio.dll
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\bin\Debug\net6.0\Crud.Dominio.pdb
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\obj\Debug\net6.0\Crud.Dominio.csproj.AssemblyReference.cache
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\obj\Debug\net6.0\Crud.Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\obj\Debug\net6.0\Crud.Dominio.AssemblyInfoInputs.cache
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\obj\Debug\net6.0\Crud.Dominio.AssemblyInfo.cs
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\obj\Debug\net6.0\Crud.Dominio.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\obj\Debug\net6.0\Crud.Dominio.dll
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\obj\Debug\net6.0\refint\Crud.Dominio.dll
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\obj\Debug\net6.0\Crud.Dominio.pdb
+C:\Users\usuario\Desktop\ClienteCrud\CrudServico\obj\Debug\net6.0\ref\Crud.Dominio.dll
