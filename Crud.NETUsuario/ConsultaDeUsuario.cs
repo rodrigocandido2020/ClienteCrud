@@ -10,19 +10,20 @@ namespace Crud.NetUsuario
 {
     public partial class ConsultaDeUsuario : Form
     {        
-        public ConsultaDeUsuario()
+        private readonly IUsuarioRepositorio _usuarioRepositorio;
+        public ConsultaDeUsuario(IUsuarioRepositorio usuarioRepositorio)
         {
+            _usuarioRepositorio = usuarioRepositorio;
             InitializeComponent();
-            CarregarDados();
-            
+            CarregarDados();           
         }
+
         public void CarregarDados()
         {
-            var repositorioComBanco = new UsuarioRepositorioComBanco();
             try
             {
                 listaClienteGrid.DataSource = null;
-                listaClienteGrid.DataSource = repositorioComBanco.ObterTodos();
+                listaClienteGrid.DataSource = _usuarioRepositorio.ObterTodos();
                 listaClienteGrid.Columns["SENHA"].Visible = false;
                 listaClienteGrid.Columns["NOME"].HeaderText = "Nome";
                 listaClienteGrid.Columns["EMAIL"].HeaderText = "Email";
@@ -42,15 +43,16 @@ namespace Crud.NetUsuario
 
         public void AoClicarEmAdicionar(object sender, EventArgs e)
         {
-            var repositorio = new UsuarioRepositorioComBanco();
+            //var repositorio = new UsuarioRepositorioComBanco();
 
             try
             {
-                var cadastroDeUsuario = new CadastroDeUsuario(null);
+                var usuarioNovo = 0;
+                var cadastroDeUsuario = new CadastroDeUsuario(usuarioNovo, _usuarioRepositorio);
                 var resultado = cadastroDeUsuario.ShowDialog();
                 if(resultado == DialogResult.OK)
                 {
-                    repositorio.AdicionarUsuario(cadastroDeUsuario.Usuario);
+                    _usuarioRepositorio.AdicionarUsuario(cadastroDeUsuario.usuario);
                 }
                 CarregarDados();
             }
@@ -71,13 +73,13 @@ namespace Crud.NetUsuario
                     throw new Exception("Nenhuma linha foi selecionada");
                 }
 
-                var linhaSelecionada = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario;
-                var cadastroDeUsuario = new CadastroDeUsuario(linhaSelecionada);
+                var usuarioSelecionado = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario;
+                var cadastroDeUsuario = new CadastroDeUsuario(usuarioSelecionado.Id, _usuarioRepositorio);
 
                 var resultado = cadastroDeUsuario.ShowDialog(this);
                 if (resultado == DialogResult.OK)
                 {
-                    repositorio.EditarUsuario(linhaSelecionada);
+                    _usuarioRepositorio.AtualizarUsuario(usuarioSelecionado);
                 }
                 CarregarDados();
             }
@@ -105,7 +107,7 @@ namespace Crud.NetUsuario
         private bool DeveSairDoSistema()
         {
             return MessageBox.Show("Tem certeza que deseja sair da aplicação?", "Sair", MessageBoxButtons.YesNo,
-                   MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes;
+                   MessageBoxIcon.Question) == DialogResult.Yes;
         }
         private void AoClicarEmOk(object sender, EventArgs e)
         {
@@ -135,7 +137,7 @@ namespace Crud.NetUsuario
                 var linhaSelecionada = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario;
                 if (DeveRemoverUusario())
                 {
-                    repositorio.RemoverUsuario(linhaSelecionada.Id);
+                    _usuarioRepositorio.RemoverUsuario(linhaSelecionada.Id);
                 }
                 CarregarDados();          
             }

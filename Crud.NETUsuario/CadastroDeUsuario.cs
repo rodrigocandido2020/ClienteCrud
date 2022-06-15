@@ -8,23 +8,23 @@ namespace Crud.NetUsuario
 {
     public partial class CadastroDeUsuario : Form
     {
-        //Comentario
-        public Usuario Usuario { get; set; }
-        public CadastroDeUsuario(Usuario usuario)
+        private readonly IUsuarioRepositorio repositorioDoUsuario;
+        public Usuario usuario { get; set; }
+        public CadastroDeUsuario(int IdUsuario, IUsuarioRepositorio _usuarioRepositorio)
         {
            
             InitializeComponent();
             dateTimePicker1.Enabled = false;
 
-            if (usuario == null)
+            if (IdUsuario == 0)
             {
-                Usuario = new Usuario();
+                usuario = new Usuario();
             }
             else
             {
-                Usuario = usuario;
+                var usuarioSelecionado = _usuarioRepositorio.ObterPorId(IdUsuario);
+                PreencherInputsDaTela(usuarioSelecionado);
                 senhaTxt.Enabled = false;
-                PreencherInputsDaTela(usuario);
             }
         }
 
@@ -93,18 +93,18 @@ namespace Crud.NetUsuario
             {
 
                 ValidarCampos();
-                Usuario.Nome = nomeTxt.Text;
-                Usuario.Senha = senhaTxt.Text;
-                Usuario.Email = emailTxt.Text;
-                Usuario.DataCriacao = DateTime.Parse(dateTimePicker1.Text);
+                usuario.Nome = nomeTxt.Text;
+                usuario.Senha = senhaTxt.Text;
+                usuario.Email = emailTxt.Text;
+                usuario.DataCriacao = DateTime.Parse(dateTimePicker1.Text);
                 const string dataVazia = "  /  /";
                 if (maskedTextData.Text == dataVazia)
                 {
-                    Usuario.DataNascimento = null;
+                    usuario.DataNascimento = null;
                 }
                 else
                 {
-                    Usuario.DataNascimento = DateTime.Parse(maskedTextData.Text);
+                    usuario.DataNascimento = DateTime.Parse(maskedTextData.Text);
                 }
                 DialogResult = DialogResult.OK;
                 Close();
