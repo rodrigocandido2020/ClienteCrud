@@ -8,14 +8,13 @@ namespace Crud.NetUsuario
 {
     public partial class CadastroDeUsuario : Form
     {
-        private readonly IUsuarioRepositorio repositorioDoUsuario;
+        private readonly IUsuarioRepositorio _usuarioRepositorio;
         public Usuario usuario { get; set; }
-        public CadastroDeUsuario(int IdUsuario, IUsuarioRepositorio _usuarioRepositorio)
+        public CadastroDeUsuario(int IdUsuario, IUsuarioRepositorio usuarioRepositorio)
         {
-           
+            var _usuarioRepositorio = usuarioRepositorio;
             InitializeComponent();
             dateTimePicker1.Enabled = false;
-
             if (IdUsuario == 0)
             {
                 usuario = new Usuario();
@@ -23,7 +22,8 @@ namespace Crud.NetUsuario
             else
             {
                 var usuarioSelecionado = _usuarioRepositorio.ObterPorId(IdUsuario);
-                PreencherInputsDaTela(usuarioSelecionado);
+                usuario = usuarioSelecionado;
+                PreencherInputsDaTela(usuario);
                 senhaTxt.Enabled = false;
             }
         }
@@ -84,14 +84,12 @@ namespace Crud.NetUsuario
             {
                 throw new Exception("Campo Data invalido");
             }
-
         }
 
         private void AoclicarEmSalvar(object sender, EventArgs e)
         {
             try
             {
-
                 ValidarCampos();
                 usuario.Nome = nomeTxt.Text;
                 usuario.Senha = senhaTxt.Text;
@@ -112,7 +110,7 @@ namespace Crud.NetUsuario
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
+            } 
         }
     }
 }

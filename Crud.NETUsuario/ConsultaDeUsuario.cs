@@ -47,7 +47,7 @@ namespace Crud.NetUsuario
 
             try
             {
-                var usuarioNovo = 0;
+                var usuarioNovo = (int)decimal.Zero;
                 var cadastroDeUsuario = new CadastroDeUsuario(usuarioNovo, _usuarioRepositorio);
                 var resultado = cadastroDeUsuario.ShowDialog();
                 if(resultado == DialogResult.OK)
@@ -64,22 +64,24 @@ namespace Crud.NetUsuario
 
         private void AoClicarEmEditar(object sender, EventArgs e)
         {
-            var repositorio = new UsuarioRepositorioComBanco();
+            //var repositorio = new UsuarioRepositorioComBanco();
             try
             { 
-                var indexSelecionado = listaClienteGrid.CurrentCell.RowIndex; 
-                if (indexSelecionado == decimal.MinusOne)
+                if (listaClienteGrid.CurrentCell == null)
                 {
                     throw new Exception("Nenhuma linha foi selecionada");
                 }
-
+                var indexSelecionado = listaClienteGrid.CurrentCell.RowIndex;
                 var usuarioSelecionado = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario;
                 var cadastroDeUsuario = new CadastroDeUsuario(usuarioSelecionado.Id, _usuarioRepositorio);
 
                 var resultado = cadastroDeUsuario.ShowDialog(this);
                 if (resultado == DialogResult.OK)
                 {
-                    _usuarioRepositorio.AtualizarUsuario(usuarioSelecionado);
+                    //Quando a gente pega um usuario/Objeto de outra tela a gente tem que usar o formulario (cadastro de usuario.usuario)
+                   //sakeeeei 
+                   //kkkk deixa só eu vou outra coisa aqui
+                    _usuarioRepositorio.AtualizarUsuario(cadastroDeUsuario.usuario);
                 }
                 CarregarDados();
             }
