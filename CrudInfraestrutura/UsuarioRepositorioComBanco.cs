@@ -5,8 +5,9 @@ using System.Data.SqlClient;
 
 namespace Crud.Infra
 {
-    public class UsuarioRepositorioComBanco
+    public class UsuarioRepositorioComBanco : IUsuarioRepositorio
     {
+
         private static SqlConnection sqlConexao;
         private static SqlConnection BancoConexao()
         {
@@ -30,6 +31,23 @@ namespace Crud.Infra
                 }
             } 
             return ConversorDataTableParaUsuario.ConverterParaLista<Usuario>(BancoDeDados);
+        }
+
+        public Usuario ObterPorId(int id)
+        {
+            DataTable BancoDeDados = new DataTable();
+            using (var conexao = BancoConexao())
+            {
+                using (var cmd = conexao.CreateCommand())
+                {
+                    cmd.CommandText = "SELECT * FROM USUARIO";
+                    var comandoBancoDeDados = new SqlDataAdapter(cmd.CommandText, conexao);
+                    comandoBancoDeDados.Fill(BancoDeDados);
+                    
+                }
+            }
+            var usuario = ConversorDataTableParaUsuario.ConverterParaLista<Usuario>(BancoDeDados).Find(u => u.Id == id); 
+            return usuario;
         }
 
         public void AdicionarUsuario(Usuario usuario)
@@ -57,7 +75,7 @@ namespace Crud.Infra
             }
         }
 
-        public void EditarUsuario(Usuario usuario)
+        public void AtualizarUsuario(Usuario usuario)
         {
             if (usuario == null)
             {
@@ -106,6 +124,5 @@ namespace Crud.Infra
                 }
             }
         }
-        
     }
 }
