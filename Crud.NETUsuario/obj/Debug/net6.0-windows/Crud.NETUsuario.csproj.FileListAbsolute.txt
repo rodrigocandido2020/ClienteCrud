@@ -111,3 +111,5 @@ C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Mi
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\linq2db.dll
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Crud.Infra.dll.config

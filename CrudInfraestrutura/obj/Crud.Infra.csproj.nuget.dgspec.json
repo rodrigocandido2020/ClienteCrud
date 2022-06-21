@@ -59,6 +59,10 @@
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.3, )"
+            },
+            "linq2db": {
+              "target": "Package",
+              "version": "[4.1.0, )"
             }
           },
           "imports": [

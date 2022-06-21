@@ -43,7 +43,6 @@ namespace Crud.NetUsuario
 
         public void AoClicarEmAdicionar(object sender, EventArgs e)
         {
-            //var repositorio = new UsuarioRepositorioComBanco();
 
             try
             {
@@ -64,7 +63,6 @@ namespace Crud.NetUsuario
 
         private void AoClicarEmEditar(object sender, EventArgs e)
         {
-            //var repositorio = new UsuarioRepositorioComBanco();
             try
             { 
                 if (listaClienteGrid.CurrentCell == null)
@@ -78,9 +76,6 @@ namespace Crud.NetUsuario
                 var resultado = cadastroDeUsuario.ShowDialog(this);
                 if (resultado == DialogResult.OK)
                 {
-                    //Quando a gente pega um usuario/Objeto de outra tela a gente tem que usar o formulario (cadastro de usuario.usuario)
-                   //sakeeeei 
-                   //kkkk deixa só eu vou outra coisa aqui
                     _usuarioRepositorio.AtualizarUsuario(cadastroDeUsuario.usuario);
                 }
                 CarregarDados();
