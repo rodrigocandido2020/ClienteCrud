@@ -1,10 +1,7 @@
 ﻿using Crud.Dominio;
 using System.Configuration;
 using System.Data;
-using System.Linq;
 using System.Data.SqlClient;
-using LinqToDB.DataProvider.SqlServer;
-using LinqToDB;
 
 namespace Crud.Infra
 {
@@ -22,103 +19,141 @@ namespace Crud.Infra
 
         public List<Usuario> ObterTodos()
         {
-            using var db = SqlServerTools.CreateDataConnection(BancoConexao());
+            DataTable BancoDeDados = new DataTable();
+            try
             {
-                var resultado =
-                    from usuarios 
-                    in db.GetTable<Usuario>()
-                    select usuarios;
-                    return resultado
-                    .ToList();
+                using (var conexao = BancoConexao())
+                {
+                    using (var cmd = conexao.CreateCommand())
+                    {
+                        cmd.CommandText = "SELECT * FROM USUARIO";
+                        var comandoBancoDeDados = new SqlDataAdapter(cmd.CommandText, conexao);
+                        comandoBancoDeDados.Fill(BancoDeDados);
+                    }
+                }
+                return ConversorDataTableParaUsuario.ConverterParaLista<Usuario>(BancoDeDados);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception ("não existe usuario " + ex);
             }
         }
 
 
         public Usuario ObterPorId(int id)
         {
-           var lista = ObterTodos();
-           var usuario =  lista.Find(u => u.Id == id);
-           return usuario;  
+            DataTable BancoDeDados = new DataTable();
+            try
+            {
+                using (var conexao = BancoConexao())
+                {
+                    using (var cmd = conexao.CreateCommand())
+                    {
+                        cmd.CommandText = "SELECT * FROM USUARIO";
+                        var comandoBancoDeDados = new SqlDataAdapter(cmd.CommandText, conexao);
+                        comandoBancoDeDados.Fill(BancoDeDados);
+                    }
+                }
+                return ConversorDataTableParaUsuario.ConverterParaLista<Usuario>(BancoDeDados).Find(u => u.Id == id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao obter Usuário por id" + id + ex);
+            }
         }
 
         public void AdicionarUsuario(Usuario usuario)
         {
-            //using (var conexao = BancoConexao())
-            //{
-            //    using (var cmd = conexao.CreateCommand())
-            //    {
-            //        cmd.CommandText = "INSERT INTO USUARIO (NOME, SENHA, EMAIL, DATACRIACAO, DATANASCIMENTO) VALUES (@NOME, @SENHA, @EMAIL, @DATACRIACAO, @DATANASCIMENTO)";
-            //        cmd.Parameters.AddWithValue("@NOME", usuario.Nome);
-            //        cmd.Parameters.AddWithValue("@SENHA", CriptografarSenha.Criptografar(usuario.Senha));
-            //        cmd.Parameters.AddWithValue("@EMAIL", usuario.Email);
-            //        cmd.Parameters.AddWithValue("@DATACRIACAO", usuario.DataCriacao);
-            //        if (usuario.DataNascimento == null)
-            //        {
-            //            cmd.Parameters.AddWithValue("@DATANASCIMENTO", DBNull.Value);
-            //        }
-            //        else
-            //        {
-            //            cmd.Parameters.AddWithValue("@DATANASCIMENTO", usuario.DataNascimento);
-
-            //        }
-            //        cmd.ExecuteNonQuery();
-            //    }
-            //}
-
-            using var db = SqlServerTools.CreateDataConnection(BancoConexao());
+            try
             {
-                db.Insert(usuario);
+                using (var conexao = BancoConexao())
+                {
+                    using (var cmd = conexao.CreateCommand())
+                    {
+                        cmd.CommandText = "INSERT INTO USUARIO (NOME, SENHA, EMAIL, DATACRIACAO, DATANASCIMENTO) VALUES (@NOME, @SENHA, @EMAIL, @DATACRIACAO, @DATANASCIMENTO)";
+                        cmd.Parameters.AddWithValue("@NOME", usuario.Nome);
+                        cmd.Parameters.AddWithValue("@SENHA", CriptografarSenha.Criptografar(usuario.Senha));
+                        cmd.Parameters.AddWithValue("@EMAIL", usuario.Email);
+                        cmd.Parameters.AddWithValue("@DATACRIACAO", usuario.DataCriacao);
+                        if (usuario.DataNascimento == null)
+                        {
+                            cmd.Parameters.AddWithValue("@DATANASCIMENTO", DBNull.Value);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@DATANASCIMENTO", usuario.DataNascimento);
+                        }
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception ("Não a usuario para ser adicionado " + ex);
             }
         }
 
         public void AtualizarUsuario(Usuario usuario)
         {
-            if (usuario == null)
+            try
             {
-                throw new ArgumentNullException("Usuario não pode ser nulo");
-            }
-
-            using (var conexao = BancoConexao())
-            {
-                using(var cmd = conexao.CreateCommand())
+                if (usuario == null)
                 {
-                    cmd.CommandText = "UPDATE USUARIO SET NOME=@NOME, SENHA=@SENHA, EMAIL=@EMAIL, DATACRIACAO=@DATACRIACAO, DATANASCIMENTO=@DATANASCIMENTO WHERE ID=@ID";
-                    cmd.Parameters.AddWithValue("ID", usuario.Id);
-                    cmd.Parameters.AddWithValue("@NOME", usuario.Nome);
-                    cmd.Parameters.AddWithValue("@SENHA", usuario.Senha);
-                    cmd.Parameters.AddWithValue("EMAIL", usuario.Email);
-                    cmd.Parameters.AddWithValue("@DATACRIACAO", usuario.DataCriacao);
-                    if(usuario.DataNascimento == null)
+                    throw new ArgumentNullException("Usuario não pode ser nulo");
+                }
+                using (var conexao = BancoConexao())
+                {
+                    using (var cmd = conexao.CreateCommand())
                     {
-                        cmd.Parameters.AddWithValue("@DATANASCIMENTO", DBNull.Value);
+                        cmd.CommandText = "UPDATE USUARIO SET NOME=@NOME, SENHA=@SENHA, EMAIL=@EMAIL, DATACRIACAO=@DATACRIACAO, DATANASCIMENTO=@DATANASCIMENTO WHERE ID=@ID";
+                        cmd.Parameters.AddWithValue("ID", usuario.Id);
+                        cmd.Parameters.AddWithValue("@NOME", usuario.Nome);
+                        cmd.Parameters.AddWithValue("@SENHA", usuario.Senha);
+                        cmd.Parameters.AddWithValue("EMAIL", usuario.Email);
+                        cmd.Parameters.AddWithValue("@DATACRIACAO", usuario.DataCriacao);
+                        if (usuario.DataNascimento == null)
+                        {
+                            cmd.Parameters.AddWithValue("@DATANASCIMENTO", DBNull.Value);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@DATANASCIMENTO", usuario.DataNascimento);
+                        }
+                        cmd.ExecuteNonQuery();
                     }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@DATANASCIMENTO", usuario.DataNascimento);
-
-                    }
-                    cmd.ExecuteNonQuery();
                 }
             }
+            catch (Exception ex)
+            {
+                throw new Exception ("Usuario não pode ser Nulo " + ex);
+            }
+            
         }
 
         public void RemoverUsuario(int id)
         {
-            if (id == decimal.Zero)
+            try
             {
-                throw new ArgumentNullException("Id não pode ser zero");
-            }
-
-            using (var conexao = BancoConexao())
-            {
-
-                using(var cmd = conexao.CreateCommand())
+                if (id == decimal.Zero)
                 {
-                    cmd.CommandText = "DELETE FROM USUARIO WHERE ID=@ID";
-                    cmd.Parameters.AddWithValue("@ID", id);
-                    cmd.ExecuteNonQuery();
+                    throw new ArgumentNullException("Id não pode ser zero");
+                }
+                using (var conexao = BancoConexao())
+                {
+                    using (var cmd = conexao.CreateCommand())
+                    {
+                        cmd.CommandText = "DELETE FROM USUARIO WHERE ID=@ID";
+                        cmd.Parameters.AddWithValue("@ID", id);
+                        cmd.ExecuteNonQuery();
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                throw new Exception ("Não a usario para remover " + ex);
+            }
+       
         }
     }
 }

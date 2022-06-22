@@ -38,7 +38,7 @@ namespace Crud.NetUsuario
         {
             return Host.CreateDefaultBuilder(args)
                 .ConfigureServices((_, services) =>
-                    services.AddScoped<IUsuarioRepositorio, UsuarioRepositorioComBanco>());
+                    services.AddScoped<IUsuarioRepositorio, UsuarioRepositorioComLinqDb>());
         }
     }
 }

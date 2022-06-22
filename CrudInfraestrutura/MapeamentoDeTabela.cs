@@ -21,6 +21,7 @@ namespace Crud.Infra
                 .HasTableName(TabelaDeUsuario)
                 .HasIdentity(x => x.Id)
                 .HasPrimaryKey(x => x.Id);
+                
         }
     }
 }
