@@ -12,7 +12,7 @@ namespace Crud.NetUsuario
         public Usuario usuario { get; set; }
         public CadastroDeUsuario(int IdUsuario, IUsuarioRepositorio usuarioRepositorio)
         {
-            var _usuarioRepositorio = usuarioRepositorio;
+            _usuarioRepositorio = usuarioRepositorio;
             InitializeComponent();
             dateTimePicker1.Enabled = false;
             if (IdUsuario == 0)
@@ -50,7 +50,7 @@ namespace Crud.NetUsuario
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new AppException("Erro inesperado" , ex);
             }
         }
 
@@ -61,6 +61,7 @@ namespace Crud.NetUsuario
 
             return resultadoPergunta == DialogResult.Yes;
         }
+
         private  void ValidarCampos()
         {
             if (nomeTxt.Text == string.Empty)
@@ -109,7 +110,7 @@ namespace Crud.NetUsuario
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new AppException("Erro inesperado", ex);
             } 
         }
     }

@@ -11,7 +11,7 @@ namespace Crud.Infra
     public class UsuarioRepositorioComLinqDb : IUsuarioRepositorio
     {
 
-        private static SqlConnection sqlConexao;
+        private static SqlConnection? sqlConexao;
         private static SqlConnection BancoConexao()
         {
             sqlConexao = new SqlConnection(ConfigurationManager.ConnectionStrings
@@ -26,17 +26,12 @@ namespace Crud.Infra
             {
                 using var db = SqlServerTools.CreateDataConnection(BancoConexao());
                 {
-                    var resultado =
-                        from usuarios
-                        in db.GetTable<Usuario>()
-                        select usuarios;
-                    return resultado
-                    .ToList();
+                    return db.GetTable<Usuario>().ToList();
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao carregar lista de usuários" + ex);
+                throw new Exception("Erro ao carregar lista de usuários", ex);
             }
         }
 
@@ -47,18 +42,19 @@ namespace Crud.Infra
                 using var db = SqlServerTools.CreateDataConnection(BancoConexao());
                 var usuarioRetorno = db.GetTable<Usuario>()
                         .FirstOrDefault(u => u.Id == id);
-                return usuarioRetorno;
+
+                return usuarioRetorno ?? throw new Exception ("Id não pode ser Nulo");
             }
             catch (Exception ex)
             {
                 throw new Exception("Não foi encontrado usuario ID" + ex);
             }
-            
+
         }
 
         public void AdicionarUsuario(Usuario usuario)
         {
-            using var db = SqlServerTools.CreateDataConnection(BancoConexao());
+            
             {
                 try
                 {
@@ -66,17 +62,26 @@ namespace Crud.Infra
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Erro ao criptografar senha" + ex);
+                    throw new Exception("Erro ao criptografar senha " + ex);
                 }
-                db.Insert(usuario);
+                try
+                {
+                    using var db = SqlServerTools.CreateDataConnection(BancoConexao());
+                    db.Insert(usuario);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception ("Erro ao adicionar usuario " + ex);
+                }
+                
             }
         }
 
         public void AtualizarUsuario(Usuario usuario)
         {
-            using var db = SqlServerTools.CreateDataConnection(BancoConexao());
             try
             {
+                using var db = SqlServerTools.CreateDataConnection(BancoConexao());
                 db.Update(usuario);
             }
             catch (Exception ex)
@@ -98,9 +103,9 @@ namespace Crud.Infra
             }
             catch (Exception ex)
             {
-                throw new Exception ("Não foi encontrado Usuario para Remover " + ex);
+                throw new Exception("Não foi encontrado Usuario para Remover " + ex);
             }
-          
+
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Crud.Infra
     public class UsuarioRepositorioComBanco : IUsuarioRepositorio
     {
 
-        private static SqlConnection sqlConexao;
+        private static SqlConnection? sqlConexao;
         private static SqlConnection BancoConexao()
         {
             sqlConexao = new SqlConnection(ConfigurationManager.ConnectionStrings
@@ -35,8 +35,7 @@ namespace Crud.Infra
             }
             catch (Exception ex)
             {
-
-                throw new Exception ("não existe usuario " + ex);
+                throw new Exception ("não existe usuario "  , ex);
             }
         }
 
@@ -55,11 +54,12 @@ namespace Crud.Infra
                         comandoBancoDeDados.Fill(BancoDeDados);
                     }
                 }
-                return ConversorDataTableParaUsuario.ConverterParaLista<Usuario>(BancoDeDados).Find(u => u.Id == id);
+                return ConversorDataTableParaUsuario.ConverterParaLista<Usuario>(BancoDeDados).Find(u => u.Id == id) ??
+                    throw new Exception("Id não pode ser nulo");
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao obter Usuário por id" + id + ex);
+                throw new Exception("Erro ao obter Usuário por id" + id , ex);
             }
         }
 
@@ -90,7 +90,7 @@ namespace Crud.Infra
             }
             catch (Exception ex)
             {
-                throw new Exception ("Não a usuario para ser adicionado " + ex);
+                throw new Exception ("Não a usuario para ser adicionado " , ex);
             }
         }
 
@@ -153,7 +153,6 @@ namespace Crud.Infra
             {
                 throw new Exception ("Não a usario para remover " + ex);
             }
-       
         }
     }
 }
