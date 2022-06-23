@@ -26,7 +26,7 @@ namespace Crud.Infra
                 {
                     using (var cmd = conexao.CreateCommand())
                     {
-                        cmd.CommandText = "SELECT * FROM USUARIO";
+                        cmd.CommandText = "SELECT * FROM teste";
                         var comandoBancoDeDados = new SqlDataAdapter(cmd.CommandText, conexao);
                         comandoBancoDeDados.Fill(BancoDeDados);
                     }
@@ -126,7 +126,7 @@ namespace Crud.Infra
             }
             catch (Exception ex)
             {
-                throw new Exception ("Usuario não pode ser Nulo " + ex);
+                throw new Exception ("Usuario não pode ser Nulo " , ex);
             }
             
         }
@@ -151,7 +151,7 @@ namespace Crud.Infra
             }
             catch (Exception ex)
             {
-                throw new Exception ("Não a usario para remover " + ex);
+                throw new Exception ("Não a usario para remover " , ex);
             }
         }
     }

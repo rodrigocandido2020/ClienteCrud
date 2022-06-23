@@ -47,7 +47,7 @@ namespace Crud.Infra
             }
             catch (Exception ex)
             {
-                throw new Exception("Não foi encontrado usuario ID" + ex);
+                throw new Exception("Não foi encontrado usuario ID" , ex);
             }
 
         }
@@ -62,7 +62,7 @@ namespace Crud.Infra
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Erro ao criptografar senha " + ex);
+                    throw new Exception("Erro ao criptografar senha " , ex);
                 }
                 try
                 {
@@ -71,7 +71,7 @@ namespace Crud.Infra
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception ("Erro ao adicionar usuario " + ex);
+                    throw new Exception ("Erro ao adicionar usuario " , ex);
                 }
                 
             }
@@ -86,7 +86,7 @@ namespace Crud.Infra
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao atualizar o Usuário" + ex);
+                throw new Exception("Erro ao atualizar o Usuário" , ex);
             }
         }
 
@@ -103,7 +103,7 @@ namespace Crud.Infra
             }
             catch (Exception ex)
             {
-                throw new Exception("Não foi encontrado Usuario para Remover " + ex);
+                throw new Exception("Não foi encontrado Usuario para Remover " , ex);
             }
 
         }

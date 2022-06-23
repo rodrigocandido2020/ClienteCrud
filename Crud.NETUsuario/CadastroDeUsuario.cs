@@ -50,7 +50,7 @@ namespace Crud.NetUsuario
             }
             catch (Exception ex)
             {
-                throw new AppException("Erro inesperado" , ex);
+                throw new Exception("Erro inesperado" , ex);
             }
         }
 
@@ -110,7 +110,7 @@ namespace Crud.NetUsuario
             }
             catch (Exception ex)
             {
-                throw new AppException("Erro inesperado", ex);
+                throw new Exception("Erro inesperado", ex);
             } 
         }
     }
