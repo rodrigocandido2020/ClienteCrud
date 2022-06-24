@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Crud.Dominio
+﻿namespace Crud.Dominio
 {
     public class Usuario
     {

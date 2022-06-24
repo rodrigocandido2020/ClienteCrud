@@ -1,8 +1,5 @@
 ﻿using Crud.Dominio;
-using System;
-using System.Globalization;
 using System.Text.RegularExpressions;
-using System.Windows.Forms;
 
 namespace Crud.NetUsuario
 {
@@ -32,7 +29,7 @@ namespace Crud.NetUsuario
         {
             idTxt.Text = usuario.Id.ToString();
             nomeTxt.Text = usuario.Nome;
-            senhaTxt.Text = usuario.Senha;
+            senhaTxt.Text = CriptografarSenha.DescriptografarSenha(usuario.Senha);
             emailTxt.Text = usuario.Email;
             dateTimePicker1.Text = usuario.DataCriacao.ToString();
             maskedTextData.Text = usuario.DataNascimento.ToString();
@@ -71,6 +68,13 @@ namespace Crud.NetUsuario
             if (senhaTxt.Text == string.Empty)
             {
                 throw new Exception("Campo senha Obrigátorio");
+
+               
+            }
+            var TamanhoSenha = 50;
+            if (senhaTxt.Text.Length > TamanhoSenha)
+            {
+                throw new Exception("senha não pode ser maior que 50 caracteres ");
             }
             var regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
             var match = regex.Match(emailTxt.Text);
@@ -110,7 +114,7 @@ namespace Crud.NetUsuario
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro inesperado", ex);
+                MessageBox.Show(ex.Message);
             } 
         }
     }
