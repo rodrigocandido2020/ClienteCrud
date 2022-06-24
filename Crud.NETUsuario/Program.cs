@@ -27,16 +27,18 @@ namespace Crud.NetUsuario
                 .Services
                 .GetRequiredService<IUsuarioRepositorio>();
 
+            MapeamentoDeTabela.Mapear();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ConsultaDeUsuario(repositorioDoUsuario));
+            
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args)
         {
             return Host.CreateDefaultBuilder(args)
                 .ConfigureServices((_, services) =>
-                    services.AddScoped<IUsuarioRepositorio, UsuarioRepositorioComBanco>());
+                    services.AddScoped<IUsuarioRepositorio, UsuarioRepositorioComLinqDb>());
         }
     }
 }

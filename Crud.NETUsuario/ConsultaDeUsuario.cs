@@ -37,13 +37,13 @@ namespace Crud.NetUsuario
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                var message = $"{ex.Message}{ex.InnerException?.Message}";
+                MessageBox.Show(message);
             }
         }
 
         public void AoClicarEmAdicionar(object sender, EventArgs e)
         {
-            //var repositorio = new UsuarioRepositorioComBanco();
 
             try
             {
@@ -58,13 +58,13 @@ namespace Crud.NetUsuario
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                var message = $"{ex.Message}{ex.InnerException?.Message}";
+                MessageBox.Show(message);
             }
         }
 
         private void AoClicarEmEditar(object sender, EventArgs e)
         {
-            //var repositorio = new UsuarioRepositorioComBanco();
             try
             { 
                 if (listaClienteGrid.CurrentCell == null)
@@ -72,24 +72,24 @@ namespace Crud.NetUsuario
                     throw new Exception("Nenhuma linha foi selecionada");
                 }
                 var indexSelecionado = listaClienteGrid.CurrentCell.RowIndex;
-                var usuarioSelecionado = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario;
+                var usuarioSelecionado = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario ??
+                    throw new Exception ("Usuario pode ser nulo");
                 var cadastroDeUsuario = new CadastroDeUsuario(usuarioSelecionado.Id, _usuarioRepositorio);
 
                 var resultado = cadastroDeUsuario.ShowDialog(this);
                 if (resultado == DialogResult.OK)
                 {
-                    //Quando a gente pega um usuario/Objeto de outra tela a gente tem que usar o formulario (cadastro de usuario.usuario)
-                   //sakeeeei 
-                   //kkkk deixa só eu vou outra coisa aqui
                     _usuarioRepositorio.AtualizarUsuario(cadastroDeUsuario.usuario);
                 }
                 CarregarDados();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                var message = $"{ex.Message}{ex.InnerException?.Message}";
+                MessageBox.Show(message);
             }
         }
+
         private void AoClicarEmCancelar(object sender, EventArgs e)
         {
             try
@@ -102,7 +102,8 @@ namespace Crud.NetUsuario
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                var message = $"{ex.Message}{ex.InnerException?.Message}";
+                MessageBox.Show(message);
             }
         }
 
@@ -111,6 +112,7 @@ namespace Crud.NetUsuario
             return MessageBox.Show("Tem certeza que deseja sair da aplicação?", "Sair", MessageBoxButtons.YesNo,
                    MessageBoxIcon.Question) == DialogResult.Yes;
         }
+
         private void AoClicarEmOk(object sender, EventArgs e)
         {
             try
@@ -122,9 +124,11 @@ namespace Crud.NetUsuario
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                var message = $"{ex.Message}{ex.InnerException?.Message}";
+                MessageBox.Show(message);
             }
         }
+
         private void AoClicarEmRemover(object sender, EventArgs e)
         {
             var repositorio = new UsuarioRepositorioComBanco(); 
@@ -136,7 +140,8 @@ namespace Crud.NetUsuario
                     throw new Exception("Nenhuma linha foi selecionada");
                 } 
 
-                var linhaSelecionada = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario;
+                var linhaSelecionada = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario ??
+                    throw new Exception ("Linha selecionada não pode ser nula");
                 if (DeveRemoverUusario())
                 {
                     _usuarioRepositorio.RemoverUsuario(linhaSelecionada.Id);
@@ -145,9 +150,11 @@ namespace Crud.NetUsuario
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                var message = $"{ex.Message}{ex.InnerException?.Message}";
+                MessageBox.Show(message);
             }
         }
+
         private bool DeveRemoverUusario ()
         {
            return MessageBox.Show("Tem certeza que deseja remover o Usuario selecionado?", "Apagar", MessageBoxButtons.YesNo,

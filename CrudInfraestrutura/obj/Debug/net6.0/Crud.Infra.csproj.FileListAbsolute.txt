@@ -13,3 +13,4 @@ C:\Users\usuario\Desktop\ClienteCrud\CrudInfraestrutura\obj\Debug\net6.0\Crud.In
 C:\Users\usuario\Desktop\ClienteCrud\CrudInfraestrutura\obj\Debug\net6.0\ref\Crud.Infra.dll
 C:\Users\usuario\Desktop\ClienteCrud\CrudInfraestrutura\bin\Debug\net6.0\Crud.Dominio.dll
 C:\Users\usuario\Desktop\ClienteCrud\CrudInfraestrutura\bin\Debug\net6.0\Crud.Dominio.pdb
+C:\Users\usuario\Desktop\ClienteCrud\CrudInfraestrutura\bin\Debug\net6.0\Crud.Infra.dll.config

@@ -12,10 +12,19 @@
           "Microsoft.IdentityModel.Protocols": "6.19.0",
           "NLog": "5.0.1",
           "System.Configuration.ConfigurationManager": "6.0.0",
-          "System.Data.SqlClient": "4.8.3"
+          "System.Data.SqlClient": "4.8.3",
+          "linq2db": "4.1.0"
         },
         "runtime": {
           "Crud.Infra.dll": {}
+        }
+      },
+      "linq2db/4.1.0": {
+        "runtime": {
+          "lib/net6.0/linq2db.dll": {
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "4.1.0.0"
+          }
         }
       },
       "Microsoft.CSharp/4.5.0": {},
@@ -253,6 +262,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "linq2db/4.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Dju6pcgxkNnvRt+PoiusMT5vp469aFa/+PwnimhHhkC9cZqInYmutMgjmP7MsnoYQFs9qhWQ4OjWOAxjfNcqGg==",
+      "path": "linq2db/4.1.0",
+      "hashPath": "linq2db.4.1.0.nupkg.sha512"
     },
     "Microsoft.CSharp/4.5.0": {
       "type": "package",

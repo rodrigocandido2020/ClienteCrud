@@ -27,14 +27,14 @@ namespace Crud.Infra
         {
             var listaDeUsuario = ListaDeUsuario.Instancia();
             var usuarioEncontrado = listaDeUsuario.Find(u => u.Id == id);
-            listaDeUsuario.Remove(usuarioEncontrado);
+            listaDeUsuario.Remove(usuarioEncontrado ?? throw new Exception ("Não a Usuario para remover"));
         }
 
         public Usuario ObterPorId(int id)
         {
             var listaDeUsuario = ListaDeUsuario.Instancia();
             var usuario = listaDeUsuario.Find(u => u.Id == id);
-            return usuario;
+            return usuario ?? throw new Exception("Id não pode ser nulo");
         }
 
         public void AtualizarUsuario(Usuario usuarioEditado)
