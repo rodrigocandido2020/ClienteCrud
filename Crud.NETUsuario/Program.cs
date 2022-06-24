@@ -38,7 +38,6 @@ namespace Crud.NetUsuario
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ConsultaDeUsuario(repositorioDoUsuario));
-            
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args)
@@ -46,7 +45,6 @@ namespace Crud.NetUsuario
             return Host.CreateDefaultBuilder(args)
                 .ConfigureServices((_, services) => ConfigurarServicos(services));
         }
-
 
         private static void AtualizarBancoDeDados(IServiceProvider serviceProvider)
         {
