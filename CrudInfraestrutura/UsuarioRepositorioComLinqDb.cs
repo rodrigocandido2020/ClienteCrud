@@ -1,7 +1,6 @@
 ﻿using Crud.Dominio;
 using System.Configuration;
 using System.Data;
-using System.Linq;
 using System.Data.SqlClient;
 using LinqToDB.DataProvider.SqlServer;
 using LinqToDB;
@@ -82,6 +81,7 @@ namespace Crud.Infra
             try
             {
                 using var db = SqlServerTools.CreateDataConnection(BancoConexao());
+                usuario.Senha = CriptografarSenha.Criptografar(usuario.Senha);
                 db.Update(usuario);
             }
             catch (Exception ex)

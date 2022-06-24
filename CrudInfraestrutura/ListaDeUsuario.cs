@@ -1,12 +1,10 @@
 ﻿using Crud.Dominio;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Crud.Infra
 {
     public class ListaDeUsuario
     {
-        private static List<Usuario> instancia;
+        private static List<Usuario>? instancia;
 
         public static List<Usuario> Instancia()
         {

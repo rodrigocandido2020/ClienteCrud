@@ -58,8 +58,10 @@ namespace Crud.NetUsuario
             }
             catch (Exception ex)
             {
+
                 var message = $"{ex.Message}{ex.InnerException?.Message}";
                 MessageBox.Show(message);
+                
             }
         }
 

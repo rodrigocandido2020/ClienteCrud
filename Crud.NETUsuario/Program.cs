@@ -1,5 +1,7 @@
 ﻿using Crud.Dominio;
 using Crud.Infra;
+using Crud.Infra.Extensoes;
+using FluentMigrator.Runner;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
@@ -27,6 +29,11 @@ namespace Crud.NetUsuario
                 .Services
                 .GetRequiredService<IUsuarioRepositorio>();
 
+            using (var scope = builder.Services.CreateScope())
+            {
+                AtualizarBancoDeDados(scope.ServiceProvider);
+            }
+
             MapeamentoDeTabela.Mapear();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -37,8 +44,22 @@ namespace Crud.NetUsuario
         public static IHostBuilder CreateHostBuilder(string[] args)
         {
             return Host.CreateDefaultBuilder(args)
-                .ConfigureServices((_, services) =>
-                    services.AddScoped<IUsuarioRepositorio, UsuarioRepositorioComLinqDb>());
+                .ConfigureServices((_, services) => ConfigurarServicos(services));
+        }
+
+
+        private static void AtualizarBancoDeDados(IServiceProvider serviceProvider)
+        {
+            var runner = serviceProvider.GetRequiredService<IMigrationRunner>();
+
+            runner.MigrateUp();
+        }
+
+        private static void ConfigurarServicos(IServiceCollection servicos)
+        {
+            servicos.AddScoped<IUsuarioRepositorio, UsuarioRepositorioComLinqDb>();
+
+            servicos.ConfigurarFluentMigration();
         }
     }
 }
