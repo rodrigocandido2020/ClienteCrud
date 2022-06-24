@@ -31,7 +31,7 @@ namespace Crud.NetUsuario
 
             using (var scope = builder.Services.CreateScope())
             {
-                UpdateDatabase(scope.ServiceProvider);
+                AtualizarBancoDeDados(scope.ServiceProvider);
             }
 
             MapeamentoDeTabela.Mapear();
@@ -48,7 +48,7 @@ namespace Crud.NetUsuario
         }
 
 
-        private static void UpdateDatabase(IServiceProvider serviceProvider)
+        private static void AtualizarBancoDeDados(IServiceProvider serviceProvider)
         {
             var runner = serviceProvider.GetRequiredService<IMigrationRunner>();
 
