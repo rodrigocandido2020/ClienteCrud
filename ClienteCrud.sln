@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crud.Infra", "CrudInfraestr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crud.Dominio", "CrudServico\Crud.Dominio.csproj", "{20098EDD-6C93-49B4-AAC2-727B119EF735}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.CrudDeUsuario", "Api.CrudDeUsuario\Api.CrudDeUsuario.csproj", "{9854A917-AB9D-4380-8B96-DB3C7ADDC6D2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Crud.Usuario", "Api.Crud.Usuario\Api.Crud.Usuario.csproj", "{8AAC1B62-4C20-46F0-B01F-E34DD5A7C30B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{20098EDD-6C93-49B4-AAC2-727B119EF735}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20098EDD-6C93-49B4-AAC2-727B119EF735}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20098EDD-6C93-49B4-AAC2-727B119EF735}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9854A917-AB9D-4380-8B96-DB3C7ADDC6D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9854A917-AB9D-4380-8B96-DB3C7ADDC6D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9854A917-AB9D-4380-8B96-DB3C7ADDC6D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9854A917-AB9D-4380-8B96-DB3C7ADDC6D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AAC1B62-4C20-46F0-B01F-E34DD5A7C30B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AAC1B62-4C20-46F0-B01F-E34DD5A7C30B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AAC1B62-4C20-46F0-B01F-E34DD5A7C30B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AAC1B62-4C20-46F0-B01F-E34DD5A7C30B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

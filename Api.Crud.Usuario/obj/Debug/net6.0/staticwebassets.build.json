@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "KO00vWNTK9gALObivJSxnf+T3ePyJkMgZDKduTCPdrM=",
+  "Source": "Api.Crud.Usuario",
+  "BasePath": "_content/Api.Crud.Usuario",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
