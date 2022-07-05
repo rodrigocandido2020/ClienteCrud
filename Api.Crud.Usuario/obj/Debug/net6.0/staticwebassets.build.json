@@ -1,11 +1,37 @@
 {
   "Version": 1,
-  "Hash": "KO00vWNTK9gALObivJSxnf+T3ePyJkMgZDKduTCPdrM=",
+  "Hash": "wPVxh1GFzei+PKcTapW1gcxXNyetFhIq3dV2d3LpjQQ=",
   "Source": "Api.Crud.Usuario",
   "BasePath": "_content/Api.Crud.Usuario",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "Api.Crud.Usuario\\wwwroot",
+      "Source": "Api.Crud.Usuario",
+      "ContentRoot": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\",
+      "BasePath": "_content/Api.Crud.Usuario",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\index.html",
+      "SourceId": "Api.Crud.Usuario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\",
+      "BasePath": "_content/Api.Crud.Usuario",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
 }

@@ -86,3 +86,5 @@ C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\bin\Debug\net6.0\Crud.Domi
 C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\bin\Debug\net6.0\Crud.Infra.dll
 C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\bin\Debug\net6.0\Crud.Infra.pdb
 C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\bin\Debug\net6.0\Crud.Dominio.pdb
+C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\bin\Debug\net6.0\Api.Crud.Usuario.staticwebassets.runtime.json
+C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\bin\Debug\net6.0\Api.Crud.Usuario.dll.config
