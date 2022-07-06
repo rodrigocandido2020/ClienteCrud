@@ -2730,9 +2730,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\Api.Crud.Usuario.csproj",
-      "projectName": "Api.Crud.Usuario",
-      "projectPath": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\Api.Crud.Usuario.csproj",
+      "projectUniqueName": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\Api.CrudUsuario.csproj",
+      "projectName": "Api.CrudUsuario",
+      "projectPath": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\Api.CrudUsuario.csproj",
       "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\obj\\",
       "projectStyle": "PackageReference",
