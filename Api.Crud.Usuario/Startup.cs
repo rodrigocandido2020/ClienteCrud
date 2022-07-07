@@ -1,8 +1,9 @@
 ﻿using Crud.Dominio;
 using Crud.Infra;
+using FluentValidation;
 using Microsoft.OpenApi.Models;
 
-namespace Api.Crud.Usuario
+namespace Api.CrudUsuario
 {
     public class Startup
     {
@@ -16,7 +17,11 @@ namespace Api.Crud.Usuario
 
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddScoped<IUsuarioRepositorio, UsuarioRepositorioComLinqDb>();
+            services.AddScoped<IValidator<Usuario>, ValidacaoDeUsuario>();
+
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

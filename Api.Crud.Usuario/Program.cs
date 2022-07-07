@@ -1,4 +1,4 @@
-namespace Api.Crud.Usuario
+namespace Api.CrudUsuario
 {
     public class Program
     {

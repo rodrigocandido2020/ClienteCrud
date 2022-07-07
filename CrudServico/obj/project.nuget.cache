@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "WGLiY8I+MqhHEbbPCWhiO7+7lE127K7lZaVF//pOR/sJf1Rk1m8f2WgB4xLy8X4q3VYEQXLe3EvEWnC5DLob3Q==",
+  "dgSpecHash": "qpZZP5hL5+uumvKocIUx68yWQhXBrK3Tzb5N1L8ylreBAdP30Fq8g3uqjmBQoytAwQDIQO6S1OKOQwO9rO/uRQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\CrudServico\\Crud.Dominio.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\usuario\\.nuget\\packages\\fluentvalidation\\11.1.0\\fluentvalidation.11.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,4 +1,5 @@
 ﻿using Crud.Dominio;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.CrudUsuario.Controllers
@@ -9,26 +10,20 @@ namespace Api.CrudUsuario.Controllers
     {
         
         private readonly IUsuarioRepositorio _usuarioRepositorio;
+        private IValidator<Usuario> _Validador;
 
-        public UsuariosController(IUsuarioRepositorio usuarioRepositorio)
+        public UsuariosController(IUsuarioRepositorio usuarioRepositorio , IValidator<Usuario> validador)
         {
             _usuarioRepositorio = usuarioRepositorio;
+            _Validador = validador;
         }
 
         [HttpGet]
         [Route("ObterTodosOsUsuarios")]
         public IActionResult ObterTodosOsUsuarios()
         {
-            try
-            {
                 var todosUsuarios = _usuarioRepositorio.ObterTodos();
                 return Ok(todosUsuarios);
-            }
-            catch (Exception ex)
-            {
-
-                throw new Exception ("Não foi possivel encontrar Dados dos Usuario" , ex);
-            }
             
         }
 
@@ -36,20 +31,8 @@ namespace Api.CrudUsuario.Controllers
         [Route("ObterPorId")]
         public IActionResult ObterPorIdUsuario(int id)
         {
-            try
-            {
-                if (id == 0)
-                {
-                    return new OkObjectResult(new { message = "Usuário não encontrado" });
-                }
                 var IdUsuario = _usuarioRepositorio.ObterPorId(id);
                 return Ok(IdUsuario);
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception ("Não foi possivel encontrar Usuario Por Id" , ex);
-            }
            
         }
 
@@ -59,12 +42,14 @@ namespace Api.CrudUsuario.Controllers
         {
             try
             {
+                _Validador.ValidateAndThrow(usuario);
                 _usuarioRepositorio.AdicionarUsuario(usuario);
-                return Ok(usuario);
+                return new OkObjectResult(new { message = "Usuário adicionado" });
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao adicionar usuário" , ex);
+
+                return BadRequest("Não foi possivel adicionar usuario" + ex.Message);
             }
         }
 
@@ -72,36 +57,19 @@ namespace Api.CrudUsuario.Controllers
         [Route("AtualizarUsuario")]
         public IActionResult AtualizarUsuario(Usuario usuario)
         {
-            try
-            {
                 var usuarioAtualizado = _usuarioRepositorio.ObterPorId(usuario.Id);
                 usuarioAtualizado = usuario;
                 _usuarioRepositorio.AtualizarUsuario(usuarioAtualizado);
-                return new OkObjectResult(new { message = "Usuario Adicionado com Sucesso!!" });
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro No Id Do usuário" , ex);
-            }
-          
+                return new OkObjectResult(new { message = "Usuario Atualizado com Sucesso!!" }); 
         }
 
         [HttpDelete]
         [Route("DeletarUsuario")]
         public IActionResult DeletarUsuario(int id)
         {
-            try
-            {
-                var usuario = _usuarioRepositorio.ObterPorId(id);
+                _usuarioRepositorio.ObterPorId(id);
                 _usuarioRepositorio.RemoverUsuario(id);
-                return new OkObjectResult(new { message = "Usuario excluido com sucesso" });
-            }
-            catch (Exception ex)
-            {
-
-                throw new Exception("Erro ao Excluir Usuario" , ex);
-            }
-          
+                return new OkObjectResult(new { message = "Usuario excluido com sucesso" });         
         }
     }
 }

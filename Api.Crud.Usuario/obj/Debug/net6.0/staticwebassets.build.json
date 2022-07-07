@@ -1,27 +1,27 @@
 {
   "Version": 1,
-  "Hash": "jPgMaAYdhHkyY6nq570qCQDzQOszND/CUA3qAROsON0=",
-  "Source": "Api.CrudUsuario",
-  "BasePath": "_content/Api.CrudUsuario",
+  "Hash": "RwxeY10kM2cW5yzAo8OXDqBy83nurWlmKnQQ+XAJJFA=",
+  "Source": "Crud.ApiNetUsuario",
+  "BasePath": "_content/Crud.ApiNetUsuario",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "Api.CrudUsuario\\wwwroot",
-      "Source": "Api.CrudUsuario",
+      "Name": "Crud.ApiNetUsuario\\wwwroot",
+      "Source": "Crud.ApiNetUsuario",
       "ContentRoot": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\",
-      "BasePath": "_content/Api.CrudUsuario",
+      "BasePath": "_content/Crud.ApiNetUsuario",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
       "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\index.html",
-      "SourceId": "Api.CrudUsuario",
+      "SourceId": "Crud.ApiNetUsuario",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\",
-      "BasePath": "_content/Api.CrudUsuario",
+      "BasePath": "_content/Crud.ApiNetUsuario",
       "RelativePath": "index.html",
       "AssetKind": "All",
       "AssetMode": "All",

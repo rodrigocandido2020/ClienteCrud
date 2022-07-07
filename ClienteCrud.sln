@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crud.Infra", "CrudInfraestr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crud.Dominio", "CrudServico\Crud.Dominio.csproj", "{20098EDD-6C93-49B4-AAC2-727B119EF735}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.CrudUsuario", "Api.Crud.Usuario\Api.CrudUsuario.csproj", "{8AAC1B62-4C20-46F0-B01F-E34DD5A7C30B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crud.ApiNetUsuario", "Api.Crud.Usuario\Crud.ApiNetUsuario.csproj", "{8AAC1B62-4C20-46F0-B01F-E34DD5A7C30B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
