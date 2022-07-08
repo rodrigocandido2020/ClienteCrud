@@ -154,5 +154,10 @@ namespace Crud.Infra
                 throw new Exception ("Não a usario para remover " , ex);
             }
         }
+
+        public void ValidarEmail(string email)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -267,6 +267,14 @@
           }
         }
       },
+      "FluentValidation/11.1.0": {
+        "runtime": {
+          "lib/net6.0/FluentValidation.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.1.0.0"
+          }
+        }
+      },
       "Fody/6.6.2": {},
       "linq2db/4.1.0": {
         "runtime": {
@@ -1234,6 +1242,9 @@
         }
       },
       "Crud.Dominio/1.0.0": {
+        "dependencies": {
+          "FluentValidation": "11.1.0"
+        },
         "runtime": {
           "Crud.Dominio.dll": {}
         }
@@ -1393,6 +1404,13 @@
       "sha512": "sha512-IOYYVsgsTPdRUx6ZZ74Xuu6ZCTJuj268CG4hYciMsznuAGSZvADHFQrHC0EdXn+kNOdZfYeKyJ+kuR+igm6utg==",
       "path": "fluentmigrator.runner.sqlserverce/3.3.2",
       "hashPath": "fluentmigrator.runner.sqlserverce.3.3.2.nupkg.sha512"
+    },
+    "FluentValidation/11.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ld7w+2jOmnhQqFkngEGuEWTRa5j6u4Xzli7jKxRtbA5PtuHHcpin01qxvxYL0LomeJuzRMGAOURu2rKONdjKQA==",
+      "path": "fluentvalidation/11.1.0",
+      "hashPath": "fluentvalidation.11.1.0.nupkg.sha512"
     },
     "Fody/6.6.2": {
       "type": "package",

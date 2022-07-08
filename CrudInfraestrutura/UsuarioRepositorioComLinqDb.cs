@@ -51,10 +51,19 @@ namespace Crud.Infra
 
         }
 
+        public void ValidarEmail(string email)
+        {
+            using var db = SqlServerTools.CreateDataConnection(BancoConexao());
+            {
+                db.GetTable<Usuario>()
+                    .Where(u => u.Email == u.Email);
+            }
+        }
+
         public void AdicionarUsuario(Usuario usuario)
         {
             
-            {
+            {   
                 try
                 {
                     usuario.Senha = CriptografarSenha.Criptografar(usuario.Senha);

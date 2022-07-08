@@ -38,5 +38,10 @@ namespace Crud.Infra
             var indice = listaDeUsuarios.FindIndex(usuario => usuario.Id == usuarioEditado.Id);
             listaDeUsuarios[indice] = usuarioEditado;
         }
+
+        public void ValidarEmail(string email)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -165,3 +165,4 @@ C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\re
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.pdb
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.genruntimeconfig.cache
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\ref\Crud.NetUsuario.dll
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\FluentValidation.dll
