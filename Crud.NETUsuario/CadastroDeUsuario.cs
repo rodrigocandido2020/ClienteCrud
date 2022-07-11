@@ -1,4 +1,5 @@
 ﻿using Crud.Dominio;
+using FluentValidation;
 using System.Text.RegularExpressions;
 
 namespace Crud.NetUsuario
@@ -6,6 +7,7 @@ namespace Crud.NetUsuario
     public partial class CadastroDeUsuario : Form
     {
         private readonly IUsuarioRepositorio _usuarioRepositorio;
+
         public Usuario usuario { get; set; }
         public CadastroDeUsuario(int IdUsuario, IUsuarioRepositorio usuarioRepositorio)
         {

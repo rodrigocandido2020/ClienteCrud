@@ -26,7 +26,7 @@ namespace Crud.Infra
                 {
                     using (var cmd = conexao.CreateCommand())
                     {
-                        cmd.CommandText = "SELECT * FROM teste";
+                        cmd.CommandText = "SELECT * FROM USUARIO";
                         var comandoBancoDeDados = new SqlDataAdapter(cmd.CommandText, conexao);
                         comandoBancoDeDados.Fill(BancoDeDados);
                     }
@@ -155,9 +155,26 @@ namespace Crud.Infra
             }
         }
 
-        public void ValidarEmail(string email)
+        public bool emailExisteNoBanco(string email)
         {
-            throw new NotImplementedException();
+            DataTable BancoDeDados = new DataTable();
+            try
+            {
+                using (var conexao = BancoConexao())
+                {
+                    using (var cmd = conexao.CreateCommand())
+                    {
+                        cmd.CommandText = "SELECT * FROM USUARIO";
+                        var comandoBancoDeDados = new SqlDataAdapter(cmd.CommandText, conexao);
+                        comandoBancoDeDados.Fill(BancoDeDados);
+                    }
+                }
+                return ConversorDataTableParaUsuario.ConverterParaLista<Usuario>(BancoDeDados).Any(u=> u.Email == email);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao obter Usuário por id" + email, ex);
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Crud.Infra.Migracoes
         public override void Up()
         {
             Create.Table("USUARIO")
-                .WithColumn("ID").AsInt64().PrimaryKey().Identity()
+                .WithColumn("ID").AsInt32().PrimaryKey().Identity()
                 .WithColumn("NOME").AsString(200).NotNullable()
                 .WithColumn("SENHA").AsString(600).NotNullable()
                 .WithColumn("EMAIL").AsString(200).NotNullable()

@@ -13,6 +13,5 @@ namespace Api.CrudUsuario
             {
                 webBuilder.UseStartup<Startup>();
             });
-        
     }
 }

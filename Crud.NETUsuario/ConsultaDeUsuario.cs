@@ -1,23 +1,19 @@
 ﻿using Crud.Infra;
 using Crud.Dominio;
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Windows.Forms;
 
 namespace Crud.NetUsuario
 {
     public partial class ConsultaDeUsuario : Form
     {        
         private readonly IUsuarioRepositorio _usuarioRepositorio;
+
+     
         public ConsultaDeUsuario(IUsuarioRepositorio usuarioRepositorio)
         {
             _usuarioRepositorio = usuarioRepositorio;
             InitializeComponent();
-            CarregarDados();           
+            CarregarDados();
         }
-
         public void CarregarDados()
         {
             try
@@ -44,13 +40,12 @@ namespace Crud.NetUsuario
 
         public void AoClicarEmAdicionar(object sender, EventArgs e)
         {
-
             try
             {
                 var usuarioNovo = (int)decimal.Zero;
                 var cadastroDeUsuario = new CadastroDeUsuario(usuarioNovo, _usuarioRepositorio);
                 var resultado = cadastroDeUsuario.ShowDialog();
-                if(resultado == DialogResult.OK)
+                if (resultado == DialogResult.OK)
                 {
                     _usuarioRepositorio.AdicionarUsuario(cadastroDeUsuario.usuario);
                 }

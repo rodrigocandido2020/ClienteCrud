@@ -52,20 +52,11 @@ namespace Api.CrudUsuario.Controllers
         {
             try
             {
-                try
-                {
-                    _usuarioRepositorio.ValidarEmail(usuario.Email);
-                    return BadRequest("Email ja existente");
-                }
-                catch (Exception)
-                {
-                }
                 usuario.DataCriacao = DateTime.Now;
-             
                 _Validador.ValidateAndThrow(usuario);
                 _usuarioRepositorio.AdicionarUsuario(usuario);
                 return Ok("Usuário adicionado");
-            }   
+            }
             catch (Exception ex)
             {
                 return BadRequest("Não foi possivel adicionar usuario " + ex.Message);
@@ -76,6 +67,7 @@ namespace Api.CrudUsuario.Controllers
         [Route("{id}")]
         public IActionResult AtualizarUsuario([FromRoute]int id ,[FromBody] Usuario usuario)
         {
+            var _validador2 = new ValidacaoDeUsuario(_usuarioRepositorio);
             try
             {
                 var usuarioAtualizado = usuario;
@@ -90,8 +82,16 @@ namespace Api.CrudUsuario.Controllers
                 usuarioAtualizado.Nome = usuario.Nome;
                 usuarioAtualizado.Senha = usuario.Senha;
                 usuarioAtualizado.DataNascimento = usuario.DataNascimento;
+                
+                if (usuarioAtualizado.Email != usuario.Email)
+                {
+                    _Validador.ValidateAndThrow(usuario);
+                }
+                else
+                {
+                    _validador2.ValidacaoDeUsuarioAtualizado(usuarioAtualizado);
+                }
                 usuarioAtualizado.Email = usuario.Email;
-                _Validador.ValidateAndThrow(usuarioAtualizado);
                 _usuarioRepositorio.AtualizarUsuario(usuarioAtualizado);
                 return Ok("Usuario Atualizado com Sucesso!!");
             }
