@@ -7,6 +7,6 @@
         void RemoverUsuario(int id);
         Usuario ObterPorId(int id);
         void AtualizarUsuario(Usuario usuario);
-
+        bool emailExisteNoBanco(string email);
     }
 }

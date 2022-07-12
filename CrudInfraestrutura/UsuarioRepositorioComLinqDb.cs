@@ -51,10 +51,20 @@ namespace Crud.Infra
 
         }
 
+        public bool emailExisteNoBanco(string email)
+        {
+            using var db = SqlServerTools.CreateDataConnection(BancoConexao());
+            {
+                var emailExistente = db.GetTable<Usuario>()
+                    .Any(u => u.Email == email);
+                return emailExistente;
+            }
+        }
+
         public void AdicionarUsuario(Usuario usuario)
         {
             
-            {
+            {   
                 try
                 {
                     usuario.Senha = CriptografarSenha.Criptografar(usuario.Senha);

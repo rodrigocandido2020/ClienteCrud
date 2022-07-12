@@ -38,5 +38,12 @@ namespace Crud.Infra
             var indice = listaDeUsuarios.FindIndex(usuario => usuario.Id == usuarioEditado.Id);
             listaDeUsuarios[indice] = usuarioEditado;
         }
+
+        public bool emailExisteNoBanco(string email)
+        {
+            var listaDeUsuarios = ListaDeUsuario.Instancia();
+            var emailExistente = listaDeUsuarios.Any(usuario => usuario.Email == email);
+            return emailExistente;
+        }
     }
 }
