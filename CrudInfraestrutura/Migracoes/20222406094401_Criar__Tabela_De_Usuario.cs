@@ -1,4 +1,5 @@
 ﻿using FluentMigrator;
+using FluentMigrator.SqlServer;
 
 namespace Crud.Infra.Migracoes
 {
@@ -8,7 +9,7 @@ namespace Crud.Infra.Migracoes
         public override void Up()
         {
             Create.Table("USUARIO")
-                .WithColumn("ID").AsInt32().PrimaryKey().Identity()
+                .WithColumn("ID").AsInt32().PrimaryKey().Identity(1, 1)
                 .WithColumn("NOME").AsString(200).NotNullable()
                 .WithColumn("SENHA").AsString(600).NotNullable()
                 .WithColumn("EMAIL").AsString(200).NotNullable()

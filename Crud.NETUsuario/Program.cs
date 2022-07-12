@@ -16,24 +16,26 @@ namespace Crud.NetUsuario
         [STAThread]
         static void Main(string[] args)
         {
+            MapeamentoDeTabela.Mapear();
+
             var builder = CreateHostBuilder(args)
                 .Build();
 
             builder.RunAsync();
-
-            var repositorioDoUsuario = builder
-                .Services
-                .GetRequiredService<IUsuarioRepositorio>();
 
             using (var scope = builder.Services.CreateScope())
             {
                 AtualizarBancoDeDados(scope.ServiceProvider);
             }
 
-            MapeamentoDeTabela.Mapear();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ConsultaDeUsuario(repositorioDoUsuario));
+
+            var Form = builder
+              .Services
+              .GetRequiredService<ConsultaDeUsuario>();
+
+            Application.Run(Form);
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args)
@@ -51,9 +53,9 @@ namespace Crud.NetUsuario
 
         private static void ConfigurarServicos(IServiceCollection servicos)
         {
+            servicos.AddScoped<ConsultaDeUsuario>();
             servicos.AddScoped<IUsuarioRepositorio, UsuarioRepositorioComLinqDb>();
             servicos.AddScoped<IValidator<Usuario>, ValidacaoDeUsuario>();
-
             servicos.ConfigurarFluentMigration();
         }
     }

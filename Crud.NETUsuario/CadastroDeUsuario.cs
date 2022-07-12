@@ -7,11 +7,12 @@ namespace Crud.NetUsuario
     public partial class CadastroDeUsuario : Form
     {
         private readonly IUsuarioRepositorio _usuarioRepositorio;
-
+        private IValidator<Usuario> _Validador;
         public Usuario usuario { get; set; }
-        public CadastroDeUsuario(int IdUsuario, IUsuarioRepositorio usuarioRepositorio)
+        public CadastroDeUsuario(int IdUsuario, IUsuarioRepositorio usuarioRepositorio, IValidator<Usuario> validador)
         {
             _usuarioRepositorio = usuarioRepositorio;
+            _Validador = validador;
             InitializeComponent();
             dateTimePicker1.Enabled = false;
             if (IdUsuario == 0)
@@ -61,48 +62,15 @@ namespace Crud.NetUsuario
             return resultadoPergunta == DialogResult.Yes;
         }
 
-        private  void ValidarCampos()
-        {
-            if (nomeTxt.Text == string.Empty)
-            {
-                throw new Exception("Campo Nome Obrigátorio");
-            }
-            if (senhaTxt.Text == string.Empty)
-            {
-                throw new Exception("Campo senha Obrigátorio");
-
-               
-            }
-            var TamanhoSenha = 50;
-            if (senhaTxt.Text.Length > TamanhoSenha)
-            {
-                throw new Exception("senha não pode ser maior que 50 caracteres ");
-            }
-            var regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-            var match = regex.Match(emailTxt.Text);
-            if (match.Success == false)
-            {
-                throw new Exception("Campo e-mail invalido");
-            }
-            const string dataVazia = "  /  /";
-            var regexData = new Regex(@"(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/(19|20)\d{2}");
-            var valorDaCaixa = regexData.Match(maskedTextData.Text);
-            if (maskedTextData.Text != dataVazia && !valorDaCaixa.Success)
-            {
-                throw new Exception("Campo Data invalido");
-            }
-        }
-
         private void AoclicarEmSalvar(object sender, EventArgs e)
         {
             try
             {
-                ValidarCampos();
+                const string dataVazia = "  /  /";
                 usuario.Nome = nomeTxt.Text;
                 usuario.Senha = senhaTxt.Text;
                 usuario.Email = emailTxt.Text;
                 usuario.DataCriacao = DateTime.Parse(dateTimePicker1.Text);
-                const string dataVazia = "  /  /";
                 if (maskedTextData.Text == dataVazia)
                 {
                     usuario.DataNascimento = null;
@@ -111,6 +79,9 @@ namespace Crud.NetUsuario
                 {
                     usuario.DataNascimento = DateTime.Parse(maskedTextData.Text);
                 }
+                var usuarioDaTela = ObterUsuarioDaTela();
+                _Validador.ValidateAndThrow(usuarioDaTela);
+                usuario = usuarioDaTela;
                 DialogResult = DialogResult.OK;
                 Close();
             }
@@ -118,6 +89,39 @@ namespace Crud.NetUsuario
             {
                 MessageBox.Show(ex.Message);
             } 
+        }
+        private Usuario ObterUsuarioDaTela()
+        {
+            const string dataVazia = "  /  /";
+            DateTime? data = null;
+            if (maskedTextData.Text != dataVazia)
+            {
+                data = DateTime.Parse(maskedTextData.Text);
+            }
+            if (idTxt.Text == string.Empty)
+            {
+                return new Usuario
+                {
+                    //Id = int.Parse(idTxt.Text),
+                    Nome = nomeTxt.Text,
+                    Senha = senhaTxt.Text,
+                    Email = emailTxt.Text,
+                    DataCriacao = DateTime.Parse(dateTimePicker1.Text),
+                    DataNascimento = data
+                };
+            }
+            else
+            {
+                return new Usuario
+                {
+                    Id = int.Parse(idTxt.Text),
+                    Nome = nomeTxt.Text,
+                    Senha = senhaTxt.Text,
+                    Email = emailTxt.Text,
+                    DataCriacao = DateTime.Parse(dateTimePicker1.Text),
+                    DataNascimento = data
+                };
+            }
         }
     }
 }

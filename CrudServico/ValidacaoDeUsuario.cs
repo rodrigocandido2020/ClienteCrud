@@ -9,23 +9,31 @@ namespace Crud.Dominio
         public ValidacaoDeUsuario(IUsuarioRepositorio usuarioRepositorio)
         {
             _usuarioRepositorio = usuarioRepositorio;
-            var usuario = new Usuario();
+            const string dataMinimaValida = "1753-01-01T12:06:13.975Z";
+
             RuleFor(u => u.Nome)
                 .NotEmpty()
                 .WithMessage("O campo {PropertyName} precisa ser fornecido")
                 .Length(2, 50)
                 .WithMessage("O campo {PropertyName} precisa ter entre {MinLength} e {MaxLength} caracteres");
+
             RuleFor(u => u.Senha)
                 .NotEmpty()
                 .WithMessage("O campo {PropertyName} precisa ser fornecido")
                 .Length(2, 50)
                 .WithMessage("O campo {PropertyName} precisa ter entre {MinLength} e {MaxLength} caracteres");
+
             RuleFor(u => u.Email)
                 .Must((usuario, email) => ValidarEmail(email))
                 .WithMessage("O campo {PropertyName} é invalido")
-                .Must((usuario, email) => PodeCriarEmail(email, _usuarioRepositorio))
+                .Must((usuario, email) => PodeCriarEmail(usuario, email))
                 .WithMessage("O campo {PropertyName} já existe no banco");
-                
+
+            RuleFor(u => u.DataNascimento)
+                .LessThanOrEqualTo(DateTime.Now)
+                .WithMessage("O campo {PropertyName} é invalido")
+                .GreaterThan(DateTime.Parse(dataMinimaValida))
+                .WithMessage("O campo {PropertyName} é invalido");
         }
         
         private bool ValidarEmail(string email)
@@ -35,33 +43,26 @@ namespace Crud.Dominio
             return match.Success;
         }
 
-        private bool PodeCriarEmail(string email, IUsuarioRepositorio usuarioRepositorio)
+        private bool PodeCriarEmail(Usuario usuario, string email)
         {
-            var _usuarioRepositorio = usuarioRepositorio;
             bool resultado;
-            resultado = _usuarioRepositorio.emailExisteNoBanco(email);
-
-            if (resultado == true ? resultado = false : resultado = true) ;
-
-            return resultado;
+            if (usuario.Id == decimal.Zero)
+            {
+                resultado = _usuarioRepositorio.emailExisteNoBanco(email);
+            }
+            else
+            {
+                var usuarioASerAtualizado = _usuarioRepositorio.ObterPorId(usuario.Id);
+                if(usuario.Email != usuarioASerAtualizado.Email)
+                {
+                    resultado = _usuarioRepositorio.emailExisteNoBanco(email);
+                }
+                else
+                {
+                    resultado = false;
+                }
+            }
+            return !resultado;
         }
-
-        public void ValidacaoDeUsuarioAtualizado(Usuario usuario)
-        {
-            RuleFor(u => u.Nome)
-                .NotEmpty()
-                .WithMessage("O campo {PropertyName} precisa ser fornecido")
-                .Length(2, 50)
-                .WithMessage("O campo {PropertyName} precisa ter entre {MinLength} e {MaxLength} caracteres");
-            RuleFor(u => u.Senha)
-                .NotEmpty()
-                .WithMessage("O campo {PropertyName} precisa ser fornecido")
-                .Length(2, 50)
-                .WithMessage("O campo {PropertyName} precisa ter entre {MinLength} e {MaxLength} caracteres");
-            RuleFor(u => u.Email)
-                .Must((usuario, email) => ValidarEmail(email))
-                .WithMessage("O campo {PropertyName} é invalido");
-        }
-
     }
 }

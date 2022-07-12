@@ -1,16 +1,19 @@
 ﻿using Crud.Infra;
 using Crud.Dominio;
+using FluentValidation;
 
 namespace Crud.NetUsuario
 {
     public partial class ConsultaDeUsuario : Form
     {        
         private readonly IUsuarioRepositorio _usuarioRepositorio;
+        private IValidator<Usuario> _Validador;
 
-     
-        public ConsultaDeUsuario(IUsuarioRepositorio usuarioRepositorio)
+
+        public ConsultaDeUsuario(IUsuarioRepositorio usuarioRepositorio,IValidator<Usuario> validador)
         {
             _usuarioRepositorio = usuarioRepositorio;
+            _Validador = validador;
             InitializeComponent();
             CarregarDados();
         }
@@ -43,7 +46,7 @@ namespace Crud.NetUsuario
             try
             {
                 var usuarioNovo = (int)decimal.Zero;
-                var cadastroDeUsuario = new CadastroDeUsuario(usuarioNovo, _usuarioRepositorio);
+                var cadastroDeUsuario = new CadastroDeUsuario(usuarioNovo, _usuarioRepositorio , _Validador);
                 var resultado = cadastroDeUsuario.ShowDialog();
                 if (resultado == DialogResult.OK)
                 {
@@ -53,10 +56,8 @@ namespace Crud.NetUsuario
             }
             catch (Exception ex)
             {
-
                 var message = $"{ex.Message}{ex.InnerException?.Message}";
                 MessageBox.Show(message);
-                
             }
         }
 
@@ -71,7 +72,7 @@ namespace Crud.NetUsuario
                 var indexSelecionado = listaClienteGrid.CurrentCell.RowIndex;
                 var usuarioSelecionado = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario ??
                     throw new Exception ("Usuario pode ser nulo");
-                var cadastroDeUsuario = new CadastroDeUsuario(usuarioSelecionado.Id, _usuarioRepositorio);
+                var cadastroDeUsuario = new CadastroDeUsuario(usuarioSelecionado.Id, _usuarioRepositorio , _Validador);
 
                 var resultado = cadastroDeUsuario.ShowDialog(this);
                 if (resultado == DialogResult.OK)
@@ -128,15 +129,13 @@ namespace Crud.NetUsuario
 
         private void AoClicarEmRemover(object sender, EventArgs e)
         {
-            var repositorio = new UsuarioRepositorioComBanco(); 
             try
             {
-                var indexSelecionado = listaClienteGrid.CurrentCell.RowIndex;
-                if (indexSelecionado == decimal.MinusOne)
+                if (listaClienteGrid.CurrentCell == null)
                 {
                     throw new Exception("Nenhuma linha foi selecionada");
-                } 
-
+                }
+                var indexSelecionado = listaClienteGrid.CurrentCell.RowIndex;
                 var linhaSelecionada = listaClienteGrid.Rows[indexSelecionado].DataBoundItem as Usuario ??
                     throw new Exception ("Linha selecionada não pode ser nula");
                 if (DeveRemoverUusario())

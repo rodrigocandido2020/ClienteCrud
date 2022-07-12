@@ -1,6 +1,7 @@
 ﻿using Crud.Dominio;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace Api.CrudUsuario.Controllers
 {
@@ -28,7 +29,7 @@ namespace Api.CrudUsuario.Controllers
             }
             catch (Exception ex)
             {
-                return NotFound("Não foi possivel obter todos usuarios " + ex.Message);
+                return StatusCode((int)HttpStatusCode.InternalServerError,ex.Message);
             }
         }
 
@@ -36,30 +37,43 @@ namespace Api.CrudUsuario.Controllers
         [Route("{id}")]
         public IActionResult ObterPorIdUsuario([FromRoute] int id)
         {
+            if (id == decimal.Zero)
+            {
+                return BadRequest("o Id deve ser Informado");
+            }
             try
             {
                 var IdUsuario = _usuarioRepositorio.ObterPorId(id);
+                if (IdUsuario is null)
+                {
+                    return NotFound("Usuario não encontrado");
+                }
                 return Ok(IdUsuario);
             }
             catch (Exception ex)
             {
-                return BadRequest("Não foi obter usuario por Id " + ex.Message);
+                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
             }
         }
 
         [HttpPost]
         public IActionResult AdicionarUsuario([FromBody] Usuario usuario)
         {
+            if (usuario is null)
+            {
+                return BadRequest("O Usuario deve ser informado");
+            }
             try
             {
                 usuario.DataCriacao = DateTime.Now;
                 _Validador.ValidateAndThrow(usuario);
                 _usuarioRepositorio.AdicionarUsuario(usuario);
-                return Ok("Usuário adicionado");
+
+                return Created($"{usuario.Id}" , usuario);
             }
             catch (Exception ex)
             {
-                return BadRequest("Não foi possivel adicionar usuario " + ex.Message);
+                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
             }
         }
 
@@ -67,37 +81,26 @@ namespace Api.CrudUsuario.Controllers
         [Route("{id}")]
         public IActionResult AtualizarUsuario([FromRoute]int id ,[FromBody] Usuario usuario)
         {
-            var _validador2 = new ValidacaoDeUsuario(_usuarioRepositorio);
+            if (usuario is null)
+            {
+                return BadRequest("O Usuario deve ser informado");
+            }
             try
             {
-                var usuarioAtualizado = usuario;
-                try
+                var usuarioDobanco = _usuarioRepositorio.ObterPorId(id);
+                if (usuarioDobanco is null)
                 {
-                    usuarioAtualizado = _usuarioRepositorio.ObterPorId(id);
+                    return NotFound("Usuario não encontrado por Id");
                 }
-                catch (Exception ex)
-                {
-                    return BadRequest("Usuario não encontrado, verifique o id " + ex.Message);
-                }
-                usuarioAtualizado.Nome = usuario.Nome;
-                usuarioAtualizado.Senha = usuario.Senha;
-                usuarioAtualizado.DataNascimento = usuario.DataNascimento;
-                
-                if (usuarioAtualizado.Email != usuario.Email)
-                {
-                    _Validador.ValidateAndThrow(usuario);
-                }
-                else
-                {
-                    _validador2.ValidacaoDeUsuarioAtualizado(usuarioAtualizado);
-                }
-                usuarioAtualizado.Email = usuario.Email;
-                _usuarioRepositorio.AtualizarUsuario(usuarioAtualizado);
-                return Ok("Usuario Atualizado com Sucesso!!");
+                usuario.DataCriacao = usuarioDobanco.DataCriacao;
+                usuario.Id = id;
+                _Validador.ValidateAndThrow(usuario);
+                _usuarioRepositorio.AtualizarUsuario(usuario);
+                return NoContent();
             }
             catch (Exception ex)
             {
-                return BadRequest("Não foi possivel atualizar usuario " + ex.Message);
+                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
             }
         }
 
@@ -105,16 +108,24 @@ namespace Api.CrudUsuario.Controllers
         [Route("{id}")]
         public IActionResult DeletarUsuario([FromRoute] int id)
         {
+            if (id == decimal.Zero)
+            {
+                return BadRequest("o Id deve ser informado");
+            }
             try
             {
-                _usuarioRepositorio.RemoverUsuario(id);
-                return Ok("Usuario excluido com sucesso");
+                var usuarioASerDeletado = _usuarioRepositorio.ObterPorId(id);
+                if (usuarioASerDeletado is null)
+                {
+                    return NotFound($"Usuario não pode ser encontrado com o Id : {id}");
+                }
+                _usuarioRepositorio.RemoverUsuario(usuarioASerDeletado.Id);
+                return Ok();
             }
             catch (Exception ex)
             {
-                return BadRequest("Não foi possivel excluir usuario " + ex.Message);
+                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
             }
-                         
         }
     }
 }
