@@ -27,6 +27,7 @@ C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\bin\Debug\net6.0\FluentMig
 C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\bin\Debug\net6.0\FluentMigrator.Runner.SqlServer.dll
 C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\bin\Debug\net6.0\FluentMigrator.Runner.SqlServerCe.dll
 C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\bin\Debug\net6.0\System.Data.SqlServerCe.dll
+C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\bin\Debug\net6.0\FluentValidation.dll
 C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\bin\Debug\net6.0\linq2db.dll
 C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\bin\Debug\net6.0\Microsoft.Identity.Client.dll
@@ -88,4 +89,5 @@ C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\obj\Debug\net6.0\refint\Cr
 C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\obj\Debug\net6.0\Crud.ApiNetUsuario.pdb
 C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\obj\Debug\net6.0\Crud.ApiNetUsuario.genruntimeconfig.cache
 C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\obj\Debug\net6.0\ref\Crud.ApiNetUsuario.dll
-C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\bin\Debug\net6.0\wwwroot\Invoices.json
+C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\bin\Debug\net6.0\wwwroot\manifest.json

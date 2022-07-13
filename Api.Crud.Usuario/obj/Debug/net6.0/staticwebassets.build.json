@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Jv51yOPsrsygkD+mRGvaavKaIQl8ABV6jJAF7M5YwqE=",
+  "Hash": "eZqWzntrKRDP0XA+ue8mzUrljQHk1IPmWL0jSiylIOU=",
   "Source": "Crud.ApiNetUsuario",
   "BasePath": "_content/Crud.ApiNetUsuario",
   "Mode": "Default",
@@ -199,7 +199,7 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
+      "CopyToOutputDirectory": "Always",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Invoices.json"
     },
@@ -267,7 +267,7 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
+      "CopyToOutputDirectory": "Always",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\manifest.json"
     },

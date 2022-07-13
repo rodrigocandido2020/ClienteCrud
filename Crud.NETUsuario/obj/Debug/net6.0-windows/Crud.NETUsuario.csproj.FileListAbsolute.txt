@@ -50,14 +50,6 @@ C:\Users\usuario\Desktop\ClienteCrud - .net 5 origin\Crud.NETUsuario\obj\Debug\n
 C:\Users\usuario\Desktop\ClienteCrud - .net 5 origin\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NETUsuario.pdb
 C:\Users\usuario\Desktop\ClienteCrud - .net 5 origin\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NETUsuario.genruntimeconfig.cache
 C:\Users\usuario\Desktop\ClienteCrud - .net 5 origin\Crud.NETUsuario\obj\Debug\net6.0-windows\ref\Crud.NETUsuario.dll
-C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.csproj.AssemblyReference.cache
-C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.CadastroDeUsuario.resources
-C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.ConsultaDeUsuario.resources
-C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.csproj.GenerateResource.cache
-C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.AssemblyInfoInputs.cache
-C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.AssemblyInfo.cs
-C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.csproj.CoreCompileInputs.cache
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Crud.NetUsuario.exe
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Crud.NetUsuario.dll.config
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Crud.NetUsuario.deps.json
@@ -84,6 +76,7 @@ C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Fl
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\FluentMigrator.Runner.SqlServer.dll
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\FluentMigrator.Runner.SqlServerCe.dll
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\System.Data.SqlServerCe.dll
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\FluentValidation.dll
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\linq2db.dll
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Microsoft.Data.SqlClient.dll
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.dll
@@ -157,6 +150,14 @@ C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Cr
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Crud.Infra.dll
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Crud.Infra.pdb
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\Crud.Dominio.pdb
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.csproj.AssemblyReference.cache
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.CadastroDeUsuario.resources
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.ConsultaDeUsuario.resources
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.csproj.GenerateResource.cache
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.AssemblyInfoInputs.cache
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.AssemblyInfo.cs
+C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.csproj.CoreCompileInputs.cache
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.csproj.Fody.CopyLocal.cache
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.csproj.Fody.RuntimeCopyLocal.cache
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.csproj.CopyComplete
@@ -165,4 +166,3 @@ C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\re
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.pdb
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\Crud.NetUsuario.genruntimeconfig.cache
 C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\obj\Debug\net6.0-windows\ref\Crud.NetUsuario.dll
-C:\Users\usuario\Desktop\ClienteCrud\Crud.NETUsuario\bin\Debug\net6.0-windows\FluentValidation.dll

@@ -23,4 +23,17 @@
     <ProjectReference Include="..\CrudServico\Crud.Dominio.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\i18n\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\Invoices.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\manifest.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

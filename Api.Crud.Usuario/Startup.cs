@@ -1,6 +1,7 @@
 ﻿using Crud.Dominio;
 using Crud.Infra;
 using FluentValidation;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.OpenApi.Models;
 
 namespace Api.CrudUsuario
@@ -38,15 +39,25 @@ namespace Api.CrudUsuario
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Aplicação CRUD Swagger UI"));
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseDefaultFiles();
-            app.UseStaticFiles();
+
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                ContentTypeProvider = new FileExtensionContentTypeProvider
+                {
+                    Mappings = { [".properties"] = "application/x-msdownload" }
+                }
+            });
+
             app.UseRouting();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
+            app.UseCors();
         }
     }
 }
