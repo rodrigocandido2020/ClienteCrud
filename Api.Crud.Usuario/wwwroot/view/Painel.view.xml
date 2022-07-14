@@ -1,0 +1,55 @@
+<mvc:View
+	controllerName="sap.ui.demo.walkthrough.controller.Painel"
+	height="20%"
+			xmlns:mvc="sap.ui.core.mvc"
+			xmlns:core="sap.ui.core"
+			xmlns="sap.m">
+			<FlexBox
+				height="100px"
+				alignItems="Start"
+				justifyContent="Center">
+				<ToggleButton text="{i18n>Criar}" icon="sap-icon://create" press="onPress" class="sapUiSmallMarginEnd"/>
+				<Button text="{i18n>Edit}" type="Emphasized" class="sapUiSmallMarginEnd" />
+				<Button text="{i18n>Excluir}" type="Reject" class="sapUiSmallMarginEnd" />
+				<Button text="{i18n>Listar}" type="Accept" />
+			</FlexBox>
+
+
+
+
+			<Table
+			id="invoiceList"
+			class="sapUiResponsiveMargin"
+			width="auto"
+			items="{
+				path : 'listaDeUsuarios>/',
+				sorter : {
+					path : 'id',
+					group : true
+				}
+			}">
+			<columns>
+				<Column>
+					<Text text="Nome"/>
+				</Column>
+					<Column>
+					<Text text="altura"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem
+					type="Navigation"
+					press=".onPress">
+					<cells>
+						<ObjectIdentifier title="{listaDeUsuarios>name}"/>
+						<Text text="{listaDeUsuarios>height}"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+
+
+
+
+
+</mvc:View>

@@ -89,5 +89,4 @@ C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\obj\Debug\net6.0\refint\Cr
 C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\obj\Debug\net6.0\Crud.ApiNetUsuario.pdb
 C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\obj\Debug\net6.0\Crud.ApiNetUsuario.genruntimeconfig.cache
 C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\obj\Debug\net6.0\ref\Crud.ApiNetUsuario.dll
-C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\bin\Debug\net6.0\wwwroot\Invoices.json
 C:\Users\usuario\Desktop\ClienteCrud\Api.Crud.Usuario\bin\Debug\net6.0\wwwroot\manifest.json
