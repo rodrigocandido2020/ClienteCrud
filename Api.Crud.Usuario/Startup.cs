@@ -18,7 +18,7 @@ namespace Api.CrudUsuario
 
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddCors();
             services.AddScoped<IUsuarioRepositorio, UsuarioRepositorioComLinqDb>();
             services.AddScoped<IValidator<Usuario>, ValidacaoDeUsuario>();
 
@@ -41,6 +41,7 @@ namespace Api.CrudUsuario
 
             //app.UseHttpsRedirection();
             app.UseDefaultFiles();
+            
 
             app.UseStaticFiles(new StaticFileOptions
             {
@@ -49,7 +50,7 @@ namespace Api.CrudUsuario
                     Mappings = { [".properties"] = "application/x-msdownload" }
                 }
             });
-
+            app.UseCors();
             app.UseRouting();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
@@ -57,7 +58,7 @@ namespace Api.CrudUsuario
                 endpoints.MapControllers();
             });
 
-            app.UseCors();
+
         }
     }
 }

@@ -8,11 +8,11 @@ sap.ui.define([
 		
 		onInit: function () {
 			this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
-			this.carregarUsuarioDoBanco();
+			this.carregarUsuarioDoBanco();''
 		},
 
 		BuscarUsuarioDoBanco : function (){
-			var usarioObtidos = fetch("https://swapi.dev/api/people/")
+			var usarioObtidos = fetch('https://localhost:7137/Api/Controller')
 			.then((resposta) => resposta.json())
 			return (usarioObtidos)
 		},
@@ -20,7 +20,7 @@ sap.ui.define([
 		carregarUsuarioDoBanco : function() {
 			var resultado = this.BuscarUsuarioDoBanco();
 			resultado.then(lista => {
-				var oModel = new JSONModel(lista.results);
+				var oModel = new JSONModel(lista);
 				this.getView().setModel(oModel, "listaDeUsuarios")
 			})
 		},

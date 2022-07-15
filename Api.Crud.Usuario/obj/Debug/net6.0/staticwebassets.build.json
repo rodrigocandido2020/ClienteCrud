@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BhSl2YRzlIWu6vCgMPH05LL/3NG+ZPSX5AFEUbvMYcs=",
+  "Hash": "p2y35hZea3lkxl6SeyrVxrwSP7YENxiuapu2plzgEFs=",
   "Source": "Crud.ApiNetUsuario",
   "BasePath": "_content/Crud.ApiNetUsuario",
   "Mode": "Default",
@@ -406,6 +406,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\view\\app.view.xml"
+    },
+    {
+      "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\view\\Criar.view.xml",
+      "SourceId": "Crud.ApiNetUsuario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\",
+      "BasePath": "_content/Crud.ApiNetUsuario",
+      "RelativePath": "view/Criar.view.xml",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\view\\Criar.view.xml"
     },
     {
       "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\view\\Overview.view.xml",

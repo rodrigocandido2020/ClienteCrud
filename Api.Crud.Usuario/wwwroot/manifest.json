@@ -60,13 +60,6 @@
 					],
 					"fallbackLocale": ""
 				}
-			},
-			"invoice": {
-				"type": "sap.ui.model.json.JSONModel",
-				"uri" : "Invoices.json",
-				
-				"_commentario": "se deseja mexer na lista de teste usar apenas o dataSource abaixo",
-				"dataSource" : "invoiceRemote"
 			}
 		},
 		"routing": {
@@ -85,9 +78,10 @@
 					"target": "overview"
 				},
 				{
-					"pattern": "detail/{invoicePath}",
-					"name": "detail",
-					"target": "detail"
+					"pattern": "criar",
+					"id":"criar",
+					"name":"criar"
+
 				}
 			],
 			"targets": {
@@ -95,9 +89,9 @@
 					"id": "overview",
 					"name": "Overview"
 				},
-				"detail": {
-					"id": "detail",
-					"name": "Detail"
+				"criar": {
+					"id": "criar",
+					"name": "Criar"
 				}
 			},
 			"resources": {

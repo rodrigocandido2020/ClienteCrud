@@ -8,15 +8,11 @@
 				height="100px"
 				alignItems="Start"
 				justifyContent="Center">
-				<ToggleButton text="{i18n>Criar}" icon="sap-icon://create" press="onPress" class="sapUiSmallMarginEnd"/>
-				<Button text="{i18n>Edit}" type="Emphasized" class="sapUiSmallMarginEnd" />
-				<Button text="{i18n>Excluir}" type="Reject" class="sapUiSmallMarginEnd" />
-				<Button text="{i18n>Listar}" type="Accept" />
+				<ToggleButton text="{i18n>criarBotao}"  press="onPress" icon="sap-icon://create" class="sapUiSmallMarginEnd"/>
+				<Button text="{i18n>editarBotao}" type="Emphasized" class="sapUiSmallMarginEnd" />
+				<Button text="{i18n>excluirBotao}" press="testeFuncao" type="Reject" class="sapUiSmallMarginEnd" />
+				<Button text="{i18n>listarBotao}" type="Accept" />
 			</FlexBox>
-
-
-
-
 			<Table
 			id="invoiceList"
 			class="sapUiResponsiveMargin"
@@ -24,32 +20,39 @@
 			items="{
 				path : 'listaDeUsuarios>/',
 				sorter : {
-					path : 'id',
+					path : '',
 					group : true
 				}
 			}">
-			<columns>
-				<Column>
-					<Text text="Nome"/>
-				</Column>
+				<columns>
 					<Column>
-					<Text text="altura"/>
-				</Column>
-			</columns>
-			<items>
-				<ColumnListItem
-					type="Navigation"
-					press=".onPress">
-					<cells>
-						<ObjectIdentifier title="{listaDeUsuarios>name}"/>
-						<Text text="{listaDeUsuarios>height}"/>
-					</cells>
-				</ColumnListItem>
-			</items>
+						<Text text="id"/>
+					</Column>
+					<Column>
+						<Text text="nome"/>
+					</Column>
+					<Column>
+						<Text text="email"/>
+					</Column>
+					<Column>
+						<Text text="dataNascimento"/>
+					</Column>
+					<Column>
+						<Text text="dataCriacao"/>
+					</Column>				
+				</columns>
+				<items>
+					<ColumnListItem
+						type="Navigation"
+						press=".onPress">
+						<cells>
+							<ObjectIdentifier title="{listaDeUsuarios>id}"/>
+							<Text text="{listaDeUsuarios>nome}"/>
+							<Text text="{listaDeUsuarios>email}"/>
+							<Text text="{listaDeUsuarios>dataNascimento}"/>
+							<Text text="{listaDeUsuarios>dataCriacao}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
 		</Table>
-
-
-
-
-
 </mvc:View>
