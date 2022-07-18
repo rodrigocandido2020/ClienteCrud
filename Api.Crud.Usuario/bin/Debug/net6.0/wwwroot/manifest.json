@@ -74,24 +74,45 @@
 			"routes": [
 				{
 					"pattern": "",
-					"name": "overview",
-					"target": "overview"
+					"name": "lista",
+					"target": "lista"
 				},
 				{
-					"pattern": "criar",
+					"pattern": "usuarios/criar",
 					"id":"criar",
-					"name":"criar"
+					"name":"criar",
+					"target": "criar"
 
+				},
+				{
+					"pattern": "usuarios/{id}/atualizar",
+					"id":"atualizar",
+					"name":"atualizar",
+					"target": "atualizar"
+				},
+				{
+					"pattern": "usuarios/{id}",
+					"id":"detalhes",
+					"name":"detalhes",
+					"target": "detalhes"
 				}
 			],
 			"targets": {
-				"overview": {
-					"id": "overview",
-					"name": "Overview"
+				"lista": {
+					"id": "lista",
+					"name": "Lista"
+				},
+				"detalhes": {
+					"id": "criar",
+					"name": "Detalhes"
 				},
 				"criar": {
 					"id": "criar",
 					"name": "Criar"
+				},
+				"atualizar": {
+					"id": "atualizar",
+					"name": "Atualizar"
 				}
 			},
 			"resources": {

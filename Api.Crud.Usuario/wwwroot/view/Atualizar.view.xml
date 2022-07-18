@@ -1,19 +1,23 @@
 <mvc:View
-	controllerName="sap.ui.demo.walkthrough.controller.Painel"
-	height="20%"
-			xmlns:mvc="sap.ui.core.mvc"
-			xmlns:core="sap.ui.core"
-			xmlns="sap.m">
-			<FlexBox
+    controllerName="sap.ui.demo.walkthrough.controller.Atualizar"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout">
+	<Page
+		title="atualizar">
+        <FlexBox
 				height="100px"
 				alignItems="Start"
 				justifyContent="Center">
-				<ToggleButton text="{i18n>criarBotao}"  press="onPress" icon="sap-icon://create" class="sapUiSmallMarginEnd"/>
-				<Button text="{i18n>editarBotao}" type="Emphasized" class="sapUiSmallMarginEnd" />
-				<Button text="{i18n>excluirBotao}" press="testeFuncao" type="Reject" class="sapUiSmallMarginEnd" />
-				<Button text="{i18n>listarBotao}" type="Accept" />
-			</FlexBox>
-			<Table
+            <Button text="{i18n>salvar}" press="adicionarUsuario" type="Accept" class="sapUiSmallMarginEnd" />
+			<Button text="buscar id" press="buscarUsuarioId" type="Accept" class="sapUiSmallMarginEnd" />
+            <Button text="{i18n>voltar}" press="telaInicial" type="Emphasized" class="sapUiSmallMarginEnd" />
+        </FlexBox>
+        <l:VerticalLayout class="sapUiContentPadding" width="50%">
+        	<SearchField width="50%" search="buscarUsuarioId"/>
+		</l:VerticalLayout> 
+
+		<Table
 			id="invoiceList"
 			class="sapUiResponsiveMargin"
 			width="auto"
@@ -44,15 +48,16 @@
 				<items>
 					<ColumnListItem
 						type="Navigation"
-						press=".onPress">
+						press="atualizarUsuario">
 						<cells>
 							<ObjectIdentifier title="{listaDeUsuarios>id}"/>
 							<Text text="{listaDeUsuarios>nome}"/>
 							<Text text="{listaDeUsuarios>email}"/>
-							<Text text="{listaDeUsuarios>dataNascimento}"/>
+							<Text  text="{listaDeUsuarios>dataNascimento}"/>
 							<Text text="{listaDeUsuarios>dataCriacao}"/>
 						</cells>
 					</ColumnListItem>
 				</items>
-		</Table>
+		</Table>           
+    </Page>
 </mvc:View>

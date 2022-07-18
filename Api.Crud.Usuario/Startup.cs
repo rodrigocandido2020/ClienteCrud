@@ -18,7 +18,13 @@ namespace Api.CrudUsuario
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors();
+            services.AddCors(services =>
+            {
+                services.AddPolicy("CorsPolicy", build => build
+                .AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod());
+            });
             services.AddScoped<IUsuarioRepositorio, UsuarioRepositorioComLinqDb>();
             services.AddScoped<IValidator<Usuario>, ValidacaoDeUsuario>();
 
@@ -50,7 +56,7 @@ namespace Api.CrudUsuario
                     Mappings = { [".properties"] = "application/x-msdownload" }
                 }
             });
-            app.UseCors();
+            app.UseCors("CorsPolicy");
             app.UseRouting();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>

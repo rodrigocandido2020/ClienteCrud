@@ -5,7 +5,7 @@ using System.Net;
 
 namespace Api.CrudUsuario.Controllers
 {
-    [Route("Api/Controller")]
+    [Route("Api/[controller]")]
     [ApiController]
     public class UsuariosController : Controller
     {

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "p2y35hZea3lkxl6SeyrVxrwSP7YENxiuapu2plzgEFs=",
+  "Hash": "GMfp3G9cdT/pjJy/X/TUS/CCeJFmv2oF5kAbMawltO4=",
   "Source": "Crud.ApiNetUsuario",
   "BasePath": "_content/Crud.ApiNetUsuario",
   "Mode": "Default",
@@ -51,12 +51,12 @@
       "OriginalItemSpec": "wwwroot\\control\\ProductRating.js"
     },
     {
-      "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\controller\\app.controller.js",
+      "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\controller\\App.controller.js",
       "SourceId": "Crud.ApiNetUsuario",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\",
       "BasePath": "_content/Crud.ApiNetUsuario",
-      "RelativePath": "controller/app.controller.js",
+      "RelativePath": "controller/App.controller.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -65,15 +65,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\controller\\app.controller.js"
+      "OriginalItemSpec": "wwwroot\\controller\\App.controller.js"
     },
     {
-      "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\controller\\Painel.controller.js",
+      "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\controller\\Atualizar.controller.js",
       "SourceId": "Crud.ApiNetUsuario",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\",
       "BasePath": "_content/Crud.ApiNetUsuario",
-      "RelativePath": "controller/Painel.controller.js",
+      "RelativePath": "controller/Atualizar.controller.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -82,7 +82,41 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\controller\\Painel.controller.js"
+      "OriginalItemSpec": "wwwroot\\controller\\Atualizar.controller.js"
+    },
+    {
+      "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\controller\\Criar.controller.js",
+      "SourceId": "Crud.ApiNetUsuario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\",
+      "BasePath": "_content/Crud.ApiNetUsuario",
+      "RelativePath": "controller/Criar.controller.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\controller\\Criar.controller.js"
+    },
+    {
+      "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\controller\\Lista.controller.js",
+      "SourceId": "Crud.ApiNetUsuario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\",
+      "BasePath": "_content/Crud.ApiNetUsuario",
+      "RelativePath": "controller/Lista.controller.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\controller\\Lista.controller.js"
     },
     {
       "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\css\\style.css",
@@ -391,12 +425,12 @@
       "OriginalItemSpec": "wwwroot\\test\\unit\\unitTests.qunit.js"
     },
     {
-      "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\view\\app.view.xml",
+      "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\view\\App.view.xml",
       "SourceId": "Crud.ApiNetUsuario",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\",
       "BasePath": "_content/Crud.ApiNetUsuario",
-      "RelativePath": "view/app.view.xml",
+      "RelativePath": "view/App.view.xml",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -405,7 +439,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\view\\app.view.xml"
+      "OriginalItemSpec": "wwwroot\\view\\App.view.xml"
+    },
+    {
+      "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\view\\Atualizar.view.xml",
+      "SourceId": "Crud.ApiNetUsuario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\",
+      "BasePath": "_content/Crud.ApiNetUsuario",
+      "RelativePath": "view/Atualizar.view.xml",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\view\\Atualizar.view.xml"
     },
     {
       "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\view\\Criar.view.xml",
@@ -425,6 +476,23 @@
       "OriginalItemSpec": "wwwroot\\view\\Criar.view.xml"
     },
     {
+      "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\view\\Lista.view.xml",
+      "SourceId": "Crud.ApiNetUsuario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\",
+      "BasePath": "_content/Crud.ApiNetUsuario",
+      "RelativePath": "view/Lista.view.xml",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\view\\Lista.view.xml"
+    },
+    {
       "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\view\\Overview.view.xml",
       "SourceId": "Crud.ApiNetUsuario",
       "SourceType": "Discovered",
@@ -440,23 +508,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\view\\Overview.view.xml"
-    },
-    {
-      "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\view\\Painel.view.xml",
-      "SourceId": "Crud.ApiNetUsuario",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\",
-      "BasePath": "_content/Crud.ApiNetUsuario",
-      "RelativePath": "view/Painel.view.xml",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\view\\Painel.view.xml"
     }
   ]
 }
