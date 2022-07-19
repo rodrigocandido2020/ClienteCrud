@@ -1,63 +1,11 @@
 <mvc:View
-    controllerName="sap.ui.demo.walkthrough.controller.Atualizar"
+	controllerName="sap.ui.demo.walkthrough.controller.Atualizar"
 	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-    xmlns:l="sap.ui.layout">
+	xmlns:mvc="sap.ui.core.mvc">
 	<Page
-		title="atualizar">
-        <FlexBox
-				height="100px"
-				alignItems="Start"
-				justifyContent="Center">
-            <Button text="{i18n>salvar}" press="adicionarUsuario" type="Accept" class="sapUiSmallMarginEnd" />
-			<Button text="buscar id" press="buscarUsuarioId" type="Accept" class="sapUiSmallMarginEnd" />
-            <Button text="{i18n>voltar}" press="telaInicial" type="Emphasized" class="sapUiSmallMarginEnd" />
-        </FlexBox>
-        <l:VerticalLayout class="sapUiContentPadding" width="50%">
-        	<SearchField width="50%" search="buscarUsuarioId"/>
-		</l:VerticalLayout> 
-
-		<Table
-			id="invoiceList"
-			class="sapUiResponsiveMargin"
-			width="auto"
-			items="{
-				path : 'listaDeUsuarios>/',
-				sorter : {
-					path : '',
-					group : true
-				}
-			}">
-				<columns>
-					<Column>
-						<Text text="id"/>
-					</Column>
-					<Column>
-						<Text text="nome"/>
-					</Column>
-					<Column>
-						<Text text="email"/>
-					</Column>
-					<Column>
-						<Text text="dataNascimento"/>
-					</Column>
-					<Column>
-						<Text text="dataCriacao"/>
-					</Column>				
-				</columns>
-				<items>
-					<ColumnListItem
-						type="Navigation"
-						press="atualizarUsuario">
-						<cells>
-							<ObjectIdentifier title="{listaDeUsuarios>id}"/>
-							<Text text="{listaDeUsuarios>nome}"/>
-							<Text text="{listaDeUsuarios>email}"/>
-							<Text  text="{listaDeUsuarios>dataNascimento}"/>
-							<Text text="{listaDeUsuarios>dataCriacao}"/>
-						</cells>
-					</ColumnListItem>
-				</items>
-		</Table>           
-    </Page>
+		title="{i18n>detailPageTitle}">
+		<ObjectHeader
+			intro="{invoice>ShipperName}"
+			title="{invoice>ProductName}"/>
+	</Page>
 </mvc:View>

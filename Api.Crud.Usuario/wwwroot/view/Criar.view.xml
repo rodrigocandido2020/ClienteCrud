@@ -9,8 +9,8 @@
 				height="100px"
 				alignItems="Start"
 				justifyContent="Center">
-            <Button text="{i18n>salvar}" press="adicionarUsuario" type="Accept" class="sapUiSmallMarginEnd" />
-            <Button text="{i18n>voltar}" press="onNavBack" type="Emphasized" class="sapUiSmallMarginEnd" />
+            <Button text="{i18n>salvar}" press=".adicionarUsuario" type="Accept" class="sapUiSmallMarginEnd" />
+            <Button text="{i18n>voltar}" press=".onNavBack" type="Emphasized" class="sapUiSmallMarginEnd" />
         </FlexBox>
 
         <l:VerticalLayout class="sapUiContentPadding" width="50%">

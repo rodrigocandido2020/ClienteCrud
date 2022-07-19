@@ -12,7 +12,9 @@
 				<Button text="{i18n>excluirBotao}" press="testeFuncao" type="Reject" class="sapUiSmallMarginEnd" />
 				<Button text="{i18n>listarBotao}" type="Accept" />
 			</FlexBox>
-			<Table id="invoiceList" class="sapUiResponsiveMargin" width="auto" items="{
+			<Table 
+			 itemPress="atualizarUsuario"
+			id="invoiceList" class="sapUiResponsiveMargin" width="auto" items="{
 				path : 'listaDeUsuarios>/',
 				sorter : {
 					path : '',
@@ -37,7 +39,7 @@
 					</Column>
 				</columns>
 				<items>
-					<ColumnListItem type="Navigation" press="atualizarUsuario">
+					<ColumnListItem type="Navigation">
 						<cells>
 							<ObjectIdentifier title="{listaDeUsuarios>id}"/>
 							<Text text="{listaDeUsuarios>nome}"/>

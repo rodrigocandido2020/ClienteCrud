@@ -31,9 +31,14 @@ sap.ui.define([
 			oRouter.navTo("criar");
 		},
 
-		atualizarUsuario: function (oEvent) {
+		atualizarUsuario: function (oEvent) { 
+			var id = oEvent
+				.getParameter("listItem")
+				.getBindingContext("listaDeUsuarios") 
+				.getProperty("id");
+				
 			var oRouter = this.getOwnerComponent().getRouter();
-			oRouter.navTo("atualizar", { id: 1 });
+			oRouter.navTo("atualizar", { id: id });
 		},
 
 		testeFuncao: function () {

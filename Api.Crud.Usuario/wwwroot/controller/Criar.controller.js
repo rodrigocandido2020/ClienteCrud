@@ -20,7 +20,7 @@ sap.ui.define([
 
         adicionarUsuario: function () {
 			var usuarioTela = this.getView().getModel("usuario")
-			fetch("https://localhost:7137/Api/Controller", {
+			fetch("https://localhost:7137/Api/Usuarios", {
 				method: 'POST',
 				headers: {
 					'Content-type': 'application/json'
@@ -39,7 +39,7 @@ sap.ui.define([
 				window.history.go(-1);
 			} else {
 				var oRouter = this.getOwnerComponent().getRouter();
-				oRouter.navTo("overview", {}, true);
+				oRouter.navTo("Lista", {}, true);
 			}
 		}
 	});
