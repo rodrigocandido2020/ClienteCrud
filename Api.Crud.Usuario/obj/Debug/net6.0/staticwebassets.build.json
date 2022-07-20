@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8x70l0Def9gJl5Y12BqnBjDt8ZpfFcld2zgNQpqz0fw=",
+  "Hash": "oT/U85oInnAl4MDTWKcOFLl6lEBhL2Kzs/58xC4OW2I=",
   "Source": "Crud.ApiNetUsuario",
   "BasePath": "_content/Crud.ApiNetUsuario",
   "Mode": "Default",
@@ -85,12 +85,12 @@
       "OriginalItemSpec": "wwwroot\\controller\\Atualizar.controller.js"
     },
     {
-      "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\controller\\Criar.controller.js",
+      "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\controller\\Cadastro.controller.js",
       "SourceId": "Crud.ApiNetUsuario",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\",
       "BasePath": "_content/Crud.ApiNetUsuario",
-      "RelativePath": "controller/Criar.controller.js",
+      "RelativePath": "controller/Cadastro.controller.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -99,7 +99,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\controller\\Criar.controller.js"
+      "OriginalItemSpec": "wwwroot\\controller\\Cadastro.controller.js"
     },
     {
       "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\controller\\Lista.controller.js",
@@ -459,12 +459,12 @@
       "OriginalItemSpec": "wwwroot\\view\\Atualizar.view.xml"
     },
     {
-      "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\view\\Criar.view.xml",
+      "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\view\\Cadastro.view.xml",
       "SourceId": "Crud.ApiNetUsuario",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\",
       "BasePath": "_content/Crud.ApiNetUsuario",
-      "RelativePath": "view/Criar.view.xml",
+      "RelativePath": "view/Cadastro.view.xml",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -473,7 +473,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\view\\Criar.view.xml"
+      "OriginalItemSpec": "wwwroot\\view\\Cadastro.view.xml"
     },
     {
       "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\view\\Lista.view.xml",

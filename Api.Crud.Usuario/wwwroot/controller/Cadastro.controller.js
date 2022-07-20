@@ -6,7 +6,7 @@ sap.ui.define([
 ], function (Controller, History, JSONModel) {
 	"use strict";
 
-	return Controller.extend("sap.ui.demo.walkthrough.controller.Criar", {
+	return Controller.extend("sap.ui.demo.walkthrough.controller.Cadastro", {
 		
 		onInit: function () {
 			this.getView().setModel(new JSONModel({

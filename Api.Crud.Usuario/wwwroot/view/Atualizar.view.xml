@@ -1,11 +1,10 @@
-<mvc:View
-	controllerName="sap.ui.demo.walkthrough.controller.Atualizar"
+<mvc:View controllerName="sap.ui.demo.walkthrough.controller.Atualizar"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
-	<Page
-		title="{i18n>detailPageTitle}">
-		<ObjectHeader
-			intro="{invoice>ShipperName}"
-			title="{invoice>ProductName}"/>
+	<Page title="{i18n>detalhes}">
+
+
+		<Label text="{usuario>/nome}"/>
+
 	</Page>
 </mvc:View>

@@ -28,18 +28,18 @@ sap.ui.define([
 
 		telaCriarUsuario: function (oEvent) {
 			var oRouter = this.getOwnerComponent().getRouter();
-			oRouter.navTo("criar");
+			oRouter.navTo("cadastro");
 		},
 
 		atualizarUsuario: function (oEvent) { 
 			var id = oEvent
 				.getParameter("listItem")
 				.getBindingContext("listaDeUsuarios") 
-				.getProperty("id");
-				
-			var oRouter = this.getOwnerComponent().getRouter();
+				.getProperty("id")
+				var oRouter = this.getOwnerComponent().getRouter();
+			
 			oRouter.navTo("atualizar", { id: id });
-		},
+	},
 
 		testeFuncao: function () {
 			MessageToast.show("Hello World");

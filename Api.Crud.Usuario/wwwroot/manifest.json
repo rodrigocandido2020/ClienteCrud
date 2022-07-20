@@ -78,10 +78,10 @@
 					"target": "lista"
 				},
 				{
-					"pattern": "usuarios/criar",
-					"id":"criar",
-					"name":"criar",
-					"target": "criar"
+					"pattern": "usuarios/cadastro",
+					"id":"cadastro",
+					"name":"cadastro",
+					"target": "cadastro"
 
 				},
 				{
@@ -103,12 +103,12 @@
 					"name": "Lista"
 				},
 				"detalhes": {
-					"id": "criar",
+					"id": "cadastro",
 					"name": "Detalhes"
 				},
-				"criar": {
-					"id": "criar",
-					"name": "Criar"
+				"cadastro": {
+					"id": "cadastro",
+					"name": "Cadastro"
 				},
 				"atualizar": {
 					"id": "atualizar",
