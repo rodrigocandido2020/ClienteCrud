@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "oT/U85oInnAl4MDTWKcOFLl6lEBhL2Kzs/58xC4OW2I=",
+  "Hash": "+sXJH2ZZj4myHn0nh5FP9DB0/hogs18TQhsjJr3MG98=",
   "Source": "Crud.ApiNetUsuario",
   "BasePath": "_content/Crud.ApiNetUsuario",
   "Mode": "Default",
@@ -68,23 +68,6 @@
       "OriginalItemSpec": "wwwroot\\controller\\App.controller.js"
     },
     {
-      "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\controller\\Atualizar.controller.js",
-      "SourceId": "Crud.ApiNetUsuario",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\",
-      "BasePath": "_content/Crud.ApiNetUsuario",
-      "RelativePath": "controller/Atualizar.controller.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\controller\\Atualizar.controller.js"
-    },
-    {
       "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\controller\\Cadastro.controller.js",
       "SourceId": "Crud.ApiNetUsuario",
       "SourceType": "Discovered",
@@ -100,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\controller\\Cadastro.controller.js"
+    },
+    {
+      "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\controller\\Detalhes.controller.js",
+      "SourceId": "Crud.ApiNetUsuario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\",
+      "BasePath": "_content/Crud.ApiNetUsuario",
+      "RelativePath": "controller/Detalhes.controller.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\controller\\Detalhes.controller.js"
     },
     {
       "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\controller\\Lista.controller.js",
@@ -442,23 +442,6 @@
       "OriginalItemSpec": "wwwroot\\view\\App.view.xml"
     },
     {
-      "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\view\\Atualizar.view.xml",
-      "SourceId": "Crud.ApiNetUsuario",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\",
-      "BasePath": "_content/Crud.ApiNetUsuario",
-      "RelativePath": "view/Atualizar.view.xml",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\view\\Atualizar.view.xml"
-    },
-    {
       "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\view\\Cadastro.view.xml",
       "SourceId": "Crud.ApiNetUsuario",
       "SourceType": "Discovered",
@@ -474,6 +457,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\view\\Cadastro.view.xml"
+    },
+    {
+      "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\view\\Detalhes.view.xml",
+      "SourceId": "Crud.ApiNetUsuario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\",
+      "BasePath": "_content/Crud.ApiNetUsuario",
+      "RelativePath": "view/Detalhes.view.xml",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\view\\Detalhes.view.xml"
     },
     {
       "Identity": "C:\\Users\\usuario\\Desktop\\ClienteCrud\\Api.Crud.Usuario\\wwwroot\\view\\Lista.view.xml",

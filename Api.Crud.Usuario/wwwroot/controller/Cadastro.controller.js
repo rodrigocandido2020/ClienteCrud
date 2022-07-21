@@ -7,28 +7,27 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("sap.ui.demo.walkthrough.controller.Cadastro", {
-		
+
 		onInit: function () {
 			this.getView().setModel(new JSONModel({
 
-                nome: "",
-                senha: "",
-                email: "",
+				nome: "",
+				senha: "",
+				email: "",
 				dataNascimento: "",
-            }), "usuario")
+			}), "usuario")
 		},
 
-        adicionarUsuario: function () {
+		adicionarUsuario: function () {
 			var usuarioTela = this.getView().getModel("usuario")
 			fetch("https://localhost:7137/Api/Usuarios", {
-				method: 'POST',
-				headers: {
-					'Content-type': 'application/json'
-				},
-				body: JSON.stringify(usuarioTela.getData())
-			})
-			.then(response => response.json())
-			alert("Usuario cadastrado com sucesso!!")			
+					method: 'POST',
+					headers: {
+						'Content-type': 'application/json'
+					},
+					body: JSON.stringify(usuarioTela.getData())
+				})
+				.then(response => response.json())
 		},
 
 		onNavBack: function () {
@@ -44,4 +43,3 @@ sap.ui.define([
 		}
 	});
 });
- 

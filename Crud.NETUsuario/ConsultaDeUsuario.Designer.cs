@@ -122,6 +122,7 @@
             this.Controls.Add(this.Lbl_Ok);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "ConsultaDeUsuario";
+            this.RightToLeftLayout = true;
             this.Text = "Cliente";
             ((System.ComponentModel.ISupportInitialize)(this.listaClienteGrid)).EndInit();
             this.ResumeLayout(false);

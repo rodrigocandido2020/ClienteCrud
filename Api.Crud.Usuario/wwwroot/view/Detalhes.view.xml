@@ -1,0 +1,22 @@
+<mvc:View controllerName="sap.ui.demo.walkthrough.controller.Detalhes"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Page title="{i18n>detalhes}">
+		<l:VerticalLayout class="sapUiContentPadding" width="100%">
+			<l:content>
+				<FlexBox height="50px" alignItems="Start" justifyContent="Center">
+					<Button class="sapUiTinyMarginBeginEnd" type="Ghost" text="{i18n>atualizarBotao}" press="telaCriarUsuario" />
+					<Button class="sapUiTinyMarginBeginEnd" type="Reject" text="{i18n>deletarUsuario}" press="deletarUsuario" />
+				</FlexBox>
+				<List binding="{/SupplierCollection/0}" headerText="{i18n>dadosDetalhe}">
+					<DisplayListItem label="Id" value="{usuario>/id}" />
+					<DisplayListItem label="Nome" value="{usuario>/nome}" />
+					<DisplayListItem label="E-mail" value="{usuario>/email}" />
+					<DisplayListItem label="Data Nascimento" value="{usuario>/dataNascimento}" />
+					<DisplayListItem label="Data Criação" value="{usuario>/dataCriacao}" />
+				</List>
+			</l:content>
+		</l:VerticalLayout>
+	</Page>
+</mvc:View>

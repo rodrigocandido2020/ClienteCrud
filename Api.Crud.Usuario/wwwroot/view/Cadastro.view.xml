@@ -1,37 +1,25 @@
-<mvc:View
-    controllerName="sap.ui.demo.walkthrough.controller.Cadastro"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
+<mvc:View controllerName="sap.ui.demo.walkthrough.controller.Cadastro"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
     xmlns:l="sap.ui.layout">
-	<Page
-		title="{i18n>detailPageTitle}">
-        <FlexBox
-				height="100px"
-				alignItems="Start"
-				justifyContent="Center">
+    <Page title="{i18n>detailPageTitle}">
+        <FlexBox height="100px" alignItems="Start" justifyContent="Center">
             <Button text="{i18n>salvar}" press=".adicionarUsuario" type="Accept" class="sapUiSmallMarginEnd" />
             <Button text="{i18n>voltar}" press=".onNavBack" type="Emphasized" class="sapUiSmallMarginEnd" />
         </FlexBox>
 
         <l:VerticalLayout class="sapUiContentPadding" width="50%">
-            <Label  text="{i18n>nome} (obrigatório)" labelFor="input-nome" />
+            <Label text="{i18n>nome} (obrigatório)" labelFor="input-nome" />
             <Input value="{usuario>/nome}" id="input-nome" placeholder="Digitar Nome Completo" required="true" />
 
             <Label text="{i18n>senha} (obrigatório)" labelFor="input-senha" />
             <Input value="{usuario>/senha}" id="input-senha" type="Password" placeholder="Digitar Senhar" required="true" />
 
             <Label text="{i18n>email} (obrigatório)" labelFor="emailInput"/>
-            <Input
-                id="emailInput"
-                class="sapUiSmallMarginBottom"
-                type="Email"
-                placeholder="Digitar E-mail"
-                valueStateText="O campo e-mail deve ser um endereço de e-mail válido."
-                value="{usuario>/email}"
-                required="true"  />
+            <Input id="emailInput" class="sapUiSmallMarginBottom" type="Email" placeholder="Digitar E-mail" valueStateText="O campo e-mail deve ser um endereço de e-mail válido." value="{usuario>/email}" required="true" />
 
-        <Label text="{i18n>dataNascimento}"/>
-     	<DatePicker value="{usuario>/dataNascimento}" valueFormat="yyyy-MM-dd" id="DP3" displayFormat="short" change="handleChange" class="sapUiSmallMarginBottom"/>
-        </l:VerticalLayout>            
+            <Label text="{i18n>dataNascimento}"/>
+            <DatePicker value="{usuario>/dataNascimento}" valueFormat="yyyy-MM-dd" id="DP3" displayFormat="short" change="handleChange" class="sapUiSmallMarginBottom"/>
+        </l:VerticalLayout>
     </Page>
 </mvc:View>

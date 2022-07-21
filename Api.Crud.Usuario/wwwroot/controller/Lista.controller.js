@@ -38,7 +38,7 @@ sap.ui.define([
 				.getProperty("id")
 				var oRouter = this.getOwnerComponent().getRouter();
 			
-			oRouter.navTo("atualizar", { id: id });
+			oRouter.navTo("detalhes", { id: id });
 	},
 
 		testeFuncao: function () {

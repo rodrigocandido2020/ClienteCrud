@@ -85,16 +85,16 @@
 
 				},
 				{
-					"pattern": "usuarios/{id}/atualizar",
-					"id":"atualizar",
-					"name":"atualizar",
-					"target": "atualizar"
-				},
-				{
-					"pattern": "usuarios/{id}",
+					"pattern": "usuarios/{id}/detalhes",
 					"id":"detalhes",
 					"name":"detalhes",
 					"target": "detalhes"
+				},
+				{
+					"pattern": "usuarios/{id}",
+					"id":"atualizar",
+					"name":"atualizar",
+					"target": "atualizar"
 				}
 			],
 			"targets": {
@@ -102,17 +102,17 @@
 					"id": "lista",
 					"name": "Lista"
 				},
-				"detalhes": {
+				"atualizar": {
 					"id": "cadastro",
-					"name": "Detalhes"
+					"name": "atualizar"
 				},
 				"cadastro": {
 					"id": "cadastro",
 					"name": "Cadastro"
 				},
-				"atualizar": {
-					"id": "atualizar",
-					"name": "Atualizar"
+				"detalhes": {
+					"id": "detalhes",
+					"name": "Detalhes"
 				}
 			},
 			"resources": {
