@@ -13,8 +13,22 @@
 					<DisplayListItem label="Id" value="{usuario>/id}" />
 					<DisplayListItem label="Nome" value="{usuario>/nome}" />
 					<DisplayListItem label="E-mail" value="{usuario>/email}" />
-					<DisplayListItem label="Data Nascimento" value="{usuario>/dataNascimento}" />
-					<DisplayListItem label="Data Criação" value="{usuario>/dataCriacao}" />
+					<DisplayListItem label="Data Nascimento" 
+					value="{
+							path: 'usuario>/dataNascimento',
+							type: 'sap.ui.model.type.DateTime',
+							formatOptions: {
+								pattern: 'yyyy/MM/dd'
+							}
+						}" />
+
+					<DisplayListItem label="Data Criação"
+					 value="{
+						 path: 'usuario>/dataCriacao',
+					 type: 'sap.ui.model.type.DateTime',
+					 formatOptions: {pattern: 'yyyy/MM/dd'
+							 }
+					 	}"/>
 				</List>
 			</l:content>
 		</l:VerticalLayout>

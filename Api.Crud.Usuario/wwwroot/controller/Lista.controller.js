@@ -54,6 +54,7 @@ sap.ui.define([
 		modelo: function(nome, modelo){
 			var view = this.getView();
 			if(!!modelo){	
+				
 				view.setModel(modelo, nome);
 			}
 			return view.getModel(nome); 
@@ -68,6 +69,7 @@ sap.ui.define([
 			var resultado = this.BuscarUsuariosDoBanco();
 			resultado.then(lista => {
 				var oModel = new JSONModel(lista);
+				lista.dataNascimento = Date(lista.dataNascimento)
 				this.modeloDeListaDeUsuarios(oModel);
 			})
 		},
